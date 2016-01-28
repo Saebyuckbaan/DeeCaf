@@ -4,6 +4,8 @@ $(document).ready(function ( event ) {
 
 	isUserSignedIn(event);
 	appendFirstName(event);
+	water( event );
+	calculateMaxCaffeineIntake(event);
 
 });
 
@@ -63,4 +65,23 @@ function appendFirstName ( event ){
 function goToAddNewCoffeePage( event ) {
 	window.location.href = "./add-new-coffee.html";
 
+}
+
+function water( event ){
+    $('.waterFill').animate({
+        height: '75%'
+    }, 1000)
+}
+
+function calculateMaxCaffeineIntake ( event ) {
+	
+	var maxCaffeine
+	var currentUser = Parse.User.current();
+	var weight = currentUser.get("weight");
+	console.log("weight = " + weight);
+	if ( currentUser ) {
+	    maxCaffeine = 2.72155 * weight;
+	    $("#maxCaffeine").append('Maximum amount caffeine you can take is ' + parseInt(maxCaffeine) + " mg/day");
+	}
+	
 }
