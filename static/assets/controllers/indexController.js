@@ -78,7 +78,7 @@ function calculateMaxCaffeineIntake ( event ) {
 	var maxCaffeine
 	var currentUser = Parse.User.current();
 	var weight = currentUser.get("weight");
-	console.log("weight = " + weight);
+
 	if ( currentUser ) {
 	    maxCaffeine = 2.72155 * weight;
 	    $("#maxCaffeine").append('Maximum amount caffeine you can take is ' + parseInt(maxCaffeine) + " mg/day");
