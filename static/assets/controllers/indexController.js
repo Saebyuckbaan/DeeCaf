@@ -81,7 +81,7 @@ function calculateMaxCaffeineIntake ( event ) {
 
 	if ( currentUser ) {
 	    maxCaffeine = 2.72155 * weight;
-	    $("#maxCaffeine").append('Maximum amount caffeine you can take is ' + parseInt(maxCaffeine) + " mg/day");
+	    $("#maxCaffeine").append( "123 mg" + " / " + parseInt(maxCaffeine) + "mg" );
 	}
 	
 }

@@ -3,6 +3,14 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 
 
 $("#formSubmit").click(submitForm);
+$("#forgetPW").click(forgotPassword);
+
+function forgotPassword( event ) {
+
+	alert("Working!");
+
+
+}
 
 function submitForm( event ) {
 	
