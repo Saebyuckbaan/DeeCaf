@@ -63,7 +63,7 @@ function appendFirstName ( event ){
 
 
 function goToAddNewCoffeePage( event ) {
-	window.location.href = "./add-new-coffee.html";
+	window.location.href = "./add-new-coffee-brand.html";
 
 }
 
