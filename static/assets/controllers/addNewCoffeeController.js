@@ -8,14 +8,20 @@ $(document).ready(function ( event ) {
 });
 
 $("#signOut").click(signOut);
-$("#list-of-brand").click( function (event ) { 
-	
+$(".list-of-brand").click( function (event ) { 
 	event.preventDefault();
 	selectFromSwipeList ( event, "./add-new-coffee-coffee.html");
-
-
-
 });
+$(".list-of-coffee").click( function (event ) { 
+	event.preventDefault();
+	selectFromSwipeList ( event, "./add-new-coffee-size.html");
+});
+$(".list-of-size").click( function (event ) { 
+	event.preventDefault();
+	selectFromSwipeList ( event, "./index.html");
+});
+
+
 
 
 function signOut( event ) {
@@ -71,7 +77,7 @@ function appendSwipe ( event ) {
 	});
 }
 
+
 function selectFromSwipeList ( event, url ) {
-	alert("Swipe Clicked");
 	window.location.href = url;
 }
