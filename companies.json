@@ -1,0 +1,12 @@
+{
+  "companies": [
+    {
+      "name": "Starbucks",
+      "cid": "1"
+    },
+    {
+      "name": "Peet's Coffee",
+      "cid": "2"
+    }
+  ]
+}

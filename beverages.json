@@ -1,0 +1,58 @@
+{
+  "beverages": [
+    {
+      "name": "Brewed Coffee",
+      "cid": "1",
+      "type": "Coffee",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "175",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "260",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "330",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "410",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffe Latte",
+      "cid": "1",
+      "type": "Classic Espresso Drink",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    }
+  ]
+}
