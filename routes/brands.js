@@ -8,8 +8,6 @@ exports.brands = function(req, res) {
 	//console.log( brands["companies"]);
 	//res.json( brands  );
 	var companies = brands["companies"];
-	res.render( "brands",{ 
-		companies,
-	});
+	res.render( "brands",{ companies: companies });
 
 }
