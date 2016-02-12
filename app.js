@@ -8,6 +8,8 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+
+// Routes
 var index = require('./routes/index');
 var error = require('./routes/error');
 var history = require('./routes/history');
@@ -51,8 +53,6 @@ app.get('/sign_up', sign_up.view);
 app.get('/myaccount', myaccount.view);
 app.get('/history', history.view);
 app.get('/statistic', statistic.view);
-//app.get('/project/:id', project.projectInfo);
-
 app.get('/brands', brands.brands);
 app.get('/beverages', beverages.beverages);
 app.get('/types', beverages.beverage_types);
