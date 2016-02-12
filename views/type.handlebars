@@ -38,6 +38,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/jquery.bxslider.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
@@ -174,12 +175,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <h3>Coffee Menus</h3>
 
                                     <!-- Menu goes here -->
-                                    {{#each}}
-                                      <div>
-                                        <h3>{{name}}</h3>
-                                        <b>{{type}}</b>
-                                      </div>
-                                    {{/each}}
+                                    <ul class="bxslider">
+                                      <li><img src="http://lorempixel.com/400/200/" /></li>
+                                      <li><img src="http://lorempixel.com/400/200/" /></li>
+                                      <li><img src="http://lorempixel.com/400/200/" /></li>
+                                      <li><img src="http://lorempixel.com/400/200/" /></li>
+                                    </ul>
                                     <!-- End of Menu -->
                                 </div>
                             </div>
@@ -218,6 +219,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
 		<script src="assets/global/scripts/parse-1.6.14.min.js" type="text/javascript"></script>
+        <script src="assets/global/scripts/jquery.bxslider.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script src="assets/pages/scripts/components-bootstrap-maxlength.min.js" type="text/javascript"></script>
