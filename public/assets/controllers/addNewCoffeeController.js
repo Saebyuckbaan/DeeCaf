@@ -3,7 +3,12 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 $(document).ready(function ( event ) {
 
 	isUserSignedIn( event );
-	appendSwipe( event )
+	appendSwipe( event );
+	$(document).ready(function(){
+  	$('.bxslider').bxSlider({
+
+  	});
+});
 
 });
 
