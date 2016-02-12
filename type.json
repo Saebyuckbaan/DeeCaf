@@ -1,0 +1,16 @@
+{
+  "type": [
+    {
+      "name": "Stabucks",
+      "cid": "1",
+      "type": [ "Coffee", "Classic Espresso Drink" ],
+      
+    },
+    {
+      "name": "Peet's Coffee",
+      "cid": "2",
+      "type": [ "Coffee", "Classic Espresso Drink" ],
+      
+    },
+  ]
+}

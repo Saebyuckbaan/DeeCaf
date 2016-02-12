@@ -188,12 +188,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
 
                                     <!-- Slide Image-->
-                                    <ul class="bxslider">
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                    </ul>
+                                    <div style ="padding-top: 10%">
+                                        <ul class="bxslider">
+                                        {{#each sizes}}
+                                          <li class="size" id="{{size}}" name="type" value="{{caffeine}}">
+                                              <div style="text-align: center;">
+                                                Size: {{size}}
+                                                <br/>
+                                                {{floz}} fl oz.
+                                                <br />
+                                                Caffeine: {{caffeine}} mg
+                                              </div>
+                                              <!--<img src="{{image}}" />-->
+                                          </li>
+                                        {{/each}}
+                                        </ul>
+                                    </div>
                                     <!-- end of slide -->
 
                                     <!-- Buttons -->

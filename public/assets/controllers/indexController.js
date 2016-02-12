@@ -4,7 +4,7 @@ $(document).ready(function ( event ) {
 
 	isUserSignedIn(event);
 	appendFirstName(event);
-	water( event );
+//	water( event );
 	calculateMaxCaffeineIntake(event);
 
 });
@@ -77,11 +77,21 @@ function calculateMaxCaffeineIntake ( event ) {
 
 	var maxCaffeine
 	var currentUser = Parse.User.current();
-	var weight = currentUser.get("weight");
+	var weight = currentUser.get("weight");	
+	var currentIntake = currentUser.get("todayscaffeine");
+	var ratio;
 
 	if ( currentUser ) {
 	    maxCaffeine = 2.72155 * weight;
-	    $("#maxCaffeine").append( "123 mg" + " / " + parseInt(maxCaffeine) + "mg" );
-	}
+	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
+	    $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
+
+	    console.log ( "ratio = " + ratio );
+	    ratio += "%";
+	    
+	     $('.waterFill').animate({
+        	height: ratio
+    	}, 1000);
+	 }
 
 }

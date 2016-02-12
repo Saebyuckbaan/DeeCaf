@@ -188,13 +188,16 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
 
                                     <!-- Slide Image-->
-                                    <ul class="bxslider">
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                    </ul>
-
+                                    <div style ="padding-top: 10%">
+                                        <ul class="bxslider">
+                                        {{#each beverages}}
+                                          <li class="beverage" id="{{name}}" name="type">
+                                              <div style="text-align: center;">{{name}}</div>
+                                              <img src="{{image}}" />
+                                          </li>
+                                        {{/each}}
+                                        </ul>
+                                    </div>
                                     <!-- end of slide -->
 
                                     <!-- Buttons -->

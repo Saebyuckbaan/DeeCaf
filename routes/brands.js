@@ -11,3 +11,5 @@ exports.brands = function(req, res) {
 	res.render( "brands",{ companies: companies });
 
 }
+
+

@@ -1,14 +1,69 @@
 {
-  "companies": [
-    {
-      "name": "Starbucks",
-      "cid": "1",
-      "logo" : "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Starbucks_Coffee_Logo.svg/200px-Starbucks_Coffee_Logo.svg.png"
-    },
-    {
-      "name": "Peet's Coffee",
-      "cid": "2",
-      "logo" : "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Peet's_Coffee_%26_Tea_logo.svg/1280px-Peet's_Coffee_%26_Tea_logo.svg.png"
-    }
-  ]
+  "companies": [{
+    "name": "Starbucks",
+    "cid": "1",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Starbucks_Coffee_Logo.svg/200px-Starbucks_Coffee_Logo.svg.png",
+    "beverageType": [{
+      "name": "Starbucks Refreshers™ Beverages",
+      "image": "http://www.starbucks.com/assets/12b5eb7219a049b493fbaaa10be840dd.jpg"
+    }, {
+      "name": "Evolution Fresh",
+      "image": "http://www.starbucks.com/assets/530886a27b1b472187c44f8611d7b5e7.jpg"
+
+    }, {
+      "name": "Iced Coffee",
+      "image": "http://www.starbucks.com/assets/bed7c7185cba49399c1f1537b1ce8a91.jpg"
+
+    }, {
+      "name": "Iced Tea",
+      "image": "http://www.starbucks.com/assets/409cc3e76f7b413fb19d73c5fd651483.jpg"
+
+    }, {
+      "name": "Bottled Drinks",
+      "image": "http://www.starbucks.com/assets/9e8cf6735abe482fb99adfb249567dc4.jpg"
+
+    }, {
+      "name": "Freshly Brewed Coffee",
+      "image": "http://www.starbucks.com/assets/1f218fd290c94e99ada891d603f358f8.jpg"
+
+    }, {
+      "name": "Chocolate Beverages",
+      "image": "http://www.starbucks.com/assets/5cf267c089964a84982d669bf49b941c.jpg"
+    }, {
+      "name": "Starbucks Espresso Beverages",
+      "image": "http://www.starbucks.com/assets/bc15a5ca9d744b66bda07254f2f50013.jpg"
+    }, {
+      "name": "Frappuccino Blended Beverages",
+      "image": "http://www.starbucks.com/assets/6de5a474becf44df89cf611ae71e961f.jpg"
+
+    }, {
+      "name": "Smoothies",
+      "image": "http://www.starbucks.com/assets/f3f2cf34ba8a4aafbb5afcbde6f1cbf6.jpg"
+
+    }, {
+      "name": "Fizzio Handcrafted Sodas",
+      "image": "http://www.starbucks.com/assets/20b998251fb64d88a29b7b10e6ec6e98.jpg"
+
+    }]
+  }, {
+    "name": "Peet's Coffee",
+    "cid": "2",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Peet's_Coffee_%26_Tea_logo.svg/1280px-Peet's_Coffee_%26_Tea_logo.svg.png",
+    "beverageType": [{
+      "name": "Coffee Beverages",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-coffee-beverages.jpg"
+    }, {
+      "name": "Tea Beverages",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-tea-beverages.jpg"
+
+    }, {
+      "name": "Blended Refreshment",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-blended-freddos.jpg"
+
+    }, {
+      "name": "Coffee-Free Beverages",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/2014-01/stores-page-coffee-free-beverages-2014.jpg"
+
+    }]
+  }]
 }

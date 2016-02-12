@@ -12,26 +12,49 @@ $(document).ready(function ( event ) {
 
 });
 
-var companyID;
-var beverageID;
+
 var sizeID;
 
 $("#signOut").click(signOut);
+
+// Company ( Brand ) selection is Step 1
 $(".company").click( function (event ) {
 	event.preventDefault();
-	console.log(this.id);
+	var companyID;
+
+	//console.log(this.id);
 	companyID = this.id;
-	selectFromSwipeList ( event, "./beverages");
+	selectFromSwipeList ( event, "./types" + "?" + "cid=" + companyID);
 });
+
+// Type of Beverage selection is Step 2
+$(".type").click( function (event ) {
+	event.preventDefault();
+	var beverageType;
+
+	//console.log(this.id);
+	beverageType = this.id;
+	selectFromSwipeList ( event, "./beverages" + "?" + "type=" + beverageType);
+});
+
+// Beverage Selection is Step 3
 $(".beverage").click( function (event ) { //future class for beverage.handlebars = .beverage
 	event.preventDefault();
-	console.log(this.id);
-	beverageID = this.id;
-	selectFromSwipeList ( event, "./sizes");
+	//console.log(this.id);
+
+	var beverageName;
+	beverageName = this.id;
+	selectFromSwipeList ( event, "./sizes"+ "?" + "name=" + beverageName);
 });
+
+//Size Selection is Step 4
 $(".size").click( function (event ) { //future class for size.handlebars = .size
 	event.preventDefault();
-	selectFromSwipeList ( event, "./");
+
+	// CAFFEINE INTAKE ADD FUNCTION! 
+	console.log( $(this).val());
+	incrementCaffeineIntake( event, $(this).val() );
+
 });
 
 $
@@ -93,4 +116,27 @@ function appendSwipe ( event ) {
 
 function selectFromSwipeList ( event, url ) {
 	window.location.href = url;
+}
+
+
+
+
+function incrementCaffeineIntake( event, caffeine ) {
+	//Call current user
+	var currentUser = Parse.User.current();
+	var newCaffeine = currentUser.get( "todayscaffeine") + Number(caffeine);
+	//Update information
+	console.log( newCaffeine );
+	currentUser.set("todayscaffeine",newCaffeine);
+	currentUser.save(null, {
+	  success: function(user) {
+	    // Hooray! Let them use the app now.
+	   	selectFromSwipeList ( event, "/");
+
+	  },
+	  error: function(user, error) {
+	    // Show the error message somewhere and let the user try again.
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
 }

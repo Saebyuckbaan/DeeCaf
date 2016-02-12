@@ -3,7 +3,7 @@
     {
       "name": "Brewed Coffee",
       "cid": "1",
-      "type": "Coffee",
+      "type": "Freshly Brewed Coffee",
       "image" : "http://globalassets.starbucks.com/assets/3a587a16ee4642a8a9ba3ccdd8c1e4f5.jpg",
       "fact": [
         {
@@ -31,7 +31,35 @@
     {
       "name": "Caffe Latte",
       "cid": "1",
-      "type": "Classic Espresso Drink",
+      "type": "Starbucks Espresso Beverages",
+      "image" : "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffe Latte",
+      "cid": "2",
+      "type": "Starbucks Espresso Beverages",
       "image" : "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
       "fact": [
         {

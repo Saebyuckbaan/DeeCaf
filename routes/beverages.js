@@ -1,31 +1,76 @@
 var beverages = require('../beverages.json');
+var companies = require('../companies.json');
+
+
+exports.beverage_types = function(req, res) {
+
+	//get the parameter passed 
+	var cid = req.param( 'cid');
+
+	//get beverages JSON object
+	var beverageTypeObj = companies["companies"];
+	//console.log( beverageTypeObj);
+	
+	//Sort out beverages that belongs to specific brands
+	var selectedCompany;
+
+	for (i = 0; i < beverageTypeObj.length ; i++) {
+		if ( beverageTypeObj[i]['cid'] == cid )
+			selectedCompany = beverageTypeObj[i]['beverageType'];
+	}
+
+	console.log( selectedCompany);
+
+
+	res.render( "types", { 
+		type: selectedCompany, 
+		selectedCid : cid,
+	});
+}
 
 exports.beverages = function(req, res) {
-	// get a random palette from the top ones
-	//var randomPalette = palettes[Math.floor(palettes.length * Math.random())];
-	//res.send('Your random palette is called: ' + randomPalette['title']);
-	console.log( "Beverages ");
-	//res.json( beverages );
+	
+	//get the parameter passed 
+	var type = req.param( 'type');
 	var beverageObj = beverages["beverages"];
+	console.log ( "type = " + type );
+	//console.log( beverageObj);
+
+	//Sort out beverages that belongs to specific type
+	var sortedBeverages = new Array();
+
+	for (i = 0; i < beverageObj.length ; i++) {
+		if ( beverageObj[i]['type'] == type )
+			sortedBeverages.push( beverageObj[i] );
+	}
+
+	console.log( sortedBeverages );
+
+	
+
+
 	res.render( "beverages", {
-		beverageObj: beverageObj
+		beverages: sortedBeverages
 	} );
 }
 
-exports.beverage_types = function(req, res) {
-	// get a random palette from the top ones
-	//var randomPalette = palettes[Math.floor(palettes.length * Math.random())];
-	//res.send('Your random palette is called: ' + randomPalette['title']);
-	console.log( "Beverage types ");
-	//res.json( beverages );
-		res.render( "type", {} );
-}
-
 exports.beverage_sizes = function(req, res) {
-	// get a random palette from the top ones
-	//var randomPalette = palettes[Math.floor(palettes.length * Math.random())];
-	//res.send('Your random palette is called: ' + randomPalette['title']);
-	console.log( "Beverage Sizes ");
-	//res.json( beverages );
-		res.render( "sizes", {} );
+	
+	//get the parameter passed 
+	var name = req.param( 'name');
+	var beverageObj = beverages["beverages"];
+	
+	//Sort out beverages that belongs to specific type
+	var selectedBeverage;
+
+	for (i = 0; i < beverageObj.length ; i++) {
+		if ( beverageObj[i]['name'] == name )
+			selectedBeverage =  beverageObj[i]['fact'] ;
+	}
+
+	console.log( selectedBeverage );
+
+	res.render( "sizes", {
+		sizes: selectedBeverage
+	} );
 }

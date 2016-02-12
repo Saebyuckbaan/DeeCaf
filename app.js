@@ -59,6 +59,7 @@ app.get('/beverages', beverages.beverages);
 app.get('/types', beverages.beverage_types);
 app.get('/sizes', beverages.beverage_sizes);
 app.get('/menu', menu.menu);
+
 // Example route
 // app.get('/users', user.list);
 
