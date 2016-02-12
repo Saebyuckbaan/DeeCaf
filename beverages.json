@@ -4,6 +4,7 @@
       "name": "Brewed Coffee",
       "cid": "1",
       "type": "Coffee",
+      "image" : "http://globalassets.starbucks.com/assets/3a587a16ee4642a8a9ba3ccdd8c1e4f5.jpg",
       "fact": [
         {
           "size": "Short",
@@ -31,6 +32,7 @@
       "name": "Caffe Latte",
       "cid": "1",
       "type": "Classic Espresso Drink",
+      "image" : "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
       "fact": [
         {
           "size": "Short",

@@ -189,10 +189,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     <!-- Slide Image-->
                                     <ul class="bxslider">
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
-                                      <li><img src="http://lorempixel.com/400/200/" /></li>
+                                    {{#each companies}}
+                                      <li><div style="text-align: center;">{{name}} <br/> {{cid}}</div> </li>
+                                    {{/each}}
                                     </ul>
                                     <!-- end of slide -->
 
