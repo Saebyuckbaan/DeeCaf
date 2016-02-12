@@ -8,7 +8,7 @@ exports.beverages = function(req, res) {
 	//res.json( beverages );
 	var beverageObj = beverages["beverages"];
 	res.render( "beverages", {
-		beverageObj
+		beverageObj: beverageObj
 	} );
 }
 

@@ -15,6 +15,7 @@ $(document).ready(function ( event ) {
 var companyID;
 var beverageID;
 var sizeID;
+
 $("#signOut").click(signOut);
 $(".company").click( function (event ) {
 	event.preventDefault();
