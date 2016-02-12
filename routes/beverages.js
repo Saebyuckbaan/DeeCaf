@@ -6,7 +6,10 @@ exports.beverages = function(req, res) {
 	//res.send('Your random palette is called: ' + randomPalette['title']);
 	console.log( "Beverages ");
 	//res.json( beverages );
-	res.render( "beverages", {} );
+	var beverageObj = beverages["beverages"];
+	res.render( "beverages", {
+		beverageObj
+	} );
 }
 
 exports.beverage_types = function(req, res) {

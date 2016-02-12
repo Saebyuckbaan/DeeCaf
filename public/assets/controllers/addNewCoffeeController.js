@@ -12,17 +12,23 @@ $(document).ready(function ( event ) {
 
 });
 
+var companyID;
+var beverageID;
+var sizeID;
 $("#signOut").click(signOut);
-$(".").click( function (event ) {
+$(".company").click( function (event ) {
 	event.preventDefault();
-	console.log(window.location.href);
+	console.log(this.id);
+	companyID = this.id;
 	selectFromSwipeList ( event, "./beverages");
 });
-$(".list-of-coffee").click( function (event ) {
+$(".beverage").click( function (event ) { //future class for beverage.handlebars = .beverage
 	event.preventDefault();
+	console.log(this.id);
+	beverageID = this.id;
 	selectFromSwipeList ( event, "./sizes");
 });
-$(".list-of-size").click( function (event ) {
+$(".size").click( function (event ) { //future class for size.handlebars = .size
 	event.preventDefault();
 	selectFromSwipeList ( event, "./");
 });
