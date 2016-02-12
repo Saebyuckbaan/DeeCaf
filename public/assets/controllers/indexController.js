@@ -86,7 +86,9 @@ function calculateMaxCaffeineIntake ( event ) {
 	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
 	    $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
 
-	    if ( ratio < 100 )
+	    if ( ratio == 0 )
+	    	ratio = "10%";
+	    else if ( ratio < 100 )
 	    	ratio += "%";
 	    else
 	    	ratio = "100%";
