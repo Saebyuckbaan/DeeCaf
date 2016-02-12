@@ -13,7 +13,7 @@ $(document).ready(function ( event ) {
 });
 
 $("#signOut").click(signOut);
-$(".list-of-brand").click( function (event ) {
+$(".").click( function (event ) {
 	event.preventDefault();
 	console.log(window.location.href);
 	selectFromSwipeList ( event, "./beverages");
@@ -27,7 +27,7 @@ $(".list-of-size").click( function (event ) {
 	selectFromSwipeList ( event, "./");
 });
 
-
+$
 
 
 function signOut( event ) {
