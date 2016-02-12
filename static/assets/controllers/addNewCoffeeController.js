@@ -8,15 +8,15 @@ $(document).ready(function ( event ) {
 });
 
 $("#signOut").click(signOut);
-$(".list-of-brand").click( function (event ) { 
+$(".list-of-brand").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "./add-new-coffee-coffee.html");
+	selectFromSwipeList ( event, "../views/add-new-coffee-coffee.handlebars");
 });
-$(".list-of-coffee").click( function (event ) { 
+$(".list-of-coffee").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "./add-new-coffee-size.html");
+	selectFromSwipeList ( event, "../views/add-new-coffee-size.handlebars");
 });
-$(".list-of-size").click( function (event ) { 
+$(".list-of-size").click( function (event ) {
 	event.preventDefault();
 	selectFromSwipeList ( event, "./index.html");
 });
@@ -37,7 +37,7 @@ function signOut( event ) {
 	    // show the signup or login page
 	    alert("You have to sign in first");
 	}
-	
+
 	window.location.href = "./sign-in.html";
 
 	var currentUser = Parse.User.current();  // this will now be null
@@ -60,7 +60,7 @@ function isUserSignedIn ( event ) {
 		//show name after user
 
 	}
-	
+
 }
 
 function appendSwipe ( event ) {
