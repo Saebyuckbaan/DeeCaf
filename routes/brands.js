@@ -7,6 +7,6 @@ exports.brands = function(req, res) {
 
 	console.log( "Beverage brands ");
 	//res.json( brands  );
-	res.render( "brands", {} );
-}
 
+	res.render( "brands",{});
+}
