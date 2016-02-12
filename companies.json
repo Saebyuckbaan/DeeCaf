@@ -2,11 +2,13 @@
   "companies": [
     {
       "name": "Starbucks",
-      "cid": "1"
+      "cid": "1",
+      "logo" : "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Starbucks_Coffee_Logo.svg/200px-Starbucks_Coffee_Logo.svg.png"
     },
     {
       "name": "Peet's Coffee",
-      "cid": "2"
+      "cid": "2",
+      "logo" : "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Peet's_Coffee_%26_Tea_logo.svg/1280px-Peet's_Coffee_%26_Tea_logo.svg.png"
     }
   ]
 }
