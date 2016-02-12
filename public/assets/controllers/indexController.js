@@ -27,7 +27,7 @@ function signOut( event ) {
 	    // show the signup or login page
 	    alert("You have to sign in first");
 	}
-	
+
 	window.location.href = "./sign_in";
 
 	var currentUser = Parse.User.current();  // this will now be null
@@ -49,7 +49,7 @@ function isUserSignedIn ( event ) {
 		//show name after user
 
 	}
-	
+
 }
 
 function appendFirstName ( event ){
@@ -63,7 +63,7 @@ function appendFirstName ( event ){
 
 
 function goToAddNewCoffeePage( event ) {
-	window.location.href = "./add-new-coffee-brand.html";
+	window.location.href = "./brands";
 
 }
 
@@ -74,7 +74,7 @@ function water( event ){
 }
 
 function calculateMaxCaffeineIntake ( event ) {
-	
+
 	var maxCaffeine
 	var currentUser = Parse.User.current();
 	var weight = currentUser.get("weight");
@@ -83,5 +83,5 @@ function calculateMaxCaffeineIntake ( event ) {
 	    maxCaffeine = 2.72155 * weight;
 	    $("#maxCaffeine").append( "123 mg" + " / " + parseInt(maxCaffeine) + "mg" );
 	}
-	
+
 }

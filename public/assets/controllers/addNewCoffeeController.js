@@ -10,15 +10,16 @@ $(document).ready(function ( event ) {
 $("#signOut").click(signOut);
 $(".list-of-brand").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "../views/add-new-coffee-coffee.handlebars");
+	console.log(window.location.href);
+	selectFromSwipeList ( event, "./beverages");
 });
 $(".list-of-coffee").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "../views/add-new-coffee-size.handlebars");
+	selectFromSwipeList ( event, "../views/sizes.handlebars");
 });
 $(".list-of-size").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "./index.html");
+	selectFromSwipeList ( event, "./views/index.handlebars");
 });
 
 
