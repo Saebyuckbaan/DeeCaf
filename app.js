@@ -8,10 +8,16 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-//var index = require('./routes/index');
-//var project = require('./routes/project');
-var test = require('./routes/test');
+var index = require('./routes/index');
+var error = require('./routes/error');
+var history = require('./routes/history');
+var myaccount = require('./routes/myaccount');
+var sign_in = require('./routes/sign_in');
+var sign_up = require('./routes/sign_up');
+var statistic = require('./routes/statistic');
+var brands = require('./routes/brands');
 var beverages = require ( './routes/beverages');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -38,10 +44,19 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-//app.get('/', index.view);
+app.get('/', index.view);
+app.get('/error', error.view);
+app.get('/sign_in', sign_in.view);
+app.get('/sign_up', sign_up.view);
+app.get('/myaccount', myaccount.view);
+app.get('/history', history.view);
+app.get('/statistic', statistic.view);
 //app.get('/project/:id', project.projectInfo);
-app.get('/test', test.companies);
+
+app.get('/brands', brands.brands);
 app.get('/beverages', beverages.beverages);
+app.get('/types', beverages.beverage_types);
+app.get('/sizes', beverages.beverage_sizes);
 // Example route
 // app.get('/users', user.list);
 
