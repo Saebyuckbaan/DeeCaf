@@ -15,11 +15,11 @@ $(".list-of-brand").click( function (event ) {
 });
 $(".list-of-coffee").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "../views/sizes.handlebars");
+	selectFromSwipeList ( event, "./sizes");
 });
 $(".list-of-size").click( function (event ) {
 	event.preventDefault();
-	selectFromSwipeList ( event, "./views/index.handlebars");
+	selectFromSwipeList ( event, "./");
 });
 
 
