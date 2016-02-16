@@ -125,9 +125,12 @@ function incrementCaffeineIntake( event, caffeine ) {
 	//Call current user
 	var currentUser = Parse.User.current();
 	var newCaffeine = currentUser.get( "todayscaffeine") + Number(caffeine);
+	var todaysDate  = new Date();
+
 	//Update information
 	console.log( newCaffeine );
 	currentUser.set("todayscaffeine",newCaffeine);
+	currentUser.set("lastInputTime", todaysDate);
 	currentUser.save(null, {
 	  success: function(user) {
 	    // Hooray! Let them use the app now.
