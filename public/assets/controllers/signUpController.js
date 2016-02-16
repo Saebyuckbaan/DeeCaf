@@ -6,13 +6,7 @@ $("#formSubmit").click(submitForm);
 
 
 function submitForm( event ) {
-	console.log ($("#newUsername").val());
-	console.log ($("#newPassword").val());
-	console.log ($("#newEmail").val());
-	console.log ($("#newFirstname").val());
-	console.log ($("#newLastname").val());
-	console.log ($("#newWeight").val());
-	
+
 	var user = new Parse.User();
 	user.set("username" , $("#newUsername").val());
 	user.set("password" , $("#newPassword").val());

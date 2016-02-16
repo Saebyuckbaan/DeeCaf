@@ -4,7 +4,6 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 $(document).keypress(function(event) {
 	/* Act on the event */
     if (event.keyCode == 13) {
-    	console.log( "Enter Pressed ");
 		$("#formSubmit").click();    	
         return false;
     }
@@ -38,14 +37,10 @@ function submitForm( event ) {
 	var user     = new Parse.User();
 	var username = $("#username").val();
 	var password = $("#password").val();
-	
-	console.log (username);
-	console.log (password);
-	
+		
 	Parse.User.logIn( username , password, {
 	  success: function(user) {
 	    // Do stuff after successful login.
-	    console.log ( user.get( "todayscaffeine") );
 	    resetIntakeDaily ( user );
 	  },
 	  error: function(user, error) {

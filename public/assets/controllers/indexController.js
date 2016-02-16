@@ -28,7 +28,6 @@ function signOut( event ) {
 		//log out when user is sign in
 
 		bootbox.confirm("Do you really want to sign out?", function(result) {
-		  	console.log("Confirm result: "+result);
 		  	if ( result ){
 				bootbox.alert("You are successfully sign out", function( ){
 			   		Parse.User.logOut();
