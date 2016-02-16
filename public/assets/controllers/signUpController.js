@@ -24,13 +24,16 @@ function submitForm( event ) {
 	user.signUp(null, {
 	  success: function(user) {
 	    // Hooray! Let them use the app now.
-	    alert("You are successfully signed up!");
-	    window.location.href = "/sign_in";
+	    bootbox.alert("You are successfully signed up!", function(){
+
+		    window.location.href = "/sign_in";	    	
+	    });
+
 
 	  },
 	  error: function(user, error) {
 	    // Show the error message somewhere and let the user try again.
-	    alert("Error: " + error.code + " " + error.message);
+	    bootbox.alert("Sign Up Error: " + error.message);
 	  }
 	});
 

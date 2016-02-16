@@ -16,8 +16,20 @@ $("#forgetPW").click(forgotPassword);
 
 function forgotPassword( event ) {
 
-	alert("Working!");
-
+	bootbox.prompt("What is your email address?", function(result) {                
+	  if (result) {
+	  	Parse.User.requestPasswordReset( result , {
+		  success: function() {
+		  	bootbox.alert("Email sent to your email address!");
+		  },
+		  error: function(error) {
+		    // Show the error message somewhere
+		    bootbox.alert("Error: " + error.message);
+		  }
+		});
+	                              
+	  }
+	});
 
 }
 
@@ -38,11 +50,15 @@ function submitForm( event ) {
 	  },
 	  error: function(user, error) {
 	    // The login failed. Check error to see why.
-	    alert("Login FAILEd")
+	    //bootbox.alert("Sign In Failed: username or password is incorrect");
+	    bootbox.alert("Sign In Failed: " + error.message);
 	  }
 	}).then( function () { 
-		alert("Login successful")
-	    window.location.href = "/";
+		bootbox.alert("Sign In successful", function(){
+
+		    window.location.href = "/";			
+		});
+
 
 	});
 

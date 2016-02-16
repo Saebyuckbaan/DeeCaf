@@ -26,14 +26,24 @@ function signOut( event ) {
 
 	if (currentUser) {
 		//log out when user is sign in
-		alert("You are successfully sign out");
-	    Parse.User.logOut();
+
+		bootbox.confirm("Do you really want to sign out?", function(result) {
+		  	console.log("Confirm result: "+result);
+		  	if ( result ){
+				bootbox.alert("You are successfully sign out", function( ){
+			   		Parse.User.logOut();
+			   		window.location.href = "./sign_in";		  							
+				});
+		  	}
+		}); 
 	} else {
 	    // show the signup or login page
-	    alert("You have to sign in first");
+	    bootbox.alert("You have to sign in first", function () {
+	    	window.location.href = "./sign_in";
+	    });
 	}
 
-	window.location.href = "./sign_in";
+
 
 	var currentUser = Parse.User.current();  // this will now be null
 
@@ -46,8 +56,11 @@ function isUserSignedIn ( event ) {
 
 	if ( !currentUser ) {
 	    // show the signup or login page
-	    alert("You have to sign in first");
-		window.location.href = "./sign_in";
+	    bootbox.alert("You have to sign in first", function(){
+			window.location.href = "./sign_in";
+
+	    });
+
 	}
 	else
 	{
@@ -60,10 +73,14 @@ function isUserSignedIn ( event ) {
 function appendFirstName ( event ){
 
 	var currentUser = Parse.User.current();
-	var firstname = currentUser.get("firstname");
+	if ( currentUser )
+	{
+		var firstname = currentUser.get("firstname");
 
-	$("#firstname").append(firstname);
-	$("#firstname").show();
+		$("#firstname").append(firstname);
+		$("#firstname").show();		
+	}
+
 }
 
 
@@ -82,12 +99,19 @@ function calculateMaxCaffeineIntake ( event ) {
 
 	var maxCaffeine
 	var currentUser = Parse.User.current();
-	var weight = currentUser.get("weight");	
-	var currentIntake = currentUser.get("todayscaffeine");
-	var ratio;
 
-	if ( currentUser ) {
+	if ( currentUser ) 
+	{
+
+		var weight = currentUser.get("weight");	
+		var currentIntake = currentUser.get("todayscaffeine");
+		var ratio;
+
 	    maxCaffeine = 2.72155 * weight;
+
+	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
+	    currentUser.save();
+
 	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
 	    $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
 
@@ -110,30 +134,33 @@ function resetIntakeDaily ( event )
 {
 
 	var currentUser = Parse.User.current();
-	var lastInputTime = currentUser.get("lastInputTime");
-	var currentIntake = currentUser.get("todayscaffeine");	
-	var todaysDate = new Date ();
-	var pastHistory = { 
-						"intake" : currentIntake,
-						"Date" : lastInputTime
-						};
-
-	todaysDate.setHours(0,0,0,0);
-	lastInputTime.setHours(0,0,0,0);
-
-	if ( ( lastInputTime.getTime() < todaysDate.getTime() ) && ( currentIntake != 0 ) )
+	if( currentUser )
 	{
-		//Reset the today's caffeine input into 0
-		currentUser.set("todayscaffeine", 0 );
+		var lastInputTime = currentUser.get("lastInputTime");
+		var currentIntake = currentUser.get("todayscaffeine");	
+		var todaysDate = new Date ();
+		var pastHistory = { 
+							"intake" : currentIntake,
+							"Date" : lastInputTime
+							};
 
-		//update last input time
-		currentUser.set("lastInputTime", todaysDate);
+		todaysDate.setHours(0,0,0,0);
+		lastInputTime.setHours(0,0,0,0);
 
-		// Add current intake to past History
-		currentUser.add("intakeHistory", pastHistory);
+		if ( ( lastInputTime.getTime() < todaysDate.getTime() ) && ( currentIntake != 0 ) )
+		{
+			//Reset the today's caffeine input into 0
+			currentUser.set("todayscaffeine", 0 );
 
-		//Push new user data into Parse.com DB
-		currentUser.save().then( function ( ) { location.reload();});
-		
+			//update last input time
+			currentUser.set("lastInputTime", todaysDate);
+
+			// Add current intake to past History
+			currentUser.add("intakeHistory", pastHistory);
+
+			//Push new user data into Parse.com DB
+			currentUser.save().then( function ( ) { location.reload();});
+			
+		}
 	}
 }
