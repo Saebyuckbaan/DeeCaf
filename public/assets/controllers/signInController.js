@@ -87,6 +87,9 @@ function resetIntakeDaily ( event )
 		// Add current intake to past History
 		currentUser.add("intakeHistory", pastHistory);
 
+		//Reset first coffee boolean
+		currentUser.set("isFirstCoffee", true);
+
 		//Push new user data into Parse.com DB
 		currentUser.save();	
 	}

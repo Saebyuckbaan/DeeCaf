@@ -124,22 +124,63 @@ function selectFromSwipeList ( event, url ) {
 function incrementCaffeineIntake( event, caffeine ) {
 	//Call current user
 	var currentUser = Parse.User.current();
-	var newCaffeine = currentUser.get( "todayscaffeine") + Number(caffeine);
-	var todaysDate  = new Date();
+	if ( currentUser )
+	{
+		var isFirstCoffee = currentUser.get("isFirstCoffee");
+		var newCaffeine = currentUser.get( "todayscaffeine") + Number(caffeine);
+		var todaysDate  = new Date();
+		var todaysDateWithoutTime = new Date();
+		todaysDateWithoutTime.setHours(0,0,0,0);
 
-	//Update information
-	console.log( newCaffeine );
-	currentUser.set("todayscaffeine",newCaffeine);
-	currentUser.set("lastInputTime", todaysDate);
-	currentUser.save(null, {
-	  success: function(user) {
-	    // Hooray! Let them use the app now.
-	   	selectFromSwipeList ( event, "/");
+		console.log ( "year = " + todaysDateWithoutTime.getFullYear() );
+		console.log ( "Day = " + todaysDateWithoutTime.getDay() );
+		console.log ( "Date = " + todaysDateWithoutTime.getDate() );
+		console.log ( "Month = " + todaysDateWithoutTime.getMonth() );
 
-	  },
-	  error: function(user, error) {
-	    // Show the error message somewhere and let the user try again.
-	    alert("Error: " + error.code + " " + error.message);
-	  }
-	});
+		//if user drink first coffee of the day, please ask how long have they slept
+		if ( isFirstCoffee )
+		{
+			bootbox.prompt("How long have you slept last night?", function(result) 
+			{                
+				if (result) 
+				{
+			    	console.log ( "Your sleep time = " + result);
+			    	//Update information
+					currentUser.set("todayscaffeine",newCaffeine);
+					currentUser.set("lastInputTime", todaysDate);
+					currentUser.save(null, {
+					  success: function(user) {
+					    // Hooray! Let them use the app now.
+					   	selectFromSwipeList ( event, "/");
+
+					  },
+					  error: function(user, error) {
+					    // Show the error message somewhere and let the user try again.
+					    alert("Error: " + error.code + " " + error.message);
+					  }
+					});
+
+				}
+			});
+		}
+		// If user already has the first cup of coffee for day
+		else
+		{		
+			//Just Update information
+			currentUser.set("todayscaffeine",newCaffeine);
+			currentUser.set("lastInputTime", todaysDate);
+			currentUser.save(null, {
+			  success: function(user) {
+			    // Hooray! Let them use the app now.
+			   	selectFromSwipeList ( event, "/");
+
+			  },
+			  error: function(user, error) {
+			    // Show the error message somewhere and let the user try again.
+			    alert("Error: " + error.code + " " + error.message);
+			  }
+			});
+		}
+
+	}
 }
