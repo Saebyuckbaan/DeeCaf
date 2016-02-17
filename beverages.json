@@ -1,14 +1,1675 @@
 {
   "beverages": [
-    {
-      "name": "Brewed Coffee",
+      {
+      "name": "Iced Coffee",
       "cid": "1",
-      "type": "Freshly Brewed Coffee",
-      "image" : "http://globalassets.starbucks.com/assets/3a587a16ee4642a8a9ba3ccdd8c1e4f5.jpg",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/3a587a16ee4642a8a9ba3ccdd8c1e4f5.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "120",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "235",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "280",
+          "floz": "31"
+        }
+      ]
+    },
+    {
+      "name": "Iced Coffee with Milk",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/49ce8cffa3ef415583cd12dfd9877f6e.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "90",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "125",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "170",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "190",
+          "floz": "31"
+        }
+      ]
+    },
+    {
+      "name": "Iced Espresso Classics: Vanilla Latte",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/dea527efbbe745749e3008d026873b1d.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "85",
+          "floz": "8"
+        }
+      ]
+    },
+    {
+      "name": "Iced Espresso Classics: Caffe Mocha",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/5cf5ce77290a48c39d076d42bd9c514d.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "85",
+          "floz": "8"
+        }
+      ]
+    },
+    {
+      "name": "Iced Espresso Classics: Caramel Macchiato",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/1e51466720a54d45861146da1bf2b2a6.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "85",
+          "floz": "8"
+        }
+      ]
+    },
+    {
+      "name": "Caramel Iced Coffee",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/d7c17b53cc974d6abc4e308b4e3123a0.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "115",
+          "floz": "11"
+        }
+      ]
+    },
+    {
+      "name": "Iced Coffee + Milk",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/20fb8b6d5c8c4427aec43adfefce0bbf.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "115",
+          "floz": "11"
+        }
+      ]
+    },
+    {
+      "name": "Low Calorie Iced Coffee + Milk",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/f2429f5760a4425f8655d4aaa8c715e1.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "110",
+          "floz": "11"
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Iced Coffee + Milk",
+      "cid": "1",
+      "type": "Iced Coffee",
+      "bid": "2",
+      "image": "http://globalassets.starbucks.com/assets/c55f154e4f0d43ba8edacb7217a6e0a4.jpg",
+      "fact": [
+        {
+          "size": "Bottle",
+          "caffeine": "115",
+          "floz": "11"
+        }
+      ]
+    },
+        {
+      "name": "Hot Chocolate",
+      "cid": "1",
+      "type": "Chocolate Beverages",
+      "bid": "6",
+      "image": "http://globalassets.starbucks.com/assets/f6d9e4e674cd4859b6f66a3a34b1e973.jpg",
       "fact": [
         {
           "size": "Short",
+          "caffeine": "15",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "20",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "25",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "35",
+          "floz": "24"
+        }
+      ]
+    },
+        {
+      "name": "Ginger Ale",
+      "cid": "1",
+      "type": "Fizzio Handcrafted Sodas",
+      "bid": "10",
+      "image": "http://globalassets.starbucks.com/assets/4a2951cbc9bc4b00a7014383e7908047.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "0",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "0",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "0",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "0",
+          "floz": "31"
+        }
+      ]
+    },
+    {
+      "name": "Orange Cream Soda",
+      "cid": "1",
+      "type": "Fizzio Handcrafted Sodas",
+      "bid": "10",
+      "image": "http://globalassets.starbucks.com/assets/d35257bf3ee248b18b8d5575c308e735.png",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "0",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "0",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "0",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "0",
+          "floz": "31"
+        }
+      ]
+    },
+    {
+      "name": "Lemon Ale",
+      "cid": "1",
+      "type": "Fizzio Handcrafted Sodas",
+      "bid": "10",
+      "image": "http://globalassets.starbucks.com/assets/aabef78fe0984d8499152228622314cd.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "0",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "0",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "0",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "0",
+          "floz": "31"
+        }
+      ]
+    },
+        {
+      "name": "Chocolate Smoothie",
+      "cid": "1",
+      "type": "Smoothies",
+      "bid": "9",
+      "image": "http://globalassets.starbucks.com/assets/33f5c3101e704568b952630d10954805.jpg",
+      "fact": [
+        {
+          "size": "One Size",
+          "caffeine": "20",
+          "floz": "16"
+        }
+      ]
+    },
+    {
+      "name": "Evolution Fresh™ Mango Carrot Smoothie",
+      "cid": "1",
+      "type": "Smoothies",
+      "bid": "9",
+      "image": "http://globalassets.starbucks.com/assets/9e157af4115a42ca8839329d53ee8d77.jpg",
+      "fact": [
+        {
+          "size": "One Size",
+          "caffeine": "0",
+          "floz": "16"
+        }
+      ]
+    },
+    {
+      "name": "Strawberry Smoothie",
+      "cid": "1",
+      "type": "Smoothies",
+      "bid": "9",
+      "image": "http://globalassets.starbucks.com/assets/9d24e37d7a354d07ae449a683d1a3b9f.jpg",
+      "fact": [
+        {
+          "size": "One Size",
+          "caffeine": "0",
+          "floz": "16"
+        }
+      ]
+    },
+    {
+      "name": "Evolution Fresh™ Sweet Greens Smoothie",
+      "cid": "1",
+      "type": "Smoothies",
+      "bid": "9",
+      "image": "http://globalassets.starbucks.com/assets/c4ea6b2cf6be45fabb0c3b000c6a4e71.jpg",
+      "fact": [
+        {
+          "size": "One Size",
+          "caffeine": "0",
+          "floz": "16"
+        }
+      ]
+    },
+    {
+      "name": "Evolution Fresh™ Strawberry Banana Smoothie",
+      "cid": "1",
+      "type": "Smoothies",
+      "bid": "9",
+      "image": "http://globalassets.starbucks.com/assets/22222a4085b04a91a6f28856d96f136e.jpg",
+      "fact": [
+        {
+          "size": "One Size",
+          "caffeine": "0",
+          "floz": "16"
+        }
+      ]
+    },
+        {
+      "name": "Caffe Americano",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/69dc4401f64d4419a8d78ca9b5200271.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "150",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "225",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "300",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffe Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffe Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/c250b8ffd5c7483c8aa10f790f93f18c.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "90",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "95",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
           "caffeine": "175",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "185",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Cappuccino",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/43c3301d81bd4ea4a9fec5beaf43a541.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caramel Macchiato",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/72337f2d35f44d1daeb0c28d96026ef8.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Cinnamon Dolce Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/0426b1ed0b074ebab0cc630d0fd4a61f.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Dark Chocolate Melted Truffle Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/e7fe1745bcfa45b88acfca48a6064270.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Espresso",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/9a31eb8e3806479ebcba3ad39c5024ec.jpg",
+      "fact": [
+        {
+          "size": "Solo",
+          "caffeine": "75",
+          "floz": "1"
+        },
+        {
+          "size": "Dopio",
+          "caffeine": "150",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "225",
+          "floz": "3"
+        },
+        {
+          "size": "Quad",
+          "caffeine": "300",
+          "floz": "4"
+        }
+      ]
+    },
+    {
+      "name": "Espresso Con Panna",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/b43079b91b9343cdb19fd6cfc71facb8.jpg",
+      "fact": [
+        {
+          "size": "Solo",
+          "caffeine": "75",
+          "floz": "1"
+        },
+        {
+          "size": "Dopio",
+          "caffeine": "150",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "225",
+          "floz": "3"
+        },
+        {
+          "size": "Quad",
+          "caffeine": "300",
+          "floz": "4"
+        }
+      ]
+    },
+    {
+      "name": "Espresso Macchiato",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/816de7ba40584efc9a84c1c66a865ae4.jpg",
+      "fact": [
+        {
+          "size": "Solo",
+          "caffeine": "75",
+          "floz": "1"
+        },
+        {
+          "size": "Dopio",
+          "caffeine": "150",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "225",
+          "floz": "3"
+        },
+        {
+          "size": "Quad",
+          "caffeine": "300",
+          "floz": "4"
+        }
+      ]
+    },
+    {
+      "name": "Flat White",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/d9ecac12d27f4baaa459dfa2f7cc66c4.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "90",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "90",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "130",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "130",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Caffè Americano",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/c399164ad0f94aecbe0e51a72324c9bc.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "150",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "225",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "300",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Caffè Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/e2ff601e0b964758828af1d5929d63a2.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Caffè Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/2a632a1fe8594e91870299de773d64fa.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "95",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "175",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "265",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Caramel Macchiato",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/7780b195aa6a45489e6452fbba633ea8.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Cinnamon Dolce Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/671119ed44a54370ae089036639f42f9.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Milk Chocolate Melted Truffle Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/a541023bc93341e8af94e05004bea05f.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Skinny Cinnamon Dolce Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/14588564488c40c09ae016e3b77c5ebf.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Skinny Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/32019f0a821a4683ae666ab5e053458c.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced Smoked Butterscotch Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/4aeda376442a48c9a6c46dbe2717833b.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "150",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "225",
+          "floz": "16"
+        }
+      ]
+    },
+    {
+      "name": "Iced Vanilla Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/fa575eef81a94927a81f35299d82aa7f.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Iced White Chocolate Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/980b7686392344bb961cf376f252356a.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Latte Macchiato",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/219b313a91c4402cbacfb01754a50998.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "150",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "150",
+          "floz": "12"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "225",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Milk Chocolate Melted Truffle Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/e7fe1745bcfa45b88acfca48a6064270.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Smoked Butterscotch Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/2acaebbb46434fa6ad8b754b492cd520.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Starbucks® Doubleshot on Ice",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/fdea789a8b29419f9120497536a98172.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "150",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "225",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "375",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Latte",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/9f5a7ec1c5c242f9bef7a68f18f31d2c.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "White Chocolate Mocha",
+      "cid": "1",
+      "type": "Starbucks Espresso Beverages",
+      "bid": "7",
+      "image": "http://globalassets.starbucks.com/assets/70780a741ebd4fa298d9b08b9a45c049.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "150",
+          "floz": "24"
+        }
+      ]
+    },
+        {
+      "name": "Beast Mode Frappuccino",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/de9761959eb2432cb61c32263012d75d.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "55",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "75",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "115",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Vanilla Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/dc0633c454314a518b031d1e4a9f226c.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "95",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "125",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Vanilla Light Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/5d48c4ece1264185b434e92d2bb605c4.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "90",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "125",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caramel Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/ed223419ec30443d983ffa981739ca0c.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "100",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "130",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caramel Light Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/c58fc687b2dc46a8866d1c2fe788005e.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "90",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "115",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Chai Crème Frappuccino Blended Crème",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/f8b88e6bef7741acbc75a7c2422f59b9.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "20",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "40",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "45",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Cinnamon Dolce Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/76ffa3a771c8453a99e072b8c0b874f1.jpg",
+      "fact": [
+        {
+          "size": "Mini",
+          "caffeine": "45",
+          "floz": "10"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "90",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "125",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Coffee Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/ddb969589f7d4722b6f6381b9a333ef2.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "95",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "130",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Coffee Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/ddb969589f7d4722b6f6381b9a333ef2.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "95",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "130",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Coffee Light Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/0fb208cf758741168044e2efe76994c4.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "90",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "120",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Double Chocolaty Chip Crème Frappuccino Blended Crème",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/12e98d2d878d413c9b77d3910da6252a.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "10",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "15",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "20",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Green Tea Crème Frappuccino Blended Crème",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/d45663d6ca3d47029975c6d619372312.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "50",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "70",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "95",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Java Chip Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/9631da04974146de9a18a2162d789b39.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "110",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "145",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Java Chip Light Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/758d5da19e0346efb9496648645a7952.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "100",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "130",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Mocha Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/adafb6a71b0845a488d725ad2153cf6b.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "75",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "110",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "140",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Mocha Light Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/4b14fa95cfe14cbb8836a94ffd6bb8c0.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "85",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "120",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Smoked Butterscotch Frappuccino Blended Beverage",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/4b55bf63851044b2808733617e036160.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "65",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "95",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "125",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Strawberries & Crème Frappuccino Blended Crème",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/93e8d7394e1548eb87633b2b12af64ec.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "0",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "0",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "0",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Teavana® Oprah Cinnamon Chai Crème Frappuccino",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/df13ecda962b4edba2e1df5897fbc63d.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "20",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "25",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "40",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Bean Crème Frappuccino Blended Crème",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/c5d78bae193e43ba914d499c0f0b9f74.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "0",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "0",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "0",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "White Chocolate Mocha Frappuccino Blended Coffee",
+      "cid": "1",
+      "type": "Frappuccino Blended Beverages",
+      "bid": "8",
+      "image": "http://globalassets.starbucks.com/assets/300a22e7ff194e22b68678028e418196.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "90",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "125",
+          "floz": "24"
+        }
+      ]
+    },
+        {
+      "name": "Blonde Roast",
+      "cid": "1",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://www.starbucks.com/assets/4269d250e9be472bbe362138bd2f56e2.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "180",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "270",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "360",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "475",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Caffe Misto",
+      "cid": "1",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://www.starbucks.com/assets/3ab351d4c10749088e6508d7e3613d37.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "75",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "115",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "150",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "195",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Decaf Pike Place Roast",
+      "cid": "1",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://globalassets.starbucks.com/assets/fa1d6ee019eb4c13acba4752798549e0.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "15",
+          "floz": "8"
+        },
+        {
+          "size": "Tall",
+          "caffeine": "20",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "25",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "30",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Pike Place Roast",
+      "cid": "1",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://globalassets.starbucks.com/assets/e06bd6424c0f48c89a88edb5ab841a33.jpg",
+      "fact": [
+        {
+          "size": "Short",
+          "caffeine": "180",
           "floz": "8"
         },
         {
@@ -23,66 +1684,525 @@
         },
         {
           "size": "Venti",
-          "caffeine": "410",
+          "caffeine": "415",
           "floz": "24"
         }
       ]
     },
     {
-      "name": "Caffe Latte",
+      "name": "Starbucks Cold Brew Coffee",
       "cid": "1",
-      "type": "Starbucks Espresso Beverages",
-      "image" : "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://globalassets.starbucks.com/assets/e06bd6424c0f48c89a88edb5ab841a33.jpg",
       "fact": [
         {
-          "size": "Short",
-          "caffeine": "75",
-          "floz": "8"
-        },
-        {
           "size": "Tall",
-          "caffeine": "75",
+          "caffeine": "150",
           "floz": "12"
         },
         {
           "size": "Grande",
-          "caffeine": "150",
+          "caffeine": "200",
           "floz": "16"
         },
         {
           "size": "Venti",
-          "caffeine": "150",
+          "caffeine": "300",
           "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "330",
+          "floz": "31"
         }
       ]
     },
     {
-      "name": "Caffe Latte",
-      "cid": "2",
-      "type": "Starbucks Espresso Beverages",
-      "image" : "http://globalassets.starbucks.com/assets/bb7009e9bbe4448c8480fa2cf3d2bbd8.jpg",
+      "name": "Starbucks Cold Brew Coffee with Milk",
+      "cid": "1",
+      "type": "Freshly Brewed Coffee",
+      "bid": "5",
+      "image": "http://globalassets.starbucks.com/assets/e06bd6424c0f48c89a88edb5ab841a33.jpg",
       "fact": [
         {
-          "size": "Short",
-          "caffeine": "75",
-          "floz": "8"
-        },
-        {
           "size": "Tall",
-          "caffeine": "75",
+          "caffeine": "150",
           "floz": "12"
         },
         {
           "size": "Grande",
-          "caffeine": "150",
+          "caffeine": "200",
           "floz": "16"
         },
         {
           "size": "Venti",
-          "caffeine": "150",
+          "caffeine": "300",
           "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "330",
+          "floz": "31"
         }
       ]
-    }
+    },
+      {
+    "name": "Shaken Sweet Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/42750ebdb4344448bb1fa48b3e6be1bf.jpg",
+    "fact": [{
+      "size": "Tall",
+      "caffeine": "80",
+      "floz": "12"
+    }, {
+      "size": "Grande",
+      "caffeine": "100",
+      "floz": "16"
+    }, {
+      "size": "Venti",
+      "caffeine": "115",
+      "floz": "24"
+    }, {
+      "size": "Trenta",
+      "caffeine": "200",
+      "floz": "30"
+    }]
+  }, {
+    "name": "Shaken Sweet Tea Lemonade",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/6043d37252e248c7a20a113694c487b5.jpg",
+    "fact": [{
+      "size": "Tall",
+      "caffeine": "110",
+      "floz": "12"
+    }, {
+      "size": "Grande",
+      "caffeine": "150",
+      "floz": "16"
+    }, {
+      "size": "Venti",
+      "caffeine": "220",
+      "floz": "24"
+    }, {
+      "size": "Trenta",
+      "caffeine": "290",
+      "floz": "30"
+    }]
+  }, {
+    "name": "Tazo® Bottled Berry Blossom White",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/c4841f7bdbed47f3a7db1e1be551d1d2.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "60",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Black Mango",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/23261307ab354cc387a3d19f937f3022.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "150",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Black with Lemon",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/2932977192ae4e28b331cd44398c9da7.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "140",
+      "floz": "13.8"
+    }],
+    "": {}
+  }, {
+    "name": "Tazo® Bottled Brambleberry",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/90f5c7c30c3348cebce0e8cbe665b758.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "140",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Giant Peach",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/f0fec774931c400bb63fb0032a062339.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "150",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Iced Passion",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/784ee4726e434161bf47552ad87444c8.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "70",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Lemon Ginger",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/3a5a056bcb7f4126827fde25d85e8ee4.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "120",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Organic Black Lemonade",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/f59487f0f4244398937d15e9187297ce.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "140",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Organic Iced Black Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/ba5958acd2b64278a31e6efbe30b8b2b.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "60",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Plum Pomegranate",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/0da58b2aa6b340db847729eddb2261db.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "140",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled Tazoberry",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/601d27f09c22467db9b51d9473428347.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "150",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Tazo® Bottled White Cranberry",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/f5da00f48d75447cb45847748c4dd325.jpg",
+    "fact": [{
+      "size": "Bottle",
+      "caffeine": "140",
+      "floz": "13.8"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Black Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/89f020a2850544f7a6b3a909b8d88160.jpg",
+    "fact": [{
+      "Sweetened": "Yes",
+      "size": "Tall",
+      "caffeine": "80",
+      "floz": "12"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Grande",
+      "caffeine": "120",
+      "floz": "16"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Venti",
+      "caffeine": "140",
+      "floz": "24"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Trenta",
+      "caffeine": "60",
+      "floz": "31"
+    }, {
+      "Sweetened": "No",
+      "size": "Tall",
+      "caffeine": "0",
+      "floz": "12"
+    }, {
+      "Sweetened": "No",
+      "size": "Grande",
+      "caffeine": "0",
+      "floz": "16"
+    }, {
+      "Sweetened": "No",
+      "size": "Venti",
+      "caffeine": "0",
+      "floz": "24"
+    }, {
+      "Sweetened": "No",
+      "size": "Trenta",
+      "caffeine": "0",
+      "floz": "31"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Black Tea Lemonade",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/2bfe157e0ae7494b875df91d4cf4adac.jpg",
+    "fact": [{
+      "Sweetened": "Yes",
+      "size": "Tall",
+      "caffeine": "120",
+      "floz": "12"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Grande",
+      "caffeine": "190",
+      "floz": "16"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Venti",
+      "caffeine": "220",
+      "floz": "24"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Trenta",
+      "caffeine": "90",
+      "floz": "31"
+    }, {
+      "Sweetened": "No",
+      "size": "Tall",
+      "caffeine": "35",
+      "floz": "12"
+    }, {
+      "Sweetened": "No",
+      "size": "Grande",
+      "caffeine": "45",
+      "floz": "16"
+    }, {
+      "Sweetened": "No",
+      "size": "Venti",
+      "caffeine": "70",
+      "floz": "24"
+    }, {
+      "Sweetened": "No",
+      "size": "Trenta",
+      "caffeine": "90",
+      "floz": "31"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Green Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/1cc65b3282094434b1b6cf1ac28874c0.jpg",
+    "fact": [{
+      "Sweetened": "Yes",
+      "size": "Tall",
+      "caffeine": "60",
+      "floz": "12"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Grande",
+      "caffeine": "80",
+      "floz": "16"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Venti",
+      "caffeine": "120",
+      "floz": "24"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Trenta",
+      "caffeine": "140",
+      "floz": "31"
+    }, {
+      "Sweetened": "No",
+      "size": "Tall",
+      "caffeine": "0",
+      "floz": "12"
+    }, {
+      "Sweetened": "No",
+      "size": "Grande",
+      "caffeine": "0",
+      "floz": "16"
+    }, {
+      "Sweetened": "No",
+      "size": "Venti",
+      "caffeine": "0",
+      "floz": "24"
+    }, {
+      "Sweetened": "No",
+      "size": "Trenta",
+      "caffeine": "0",
+      "floz": "31"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Green Tea Lemonade",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/c8f6576ace6e4b438a6854906acd317e.jpg",
+    "fact": [{
+      "size": "Tall",
+      "caffeine": "0",
+      "floz": "12"
+    }, {
+      "size": "Grande",
+      "caffeine": "0",
+      "floz": "16"
+    }, {
+      "size": "Venti",
+      "caffeine": "0",
+      "floz": "24"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Passion Tango™ Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/b1d9497134e3492393b70af10c2437c4.jpg",
+    "fact": [{
+      "Sweetened": "Yes",
+      "size": "Tall",
+      "caffeine": "60",
+      "floz": "12"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Grande",
+      "caffeine": "80",
+      "floz": "16"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Venti",
+      "caffeine": "120",
+      "floz": "24"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Trenta",
+      "caffeine": "140",
+      "floz": "31"
+    }, {
+      "Sweetened": "No",
+      "size": "Tall",
+      "caffeine": "0",
+      "floz": "12"
+    }, {
+      "Sweetened": "No",
+      "size": "Grande",
+      "caffeine": "0",
+      "floz": "16"
+    }, {
+      "Sweetened": "No",
+      "size": "Venti",
+      "caffeine": "0",
+      "floz": "24"
+    }, {
+      "Sweetened": "No",
+      "size": "Trenta",
+      "caffeine": "0",
+      "floz": "31"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Passion Tango™ Tea Lemonade",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/44c1c0063e2e48578637e8686fdf72c8.jpg",
+    "fact": [{
+      "Sweetened": "Yes",
+      "size": "Tall",
+      "caffeine": "90",
+      "floz": "12"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Grande",
+      "caffeine": "120",
+      "floz": "16"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Venti",
+      "caffeine": "190",
+      "floz": "24"
+    }, {
+      "Sweetened": "Yes",
+      "size": "Trenta",
+      "caffeine": {},
+      "floz": "31"
+    }, {
+      "Sweetened": "No",
+      "size": "Tall",
+      "caffeine": "35",
+      "floz": "12"
+    }, {
+      "Sweetened": "No",
+      "size": "Grande",
+      "caffeine": "45",
+      "floz": "16"
+    }, {
+      "Sweetened": "No",
+      "size": "Venti",
+      "caffeine": "70",
+      "floz": "24"
+    }, {
+      "Sweetened": "No",
+      "size": "Trenta",
+      "caffeine": "90",
+      "floz": "31"
+    }]
+  }, {
+    "name": "Teavana® Shaken Iced Peach Green Tea",
+    "cid": "1",
+    "type": "Iced Tea",
+    "bid": "3",
+    "image": "http://globalassets.starbucks.com/assets/6e66392ab98b46d88a031c966091cfa6.jpg",
+    "fact": [{
+      "size": "Tall",
+      "caffeine": "60",
+      "floz": "12"
+    }, {
+      "size": "Grande",
+      "caffeine": "80",
+      "floz": "16"
+    }, {
+      "size": "Venti",
+      "caffeine": "130",
+      "floz": "24"
+    }, {
+      "size": "Trenta",
+      "caffeine": "150",
+      "floz": "31"
+    }]
+  }
   ]
 }

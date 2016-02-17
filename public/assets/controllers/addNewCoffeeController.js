@@ -30,11 +30,11 @@ $(".company").click( function (event ) {
 // Type of Beverage selection is Step 2
 $(".type").click( function (event ) {
 	event.preventDefault();
-	var beverageType;
+	var beverageId;
 
-	//console.log(this.id);
-	beverageType = this.id;
-	selectFromSwipeList ( event, "./beverages" + "?" + "type=" + beverageType);
+	console.log(this.id);
+	beverageId = this.id;
+	selectFromSwipeList ( event, "./beverages" + "?" + "bid=" + beverageId);
 });
 
 // Beverage Selection is Step 3
