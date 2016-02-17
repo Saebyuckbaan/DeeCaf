@@ -1,5 +1,92 @@
 {
   "beverages": [
+    {
+      "name": "Cool Lime Starbucks Refreshers™ Beverage",
+      "cid": "1",
+      "type": "Starbucks Refreshers™ Beverages",
+      "bid": "0",
+      "image": "http://globalassets.starbucks.com/assets/adea460659fd4efc8b24313c10981cc8.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "45",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "55",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "85",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "110",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Strawberry Acai Starbucks Refreshers™ Beverage",
+      "cid": "1",
+      "type": "Starbucks Refreshers™ Beverages",
+      "bid": "0",
+      "image": "http://globalassets.starbucks.com/assets/528c0f233cf74258aa1102550341dbb9.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "45",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "55",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "85",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "110",
+          "floz": "24"
+        }
+      ]
+    },
+    {
+      "name": "Very Berry Hibiscus Starbucks Refreshers™ Beverage",
+      "cid": "1",
+      "type": "Starbucks Refreshers™ Beverages",
+      "bid": "0",
+      "image": "http://globalassets.starbucks.com/assets/10ca59f648094240a32e3146b99bce6c.jpg",
+      "fact": [
+        {
+          "size": "Tall",
+          "caffeine": "45",
+          "floz": "12"
+        },
+        {
+          "size": "Grande",
+          "caffeine": "55",
+          "floz": "16"
+        },
+        {
+          "size": "Venti",
+          "caffeine": "85",
+          "floz": "24"
+        },
+        {
+          "size": "Trenta",
+          "caffeine": "110",
+          "floz": "24"
+        }
+      ]
+    },
       {
       "name": "Iced Coffee",
       "cid": "1",

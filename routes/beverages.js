@@ -21,8 +21,6 @@ exports.beverage_types = function(req, res) {
 		}
 	}
 
-	console.log( cid);
-
 
 	res.render( "types", { 
 		type: selectedCompany, 
@@ -36,12 +34,11 @@ exports.beverages = function(req, res) {
 	var bid = req.param( 'bid');
 	var beverageObj = beverages["beverages"];
 	var cid;
-	console.log ( "bid = " + bid );
-	//console.log( beverageObj);
 
 	//Sort out beverages that belongs to specific type
 	var sortedBeverages = new Array();
 
+	// Get all beverages information according to the bid
 	for (i = 0; i < beverageObj.length ; i++) {
 		if ( beverageObj[i]['bid'] == bid )
 		{
@@ -51,11 +48,9 @@ exports.beverages = function(req, res) {
 
 	}
 
-	console.log( cid );
 
 	
-
-
+	//Render the handlebar page using following passed value
 	res.render( "beverages", {
 		beverages: sortedBeverages,
 		selectedCid : cid,
@@ -78,8 +73,6 @@ exports.beverage_sizes = function(req, res) {
 			bid = beverageObj[i]['bid'] ;
 		}
 	}
-
-	console.log( selectedBeverage );
 
 	res.render( "sizes", {
 		sizes: selectedBeverage,

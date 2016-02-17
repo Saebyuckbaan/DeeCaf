@@ -3,42 +3,28 @@
     "name": "Starbucks",
     "cid": "1",
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Starbucks_Coffee_Logo.svg/200px-Starbucks_Coffee_Logo.svg.png",
-    "beverageType": [{
-      "name": "Starbucks Refreshers™ Beverages",
-        "image": "http://www.starbucks.com/assets/12b5eb7219a049b493fbaaa10be840dd.jpg",
-          "bid" : "0"
-    }, {
-      "name": "Evolution Fresh",
-        "image": "http://www.starbucks.com/assets/530886a27b1b472187c44f8611d7b5e7.jpg",
-         "bid" : "1"
-
-    }, {
-      "name": "Iced Coffee",
-        "image": "http://www.starbucks.com/assets/bed7c7185cba49399c1f1537b1ce8a91.jpg",
-         "bid" : "2"
-
-    }, {
-      "name": "Iced Tea",
-      "image": "http://www.starbucks.com/assets/409cc3e76f7b413fb19d73c5fd651483.jpg",
-           "bid" : "3"
-    }, {
-      "name": "Bottled Drinks",
-        "image": "http://www.starbucks.com/assets/9e8cf6735abe482fb99adfb249567dc4.jpg",
-         "bid" : "4"
-
-    }, {
+    "beverageType": [
+    {
       "name": "Freshly Brewed Coffee",
         "image": "http://www.starbucks.com/assets/1f218fd290c94e99ada891d603f358f8.jpg",
          "bid" : "5"
 
     }, {
-      "name": "Chocolate Beverages",
-        "image": "http://www.starbucks.com/assets/5cf267c089964a84982d669bf49b941c.jpg",
-         "bid" : "6"
-    }, {
       "name": "Starbucks Espresso Beverages",
         "image": "http://www.starbucks.com/assets/bc15a5ca9d744b66bda07254f2f50013.jpg",
          "bid" : "7"
+    }, {
+      "name": "Starbucks Refreshers™ Beverages",
+        "image": "http://www.starbucks.com/assets/12b5eb7219a049b493fbaaa10be840dd.jpg",
+          "bid" : "0"
+    }, {
+      "name": "Iced Tea",
+      "image": "http://www.starbucks.com/assets/409cc3e76f7b413fb19d73c5fd651483.jpg",
+           "bid" : "3"
+    }, {
+      "name": "Chocolate Beverages",
+        "image": "http://www.starbucks.com/assets/5cf267c089964a84982d669bf49b941c.jpg",
+         "bid" : "6"
     }, {
       "name": "Frappuccino Blended Beverages",
         "image": "http://www.starbucks.com/assets/6de5a474becf44df89cf611ae71e961f.jpg",
