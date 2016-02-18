@@ -1,5 +1,6 @@
 Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7XTjiruQ7xRl34jwmYvdv89P");
 
+// ----------------- jQuery Function ----------------- //
 $(document).ready(function ( event ) {
 
 	isUserSignedIn( event );
@@ -50,18 +51,18 @@ $(".beverage").click( function (event ) { //future class for beverage.handlebars
 });
 
 //Size Selection is Step 4
-$(".size").click( function (event ) { //future class for size.handlebars = .size
+$(".size").click( function ( event ) { //future class for size.handlebars = .size
 	event.preventDefault();
+	showExceedingWarning ( event, $(this).val() );
 
 	// CAFFEINE INTAKE ADD FUNCTION! 
-	console.log( $(this).val());
-	incrementCaffeineIntake( event, $(this).val() );
+	//incrementCaffeineIntake( event, $(this).val() );
 
 });
 
-$
 
 
+// ----------------- Javascript ---------------------//
 function signOut( event ) {
 
 
@@ -185,4 +186,34 @@ function incrementCaffeineIntake( event, caffeine ) {
 		}
 
 	}
+}
+
+
+function showExceedingWarning ( event, caffeine ){
+
+	var currentUser = Parse.User.current();
+	var isExceeding = false;
+	if ( currentUser )
+	{
+		var maxCaffeine = currentUser.get("maxCaffeine");
+		var todayscaffeine = currentUser.get("todayscaffeine");
+		var intakeRate = parseInt( 100 * ( ( todayscaffeine + caffeine ) / maxCaffeine ) ) ;
+
+		// if user consume full amount
+		if( intakeRate >= 100 )
+		{
+			bootbox.confirm("You may have caffeine overdoes. Are you sure?", function(result) {
+				if( result )
+				{
+					incrementCaffeineIntake( event, caffeine );
+				}
+				else
+				{
+					console.log( "NAH ");
+				}
+			}); 
+
+		}
+	}
+
 }
