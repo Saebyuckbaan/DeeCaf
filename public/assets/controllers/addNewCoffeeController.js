@@ -30,11 +30,12 @@ $(".company").click( function (event ) {
 // Type of Beverage selection is Step 2
 $(".type").click( function (event ) {
 	event.preventDefault();
-	var beverageId;
+	var beverageId = this.id;
+	var companyID = $(this).data('cid');
 
-	console.log(this.id);
-	beverageId = this.id;
-	selectFromSwipeList ( event, "./beverages" + "?" + "bid=" + beverageId);
+//	console.log($(this).data('cid'));
+	//beverageId = this.id;
+	selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageId);
 });
 
 // Beverage Selection is Step 3
@@ -43,8 +44,9 @@ $(".beverage").click( function (event ) { //future class for beverage.handlebars
 	//console.log(this.id);
 
 	var beverageName;
+	var companyID = $(this).data('cid');
 	beverageName = this.id;
-	selectFromSwipeList ( event, "./sizes"+ "?" + "name=" + beverageName);
+	selectFromSwipeList ( event, "./sizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
 });
 
 //Size Selection is Step 4

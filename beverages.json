@@ -2290,6 +2290,414 @@
       "caffeine": "150",
       "floz": "31"
     }]
-  }
+  },
+      {
+      "name": "Caffè Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/h/o/hot_latte_l.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/iced_latte_l.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Maple Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/m/a/maple_latte_l.jpg",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Caffè Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/v/a/vanillacafelatte.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Caramel Caffè Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/c/a/caramelcaffelatte_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced Vanilla Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedvanillalatte_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced Caramel Latte",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedcaramellatte_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Espresso",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/e/s/espresso_300x400.png",
+      "fact": [
+        {
+          "size": "Single",
+          "caffeine": "70",
+          "floz": "1"
+        },
+        {
+          "size": "Double",
+          "caffeine": "140",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "210",
+          "floz": "3"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Americano",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/c/a/caffeamericano_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "70",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "140",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "210",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Con Panna",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/c/a/caffeconpanna_300x400.png",
+      "fact": [
+        {
+          "size": "Single",
+          "caffeine": "70",
+          "floz": "1"
+        },
+        {
+          "size": "Double",
+          "caffeine": "140",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "210",
+          "floz": "3"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Macchiato",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/c/a/caffemacchiato_300x400.png",
+      "fact": [
+        {
+          "size": "Single",
+          "caffeine": "70",
+          "floz": "1"
+        },
+        {
+          "size": "Double",
+          "caffeine": "140",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "210",
+          "floz": "3"
+        }
+      ]
+    },
+    {
+      "name": "Iced Espresso",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedespresso_300x400.png",
+      "fact": [
+        {
+          "size": "Single",
+          "caffeine": "70",
+          "floz": "1"
+        },
+        {
+          "size": "Double",
+          "caffeine": "140",
+          "floz": "2"
+        },
+        {
+          "size": "Triple",
+          "caffeine": "210",
+          "floz": "3"
+        }
+      ]
+    },
+    {
+      "name": "Caffè Mocha",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/c/a/caffemocha_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "85",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "240",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "White Chocolate Mocha",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/w/h/whitechocmocha_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "85",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "240",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced Mocha",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedmocha_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "85",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "240",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced Mocha",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedmocha_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "85",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "240",
+          "floz": "20"
+        }
+      ]
+    },
+    {
+      "name": "Iced White Mocha",
+      "cid": "2",
+      "type": "Coffee Beverages",
+      "bid": "0",
+      "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/catalog/product/cache/2/image/300x400/9df78eab33525d08d6e5fb8d27136e95/i/c/icedwhitemocha_300x400.png",
+      "fact": [
+        {
+          "size": "Small",
+          "caffeine": "85",
+          "floz": "12"
+        },
+        {
+          "size": "Medium",
+          "caffeine": "165",
+          "floz": "16"
+        },
+        {
+          "size": "Large",
+          "caffeine": "240",
+          "floz": "20"
+        }
+      ]
+    }
   ]
 }
