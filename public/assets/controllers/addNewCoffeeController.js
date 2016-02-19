@@ -58,15 +58,21 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 	var beverageID = $(this).data('bid');
 	var beverageName = $(this).data('name');
 	var size = $(this).data("size");
-	var currentDate = new Date();
 
+	var currentDate = new Date();
+	var mon = currentDate.getMonth()+1;
+	var day = currentDate.getDate();
+	var year = currentDate.getFullYear();
+	var dateString = mon + "/" + day + "/" + year;
+	console.log(dateString);
+	
 	caffeineObj = {
 					"name": beverageName,
 					"bid": beverageID,
 					"cid" : companyID,
 					"caffeine" : caffeineVal,
 					"size": size,
-					"date" : currentDate
+					"date" : dateString
 					};
 
 	showExceedingWarning ( event, caffeineObj );
