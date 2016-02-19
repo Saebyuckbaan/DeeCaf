@@ -77,8 +77,6 @@ function addHistory(userDrink) {
 	// CAFFEINE INTAKE ADD FUNCTION!
 	//incrementCaffeineIntake( event, $(this).val() );
 
-});
-
 //var userDrink = {id : companyID};
 
 // ----------------- Javascript ---------------------//
