@@ -5,11 +5,9 @@ $(document).ready(function ( event ) {
 
 	isUserSignedIn( event );
 	appendSwipe( event );
-	$(document).ready(function(){
-  	$('.bxslider').bxSlider({
+	$('.bxslider').bxSlider({
 
   	});
-});
 
 });
 
@@ -79,15 +77,6 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 
 });
 
-function addHistory(userDrink) {
-	console.log("companyID = " + userDrink[0]);
-	console.log("beverageID = " + userDrink[1]);
-	console.log("beverageName = " + userDrink[2]);
-	console.log("sizeID = " + userDrink[3]);
-	console.log("caffeineVal = " + userDrink[4]);
-}
-//var userDrink = {id : companyID};
-
 // ----------------- Javascript ---------------------//
 function signOut( event ) {
 
@@ -154,6 +143,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 	//Call current user
 	var currentUser = Parse.User.current();
 	var caffeine = caffeineObj["caffeine"];
+
 	console.log( caffeine);
 	if ( currentUser )
 	{
@@ -176,10 +166,13 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 				if (result)
 				{
 			    	console.log ( "Your sleep time = " + result);
+			    	updateIntake( event, caffeine );
 			    	//Update information
 					currentUser.set("todayscaffeine",newCaffeine);
 					currentUser.set("lastInputTime", todaysDate);
-					currentUser.add("drinkHistory", caffeineObj);
+					currentUser.set("isFirstCoffee", false);
+					currentUser.add("drinkHistory",  caffeineObj);
+					currentUser.add("sleepHistory",  addSleepingTime(event, result));
 					currentUser.save(null, {
 					  success: function(user) {
 					    // Hooray! Let them use the app now.
@@ -199,6 +192,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		else
 		{
 			//Just Update information
+			updateIntake( event, caffeine );
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
 			currentUser.save(null, {
@@ -216,6 +210,64 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 
 	}
 }
+
+function addSleepingTime ( event, sleepTime ){
+
+	var todaysDateWithoutTime = new Date();
+	var sleepObj;
+	todaysDateWithoutTime.setHours(0,0,0,0);
+
+	sleepObj = {
+					"date": todaysDateWithoutTime,
+					"sleepTime": sleepTime, 
+				}
+
+	return sleepObj;
+}
+
+function updateIntake ( event, caffeine ){
+
+	var currentUser = Parse.User.current();
+	var todaysDateWithoutTime = new Date();
+	var array;	
+	var isUpdated = false;
+	todaysDateWithoutTime.setHours(0,0,0,0);
+
+	array = currentUser.get("intakeHistory");
+
+	$.each( array, function( index, value ){
+
+		var date = new Date ( value["date"]);
+		console.log( value["date"]);
+		console.log( date);
+		if ( date.getTime() == todaysDateWithoutTime.getTime() )
+		{
+			
+			value["intake"] = Number( value["intake"] ) + Number( caffeine );
+			isUpdated = true;
+			console.log("found, and new value = " + value["intake"]);
+			//value["intake"] += caffeine;
+		}
+
+	});
+
+	if ( !isUpdated )
+	{
+		var newIntake = 
+		{
+			"date": todaysDateWithoutTime,
+			"intake" : caffeine,
+		};
+
+		array.push ( newIntake );
+	}
+
+
+	currentUser.set("intakeHistory", array );
+//	alert(isUpdated);
+
+}
+
 
 function showExceedingWarning ( event, caffeine ){
 
@@ -242,6 +294,10 @@ function showExceedingWarning ( event, caffeine ){
 				}
 			});
 
+		}
+		else
+		{
+			incrementCaffeineIntake( event, caffeine );
 		}
 	}
 

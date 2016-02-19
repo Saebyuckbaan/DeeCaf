@@ -20,6 +20,7 @@ $("#addNewCoffee").click(goToAddNewCoffeePage);
 
 
 //------------------- Javascript Functions --------------//
+
 function signOut( event ) {
 
 
@@ -180,7 +181,7 @@ function resetIntakeDaily ( event )
 		var todaysDate = new Date ();
 		var pastHistory = {
 							"intake" : currentIntake,
-							"Date" : lastInputTime
+							"date" : lastInputTime
 							};
 
 		todaysDate.setHours(0,0,0,0);
