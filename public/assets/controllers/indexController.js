@@ -12,7 +12,6 @@ $(document).ready(function ( event ) {
 	appendFirstName(event);
 	calculateMaxCaffeineIntake(event);
 	appendWarning(event);
-	test(event);
 
 });
 $("#signOut").click(signOut);
@@ -21,6 +20,7 @@ $("#addNewCoffee").click(goToAddNewCoffeePage);
 
 
 //------------------- Javascript Functions --------------//
+
 function signOut( event ) {
 
 
@@ -33,10 +33,10 @@ function signOut( event ) {
 		  	if ( result ){
 				bootbox.alert("You are successfully sign out", function( ){
 			   		Parse.User.logOut();
-			   		window.location.href = "./sign_in";		  							
+			   		window.location.href = "./sign_in";
 				});
 		  	}
-		}); 
+		});
 	} else {
 	    // show the signup or login page
 	    bootbox.alert("You have to sign in first", function () {
@@ -79,7 +79,7 @@ function appendFirstName ( event ){
 		var firstname = currentUser.get("firstname");
 
 		$("#firstname").append(firstname);
-		$("#firstname").show();		
+		$("#firstname").show();
 	}
 
 }
@@ -117,7 +117,7 @@ function appendWarning ( event ){
 		}
 
 //		$("#firstname").append(firstname);
-//		$("#firstname").show();		
+//		$("#firstname").show();
 	}
 
 }
@@ -140,10 +140,10 @@ function calculateMaxCaffeineIntake ( event ) {
 	var maxCaffeine
 	var currentUser = Parse.User.current();
 
-	if ( currentUser ) 
+	if ( currentUser )
 	{
 
-		var weight = currentUser.get("weight");	
+		var weight = currentUser.get("weight");
 		var currentIntake = currentUser.get("todayscaffeine");
 		var ratio;
 
@@ -161,7 +161,7 @@ function calculateMaxCaffeineIntake ( event ) {
 	    	ratio += "%";
 	    else
 	    	ratio = "100%";
-	    
+
 	     $('.waterFill').animate({
         	height: ratio
     	}, 1000);
@@ -177,11 +177,11 @@ function resetIntakeDaily ( event )
 	if( currentUser )
 	{
 		var lastInputTime = currentUser.get("lastInputTime");
-		var currentIntake = currentUser.get("todayscaffeine");	
+		var currentIntake = currentUser.get("todayscaffeine");
 		var todaysDate = new Date ();
-		var pastHistory = { 
+		var pastHistory = {
 							"intake" : currentIntake,
-							"Date" : lastInputTime
+							"date" : lastInputTime
 							};
 
 		todaysDate.setHours(0,0,0,0);
@@ -203,8 +203,7 @@ function resetIntakeDaily ( event )
 
 			//Push new user data into Parse.com DB
 			currentUser.save().then( function ( ) { location.reload();});
-			
+
 		}
 	}
 }
-
