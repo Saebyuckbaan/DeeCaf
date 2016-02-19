@@ -12,6 +12,7 @@ $(document).ready(function ( event ) {
 	appendFirstName(event);
 	calculateMaxCaffeineIntake(event);
 	appendWarning(event);
+	test(event);
 
 });
 $("#signOut").click(signOut);
@@ -206,3 +207,4 @@ function resetIntakeDaily ( event )
 		}
 	}
 }
+
