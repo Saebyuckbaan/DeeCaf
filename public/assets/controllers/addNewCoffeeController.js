@@ -5,11 +5,9 @@ $(document).ready(function ( event ) {
 
 	isUserSignedIn( event );
 	appendSwipe( event );
-	$(document).ready(function(){
-  	$('.bxslider').bxSlider({
+	$('.bxslider').bxSlider({
 
   	});
-});
 
 });
 
@@ -72,17 +70,6 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 	showExceedingWarning ( event, caffeineObj );
 
 });
-
-function addHistory(userDrink) {
-	console.log("companyID = " + userDrink[0]);
-	console.log("beverageID = " + userDrink[1]);
-	console.log("beverageName = " + userDrink[2]);
-	console.log("sizeID = " + userDrink[3]);
-	console.log("caffeineVal = " + userDrink[4]);
-}
-	
-
-//var userDrink = {id : companyID};
 
 // ----------------- Javascript ---------------------//
 function signOut( event ) {
@@ -150,6 +137,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 	//Call current user
 	var currentUser = Parse.User.current();
 	var caffeine = caffeineObj["caffeine"];
+
 	console.log( caffeine);
 	if ( currentUser )
 	{
@@ -175,7 +163,9 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 			    	//Update information
 					currentUser.set("todayscaffeine",newCaffeine);
 					currentUser.set("lastInputTime", todaysDate);
-					currentUser.add("drinkHistory", caffeineObj);
+					currentUser.set("isFirstCoffee", false);
+					currentUser.add("drinkHistory",  caffeineObj);
+					currentUser.add("sleepHistory",  addSleepingTime(event, result));
 					currentUser.save(null, {
 					  success: function(user) {
 					    // Hooray! Let them use the app now.
@@ -211,6 +201,21 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		}
 
 	}
+}
+
+function addSleepingTime ( event, sleepTime ){
+
+	var todaysDateWithoutTime = new Date();
+	var sleepObj;
+	todaysDateWithoutTime.setHours(0,0,0,0);
+
+	sleepObj = {
+					"date": todaysDateWithoutTime,
+					"sleepTime": sleepTime, 
+				}
+
+	return sleepObj;
+
 }
 
 function showExceedingWarning ( event, caffeine ){
