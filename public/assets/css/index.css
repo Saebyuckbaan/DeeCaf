@@ -1,6 +1,7 @@
 #maxCaffeine {
 	color: white;
 	text-align: center;
+
 	font-weight: bold;
 	font-size: 20px;
 
@@ -12,9 +13,9 @@
 }
 
 .glass {
-    margin: 30px auto;
+    margin: 50px auto;
     height: 250px;
-    width: 60%;
+    width: 80%;
     position: relative;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -34,8 +35,9 @@
 
 
 .waterFill {
-    background-image: url("coffee_water.png");   
-    background-position: top right;
+    background-image: url("coffee_water.png");  
+    background-position: top right; 
+    /*background-color: #bf8040;*/
     -webkit-transition: all 3s ease-out;
     -moz-transition: all 3s ease-out;
     -o-transition: all 3s ease-out;
