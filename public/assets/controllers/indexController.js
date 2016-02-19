@@ -11,6 +11,7 @@ $(document).ready(function ( event ) {
 	//Append name of the user and show the coffee rate
 	appendFirstName(event);
 	calculateMaxCaffeineIntake(event);
+	appendWarning(event);
 
 });
 $("#signOut").click(signOut);
@@ -81,6 +82,45 @@ function appendFirstName ( event ){
 	}
 
 }
+
+
+function appendWarning ( event ){
+
+	var currentUser = Parse.User.current();
+	if ( currentUser )
+	{
+		var maxCaffeine = currentUser.get("maxCaffeine");
+		var todayscaffeine = currentUser.get("todayscaffeine");
+		var intakeRate = parseInt( 100 * ( todayscaffeine / maxCaffeine ) ) ;
+
+		console.log( "maxCaffeine = " + maxCaffeine);
+		console.log( "todayscaffeine = " + todayscaffeine);
+		console.log( "intakeRate = " + intakeRate);
+
+		// if user consume full amount
+		if( intakeRate >= 100 )
+		{
+			$("#danger").show();
+			$("#warning").hide();
+		}
+		//if user consume 80% of daily recommendation
+		else if ( intakeRate >= 80 )
+		{
+			$("#danger").hide();
+			$("#warning").show();
+		}
+		else
+		{
+			$("#danger").hide();
+			$("#warning").hide();
+		}
+
+//		$("#firstname").append(firstname);
+//		$("#firstname").show();		
+	}
+
+}
+
 
 
 function goToAddNewCoffeePage( event ) {
