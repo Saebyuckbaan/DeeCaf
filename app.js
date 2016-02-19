@@ -20,6 +20,7 @@ var statistic = require('./routes/statistic');
 var brands = require('./routes/brands');
 var beverages = require ( './routes/beverages');
 var menu = require('./routes/menu');
+var help = require('./routes/help');
 
 // Example route
 // var user = require('./routes/user');
@@ -59,6 +60,7 @@ app.get('/beverages', beverages.beverages);
 app.get('/types', beverages.beverage_types);
 app.get('/sizes', beverages.beverage_sizes);
 app.get('/menu', menu.menu);
+app.get('/helpdoc', help.view);
 
 // Example route
 // app.get('/users', user.list);

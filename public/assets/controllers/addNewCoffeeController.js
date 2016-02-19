@@ -1,5 +1,7 @@
 Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7XTjiruQ7xRl34jwmYvdv89P");
 
+var userDrink = [];
+
 $(document).ready(function ( event ) {
 
 	isUserSignedIn( event );
@@ -14,13 +16,15 @@ $(document).ready(function ( event ) {
 
 
 var sizeID;
-
+var beverageID;
+var companyID;
+var beverageName;
+var caffeineVal;
 $("#signOut").click(signOut);
 
 // Company ( Brand ) selection is Step 1
 $(".company").click( function (event ) {
 	event.preventDefault();
-	var companyID;
 
 	//console.log(this.id);
 	companyID = this.id;
@@ -30,12 +34,11 @@ $(".company").click( function (event ) {
 // Type of Beverage selection is Step 2
 $(".type").click( function (event ) {
 	event.preventDefault();
-	var beverageId = this.id;
-	var companyID = $(this).data('cid');
-
+	beverageID = this.id;
+	companyID = $(this).data('cid');
 //	console.log($(this).data('cid'));
 	//beverageId = this.id;
-	selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageId);
+	selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
 });
 
 // Beverage Selection is Step 3
@@ -43,8 +46,7 @@ $(".beverage").click( function (event ) { //future class for beverage.handlebars
 	event.preventDefault();
 	//console.log(this.id);
 
-	var beverageName;
-	var companyID = $(this).data('cid');
+	companyID = $(this).data('cid');
 	beverageName = this.id;
 	selectFromSwipeList ( event, "./sizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
 });
@@ -53,14 +55,27 @@ $(".beverage").click( function (event ) { //future class for beverage.handlebars
 $(".size").click( function (event ) { //future class for size.handlebars = .size
 	event.preventDefault();
 
-	// CAFFEINE INTAKE ADD FUNCTION! 
-	console.log( $(this).val());
+	// CAFFEINE INTAKE ADD FUNCTION!
+	caffeineVal = $(this).val();
+/*
+	companyID = $(this).data('cid');
+	beverageID = $(this).data('bid');
+	beverageName = $(this).data('name');
+*/
+	sizeID = this.id;
 	incrementCaffeineIntake( event, $(this).val() );
 
 });
 
-$
+function addHistory(userDrink) {
+	console.log("companyID = " + userDrink[0]);
+	console.log("beverageID = " + userDrink[1]);
+	console.log("beverageName = " + userDrink[2]);
+	console.log("sizeID = " + userDrink[3]);
+	console.log("caffeineVal = " + userDrink[4]);
+}
 
+//var userDrink = {id : companyID};
 
 function signOut( event ) {
 
@@ -142,9 +157,9 @@ function incrementCaffeineIntake( event, caffeine ) {
 		//if user drink first coffee of the day, please ask how long have they slept
 		if ( isFirstCoffee )
 		{
-			bootbox.prompt("How long have you slept last night?", function(result) 
-			{                
-				if (result) 
+			bootbox.prompt("How long have you slept last night?", function(result)
+			{
+				if (result)
 				{
 			    	console.log ( "Your sleep time = " + result);
 			    	//Update information
@@ -167,7 +182,7 @@ function incrementCaffeineIntake( event, caffeine ) {
 		}
 		// If user already has the first cup of coffee for day
 		else
-		{		
+		{
 			//Just Update information
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
