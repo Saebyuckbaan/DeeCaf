@@ -83,5 +83,6 @@ exports.beverage_sizes = function(req, res) {
 		sizes: selectedBeverage,
 		bid: bid,
 		cid: cid,
+		name: name,
 	} );
 }

@@ -14,11 +14,7 @@ $(document).ready(function ( event ) {
 });
 
 
-var sizeID;
-var beverageID;
-var companyID;
-var beverageName;
-var caffeineVal;
+
 $("#signOut").click(signOut);
 
 // Company ( Brand ) selection is Step 1
@@ -53,17 +49,27 @@ $(".beverage").click( function (event ) { //future class for beverage.handlebars
 //Size Selection is Step 4
 $(".size").click( function ( event ) { //future class for size.handlebars = .size
 	event.preventDefault();
-	showExceedingWarning ( event, $(this).val() );
 
-	// CAFFEINE INTAKE ADD FUNCTION!
-	caffeineVal = $(this).val();
-/*
-	companyID = $(this).data('cid');
-	beverageID = $(this).data('bid');
-	beverageName = $(this).data('name');
-*/
-	sizeID = this.id;
-	incrementCaffeineIntake( event, $(this).val() );
+
+	// Create Caffeine intake information object
+	var caffeineObj;
+	var caffeineVal = $(this).val();
+	var companyID = $(this).data('cid');
+	var beverageID = $(this).data('bid');
+	var beverageName = $(this).data('name');
+	var size = $(this).data("size");
+	var currentDate = new Date();
+
+	caffeineObj = {
+					"name": beverageName,
+					"bid": beverageID,
+					"cid" : companyID,
+					"caffeine" : caffeineVal,
+					"size": size,
+					"date" : currentDate
+					};
+
+	showExceedingWarning ( event, caffeineObj );
 
 });
 
@@ -74,10 +80,7 @@ function addHistory(userDrink) {
 	console.log("sizeID = " + userDrink[3]);
 	console.log("caffeineVal = " + userDrink[4]);
 }
-	// CAFFEINE INTAKE ADD FUNCTION!
-	//incrementCaffeineIntake( event, $(this).val() );
-
-});
+	
 
 //var userDrink = {id : companyID};
 
@@ -143,9 +146,11 @@ function selectFromSwipeList ( event, url ) {
 
 
 
-function incrementCaffeineIntake( event, caffeine ) {
+function incrementCaffeineIntake( event, caffeineObj ) {
 	//Call current user
 	var currentUser = Parse.User.current();
+	var caffeine = caffeineObj["caffeine"];
+	console.log( caffeine);
 	if ( currentUser )
 	{
 		var isFirstCoffee = currentUser.get("isFirstCoffee");
@@ -170,6 +175,7 @@ function incrementCaffeineIntake( event, caffeine ) {
 			    	//Update information
 					currentUser.set("todayscaffeine",newCaffeine);
 					currentUser.set("lastInputTime", todaysDate);
+					currentUser.add("drinkHistory", caffeineObj);
 					currentUser.save(null, {
 					  success: function(user) {
 					    // Hooray! Let them use the app now.
@@ -211,11 +217,12 @@ function showExceedingWarning ( event, caffeine ){
 
 	var currentUser = Parse.User.current();
 	var isExceeding = false;
+	var intakeCaffeine = caffeine["caffeine"];
 	if ( currentUser )
 	{
 		var maxCaffeine = currentUser.get("maxCaffeine");
 		var todayscaffeine = currentUser.get("todayscaffeine");
-		var intakeRate = parseInt( 100 * ( ( todayscaffeine + caffeine ) / maxCaffeine ) ) ;
+		var intakeRate = parseInt( 100 * ( ( todayscaffeine + intakeCaffeine ) / maxCaffeine ) ) ;
 
 		// if user consume full amount
 		if( intakeRate >= 100 )
