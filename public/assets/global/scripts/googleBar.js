@@ -5,7 +5,7 @@ function drawBasic() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
-      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Caffeine');
 
       data.addRows([
         [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
@@ -27,7 +27,7 @@ function drawBasic() {
           title: 'Time'
         },
         vAxis: {
-          title: 'Popularity'
+          title: 'Caffeine Intake/mg'
         }
       };
 
