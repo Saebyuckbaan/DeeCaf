@@ -13,17 +13,19 @@
 }
 
 .glass {
-    margin: 50px auto;
     height: 250px;
     width: 100%;
     position: relative;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     background-color: #F0F0F0;
-    /*border-style: none solid solid solid;
+    /*
+    border-style: none solid solid solid;
     border-width: 10px;
     border-color: lightgray;
-    border-radius: 10px;*/
+    border-radius: 10px;
+    margin: 50px auto;
+    */
 
 }
 .glass img{
@@ -45,4 +47,32 @@
     height: 10%;
     position: absolute;
     bottom: 0;
+}
+
+.intake_table td {
+    border-top: none !important;
+}
+
+#waterlevel
+{
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+
+.add_button
+{
+    position: fixed;
+    bottom: 20px;
+    right: 35px;
+    z-index: 99;
+}
+
+#level_line{
+    border-top: 3px solid black;
+}
+
+#addNewCoffee{
+    width: 100%;
+    margin: 9px;
 }

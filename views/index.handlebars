@@ -85,11 +85,11 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-content">
                     <!-- BEGIN PAGE HEAD-->
                     <div class="page-head">
-                        <!-- BEGIN PAGE TITLE -->
+                        <!-- BEGIN PAGE TITLE 
                         <div class="page-title">
                             <h1>Welcome <span id="firstname" hidden></span>!</h1>
                         </div>
-                        <!-- END PAGE TITLE -->
+                         END PAGE TITLE -->
                     </div>
                     <!-- END PAGE HEAD-->
                     <!-- BEGIN PAGE BREADCRUMB -->
@@ -106,29 +106,54 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-bubble font-green-sharp"></i>
-                                        <span class="caption-subject font-green-sharp sbold">Today Caffeine Intake</span>
+                                        <span class="caption-subject font-green-sharp sbold">Daily Caffeine Intake Report</span>
                                     </div>
 
                                 </div>
                                 <!-- Cup and Title -->
-                                <div class="alert alert-warning" role="alert" id="warning" hidden>You have consumed 80% of recommended daily caffeine intake</div>
+                                <h2>Welcome <span id="firstname" hidden></span>!</h2>
+                                <div class="alert alert-warning" role="alert" id="warning" hidden>You have consumed more than 80% of recommended daily caffeine intake</div>
                                 <div class="alert alert-danger" role="alert" id="danger" hidden>You have consumed more than recommended daily caffeine intake</div>
                                 <div class="portlet-body">
-                                    <h3 id="titleOfCup">Today Caffeine Intake</h3>
+                                    <!-- Intake Report-->
+                                    <table class ="table intake_table">
+                                        <tr>
+                                            <td>
+                                                <h4>Current:</h4>
+                                            </td>
+                                            <td>
+                                                <h4><span id="current"></span> mg</h4>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h4>Max:</h4>
+                                            </td>
+                                            <td>
+                                                <h4><span id="max"></span> mg</h4>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- End Of Intake Report-->           
+
+                                    <!-- Coffee Glass -->
                                     <div class="glass">
                                         <img src = "/assets/img/coffee_cup.png" alt="cup">
-                                        <div class="waterFill"><div id="maxCaffeine"></div></div>
+                                        <div class="waterFill" ></div>
+                                        <div id="maxCaffeine"></div>
                                     </div>
+
+                                    <!-- Coffee Glass -->
                                     
                                 </div>
                                 <!-- End of Cup and Title -->
 
-
-                                <div class ="row">
+                                <div class ="row add_button">
                                     <div class="actions pull-right">
                                             <div class="btn-group">
                                                 <a id="addNewCoffee" href="javascript:;" class="btn btn-icon-only green">
                                                 <i class="fa fa-plus"></i>
+                                                Add Coffee
                                                 </a>
                                             </div>
                                     </div>

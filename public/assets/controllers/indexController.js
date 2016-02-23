@@ -94,10 +94,6 @@ function appendWarning ( event ){
 		var todayscaffeine = currentUser.get("todayscaffeine");
 		var intakeRate = parseInt( 100 * ( todayscaffeine / maxCaffeine ) ) ;
 
-		console.log( "maxCaffeine = " + maxCaffeine);
-		console.log( "todayscaffeine = " + todayscaffeine);
-		console.log( "intakeRate = " + intakeRate);
-
 		// if user consume full amount
 		if( intakeRate >= 100 )
 		{
@@ -143,17 +139,17 @@ function calculateMaxCaffeineIntake ( event ) {
 	if ( currentUser )
 	{
 
-		var weight = currentUser.get("weight");
+		var weight        = currentUser.get("weight");
 		var currentIntake = currentUser.get("todayscaffeine");
 		var ratio;
-
-	    maxCaffeine = 2.72155 * weight;
+		
+		maxCaffeine       = 2.72155 * weight;
 
 	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
 	    currentUser.save();
 
 	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
-	    $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
+	   // $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
 
 	    if ( ratio == 0 )
 	    	ratio = "10%";
@@ -165,8 +161,21 @@ function calculateMaxCaffeineIntake ( event ) {
 	     $('.waterFill').animate({
         	height: ratio
     	}, 1000);
+
+	    appendIntakeReport( currentIntake, parseInt(maxCaffeine));
 	 }
 
+}
+
+function appendIntakeReport ( current, max )
+{
+	//Clear
+	$("#current").empty();
+	$("#max").empty();
+
+	//append
+	$("#current").append( current );
+	$("#max").append( max );
 }
 
 

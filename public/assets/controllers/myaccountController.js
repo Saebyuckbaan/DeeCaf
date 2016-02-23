@@ -27,12 +27,15 @@ function submitForm( event ) {
 	currentUser.save(null, {
 	  success: function(user) {
 	    // Hooray! Let them use the app now.
-	    alert("Your information is successfully changed!");
+	    bootbox.alert("Your information is successfully changed!", function( )
+	    {
+			window.location.href = "./";
+		});
 
 	  },
 	  error: function(user, error) {
 	    // Show the error message somewhere and let the user try again.
-	    alert("Error: " + error.code + " " + error.message);
+	    bootbox.alert("Error: " + error.code + " " + error.message);
 	  }
 	});
 }
