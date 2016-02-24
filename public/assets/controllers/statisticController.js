@@ -89,6 +89,7 @@ function drawLineGraph ( )
   };
   var ctx = $("#myChart").get(0).getContext("2d");
   var myLineChart = new Chart(ctx).Line(data);
+  $("#chart_div").append(myLineChart.generateLegend());
 }
 
 
@@ -226,7 +227,7 @@ function queryUserHistory()
     });
 
     historyObj = { "dateArray": dateArray, "intakeArray": intakeArray };
-    debugger;
+    //debugger;
 
     console.log("Date Array = " + dateArray);
     console.log("intake Array = " + intakeArray);
