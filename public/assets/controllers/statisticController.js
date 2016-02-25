@@ -6,7 +6,7 @@ $(document).ready( function ( event ) {
 
   drawLineGraph();
 
-  $("#graphToggler").on("change", "label", function( event ) { 
+  $("#graphToggler").on("change", "label", function( event ) {
     console.log("changed");
         console.log( $("graphToggler").val() );
 
@@ -116,6 +116,9 @@ function drawLineGraph ( )
   var ctx = $("#caffeineChart").get(0).getContext("2d");
   var myLineChart = new Chart(ctx).Line(data, options);
   $("#chart_div").append(myLineChart.generateLegend());
+  if(data == "undefined") {
+    $('#statHeader').text("No data inputted yet!");
+  }
 }
 
 
@@ -132,7 +135,7 @@ function queryUserHistory()
     var sleepArray = [];
 
     var date;
-    $.each( intakeHistory, function( index, value ){ 
+    $.each( intakeHistory, function( index, value ){
       date = new Date(value["date"]);
       dateString = ( date.getMonth() + 1 ) + "/" + date.getDate() ;
       dateArray.push( dateString );
@@ -140,8 +143,8 @@ function queryUserHistory()
       sleepArray.push( value["sleep"] );
     });
 
-    historyObj = {  "dateArray": dateArray, 
-                    "intakeArray": intakeArray, 
+    historyObj = {  "dateArray": dateArray,
+                    "intakeArray": intakeArray,
                     "sleepArray": sleepArray };
     //debugger;
 
