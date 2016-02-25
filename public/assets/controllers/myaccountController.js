@@ -27,7 +27,7 @@ function submitForm( event ) {
 	currentUser.save(null, {
 	  success: function(user) {
 	    // Hooray! Let them use the app now.
-	    bootbox.alert("Your information is successfully changed!", function( )
+	    bootbox.alert("Your information has been successfully changed!", function( )
 	    {
 			window.location.href = "./";
 		});
@@ -48,13 +48,13 @@ function signOut( event ) {
 
 	if (currentUser) {
 		//log out when user is sign in
-		alert("You are successfully sign out");
+		alert("You have successfully signed out");
 	    Parse.User.logOut();
 	} else {
 	    // show the signup or login page
 	    alert("You have to sign in first");
 	}
-	
+
 	window.location.href = "./sign_in";
 
 	var currentUser = Parse.User.current();  // this will now be null
@@ -76,13 +76,13 @@ function isUserSignedIn ( event ) {
 		//show name after user
 
 	}
-	
+
 }
 
 function appendPrefilled ( event )
 {
 	var currentUser = Parse.User.current();
-	
+
 
 	$("#newWeight").attr("value", currentUser.get("weight"));
 	$("#newLastname").attr("value",currentUser.get("lastname") );
@@ -109,5 +109,3 @@ function appendUserName ( event )
 	$("#username").append(firstname);
 	$("#username").show();
 }
-
- 

@@ -63,7 +63,7 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 	var year = currentDate.getFullYear();
 	var dateString = mon + "/" + day + "/" + year;
 	console.log(dateString);
-	
+
 	caffeineObj = {
 					"name": beverageName,
 					"bid": beverageID,
@@ -161,7 +161,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		//if user drink first coffee of the day, please ask how long have they slept
 		if ( isFirstCoffee )
 		{
-			bootbox.prompt("How long have you slept last night?", function(result)
+			bootbox.prompt("How long did you sleep last night?", function(result)
 			{
 				if (result)
 				{
@@ -219,7 +219,7 @@ function addSleepingTime ( event, sleepTime ){
 
 	sleepObj = {
 					"date": todaysDateWithoutTime,
-					"sleepTime": sleepTime, 
+					"sleepTime": sleepTime,
 				}
 
 	return sleepObj;
@@ -229,7 +229,7 @@ function updateIntake ( event, caffeine ){
 
 	var currentUser = Parse.User.current();
 	var todaysDateWithoutTime = new Date();
-	var array;	
+	var array;
 	var isUpdated = false;
 	todaysDateWithoutTime.setHours(0,0,0,0);
 
@@ -242,7 +242,7 @@ function updateIntake ( event, caffeine ){
 		console.log( date);
 		if ( date.getTime() == todaysDateWithoutTime.getTime() )
 		{
-			
+
 			value["intake"] = Number( value["intake"] ) + Number( caffeine );
 			isUpdated = true;
 			console.log("found, and new value = " + value["intake"]);
@@ -253,7 +253,7 @@ function updateIntake ( event, caffeine ){
 
 	if ( !isUpdated )
 	{
-		var newIntake = 
+		var newIntake =
 		{
 			"date": todaysDateWithoutTime,
 			"intake" : caffeine,
@@ -283,7 +283,7 @@ function showExceedingWarning ( event, caffeine ){
 		// if user consume full amount
 		if( intakeRate >= 100 )
 		{
-			bootbox.confirm("You may have caffeine overdoes. Are you sure?", function(result) {
+			bootbox.confirm("You are having more than your daily recommended caffeine value. Are you sure you want to add?", function(result) {
 				if( result )
 				{
 					incrementCaffeineIntake( event, caffeine );
