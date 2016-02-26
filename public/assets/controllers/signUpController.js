@@ -14,6 +14,15 @@ function submitForm( event ) {
 	user.set("firstname", $("#newFirstname").val());
 	user.set("lastname" , $("#newLastname").val());
 	user.set("weight"   , $("#newWeight").val());
+	
+
+	// Initialize with empty or initial variable
+	user.set("isFirstCoffee", true );
+	user.set("todayscaffeine"   ,0 );
+	user.set("intakeHistory", [] );
+	user.set("sleepHistory" , [] );
+	user.set("drinkHistory" , [] );
+	user.set("statistics"   , []);
 
 	user.signUp(null, {
 	  success: function(user) {
