@@ -29,8 +29,10 @@ function userHistory(event)
 	if(currentUser) {
 		var history = currentUser.get("drinkHistory");
 		$.each(history, function(index, value){
-			$("#list").append("<li>" + value["size"] + " "
-			+ value["name"] + ": " + value["caffeine"] + "mg at " + value["date"]);
+			$("#list").append("<dt>" + value["size"] + " "
+			+ value["name"] + ": " + "</dt>");
+			$("#list").append("<dd>" + value["caffeine"] + "mg of caffeine at " + value["date"]
+			+ "</dd>");
 		});
 	}
 }

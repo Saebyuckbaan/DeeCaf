@@ -31,7 +31,7 @@ function signOut( event ) {
 
 		bootbox.confirm("Do you really want to sign out?", function(result) {
 		  	if ( result ){
-				bootbox.alert("You are successfully sign out", function( ){
+				bootbox.alert("You have successfully signed out", function( ){
 			   		Parse.User.logOut();
 			   		window.location.href = "./sign_in";
 				});
@@ -142,7 +142,7 @@ function calculateMaxCaffeineIntake ( event ) {
 		var weight        = currentUser.get("weight");
 		var currentIntake = currentUser.get("todayscaffeine");
 		var ratio;
-		
+
 		maxCaffeine       = 2.72155 * weight;
 
 	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
