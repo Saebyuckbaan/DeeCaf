@@ -17,12 +17,13 @@ function submitForm( event ) {
 	
 
 	// Initialize with empty or initial variable
-	user.set("isFirstCoffee", true );
-	user.set("todayscaffeine"   ,0 );
-	user.set("intakeHistory", [] );
-	user.set("sleepHistory" , [] );
-	user.set("drinkHistory" , [] );
-	user.set("statistics"   , []);
+	user.set("isFirstCoffee"  , true );
+	user.set("todayscaffeine" , 0    );
+	user.set("intakeHistory"  , []   );
+	user.set("sleepHistory"   , []   );
+	user.set("drinkHistory"   , []   );
+	user.set("statistics"     , []   );
+	user.set("lastInputTime"  , new Date() );
 
 	user.signUp(null, {
 	  success: function(user) {
