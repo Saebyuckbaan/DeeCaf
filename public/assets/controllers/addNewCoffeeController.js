@@ -167,6 +167,11 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 				{
 			    	console.log ( "Your sleep time = " + result);
 			    	updateIntake( event, caffeine );
+
+			    	//Update both sleep and caffeine intake
+			    	updateHistory( event, "sleep", result );
+  					updateHistory( event, "caffeine", newCaffeine);
+
 			    	//Update information
 					currentUser.set("todayscaffeine",newCaffeine);
 					currentUser.set("lastInputTime", todaysDate);
@@ -193,6 +198,10 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		{
 			//Just Update information
 			updateIntake( event, caffeine );
+
+			//Update caffeine intake
+  			updateHistory( event, "caffeine", newCaffeine);
+			
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
 			currentUser.save(null, {
@@ -257,6 +266,7 @@ function updateIntake ( event, caffeine ){
 		{
 			"date": todaysDateWithoutTime,
 			"intake" : caffeine,
+			"sleep" : 0,
 		};
 
 		array.push ( newIntake );
@@ -301,4 +311,134 @@ function showExceedingWarning ( event, caffeine ){
 		}
 	}
 
+}
+
+
+
+
+
+// ---------------- Beta testing functions ---------------- //
+/*
+* type - "sleep" or "caffeine"
+*
+*
+*/
+function updateHistory ( event,  type, newValue ){
+
+	// Declare Variables
+	var currentUser = Parse.User.current();
+	var statArray;	
+	var isUpdated = false;
+	var todaysDateWithoutTime = new Date();
+	todaysDateWithoutTime.setHours(0,0,0,0);
+
+	if( type == "sleep" )
+	{
+		todaysDateWithoutTime.setDate(todaysDateWithoutTime.getDate() - 1);
+	}
+
+	//Try to querying current user's history.
+	//if they are empty, create new object
+	statArray = currentUser.get("statistics");
+	//debugger;
+
+//	console.log ( "statArray= " + statArray, " it's lenfth = " + statArray.length);
+
+	if(typeof statArray == "undefined") {
+    	statArray = new Array();
+	}
+	// if array obejct exist, Loop through them
+	else
+	{
+		$.each( statArray, function( index, value ){
+
+			var date = new Date ( value["date"] );
+			console.log( value["date"] );
+			console.log( date );
+			if ( date.getTime() == todaysDateWithoutTime.getTime() )
+			{
+				//update the value according to the type
+				switch( type )
+				{
+					case "sleep":
+					{
+						value["sleep"] = Number( newValue );
+						isUpdated = true;
+					}
+					break;
+					case "caffeine":
+					{
+						value["intake"] = Number( value["intake"] ) + Number( newValue );
+						isUpdated = true;
+					}
+					break;
+					default:
+					{
+						bootbox.alert("Choice must be sleep or caffeine you dumb programmer");
+					}
+					break;
+				}
+
+				console.log("found, and new value = " + value["intake"]);
+				//value["intake"] += caffeine;
+			}
+
+		});
+	}
+
+	// if currently do not have such a date input
+	if ( !isUpdated )
+	{
+		switch( type )
+		{
+			case "sleep":
+			{
+				var newIntake = 
+				{
+					"date": todaysDateWithoutTime,
+					"intake" : 0,
+					"sleep" : Number( newValue ),
+				};
+			}
+			break;
+			case "caffeine":
+			{
+				var newIntake = 
+				{
+					"date": todaysDateWithoutTime,
+					"intake" : Number( newValue ),
+					"sleep" : 0,
+				};
+			}
+			break;
+			default:
+			{
+				bootbox.alert("Choice must be sleep or caffeine you dumb programmer");
+			}
+		}
+
+
+		statArray.push ( newIntake );
+	}
+
+	statArray.sort( function( a, b )
+	{
+	    var keyA = new Date(a.date),
+	        keyB = new Date(b.date);
+	    // Compare the 2 dates
+	    if(keyA < keyB) return -1;
+	    if(keyA > keyB) return 1;
+	    return 0;
+	});
+
+	currentUser.set("statistics", statArray );
+	currentUser.save(null, {
+	  success: function(user) {	
+
+	  },
+	  error: function(user, error) {
+	    // Show the error message somewhere and let the user try again.
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
 }

@@ -111,10 +111,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <i class="icon-bubble font-green-sharp"></i>
                                         <span class="caption-subject font-green-sharp sbold">Statistics</span>
                                     </div>
-
                                 </div>
+
+
+                                <!-- Radio Button -->
+                                <div class="clearfix">
+                                    <div class="btn-group btn-group-circle" data-toggle="buttons" id="graphToggler">
+                                        <label class="btn blue active">
+                                            <input type="radio" class="toggle" value="0"> Caffine Intake </label>
+                                        <label class="btn blue">
+                                            <input type="radio" class="toggle" value="1"> Sleep </label>
+                                    </div>
+                                </div>
+                                <!--End of Radio Button-->
+
                                 <div class="portlet-body">
-                                      <canvas id="myChart"></canvas>
+                                      <canvas id="caffeineChart"></canvas>
+                                      <canvas id="sleepChart" hidden></canvas>
                                       <div id="chart_div"></div>
                                 </div>
                             </div>
