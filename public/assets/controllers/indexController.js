@@ -194,6 +194,9 @@ function resetIntakeDaily ( event )
 							};
 
 		todaysDate.setHours(0,0,0,0);
+		if ( typeof lastInputTime == "undefined")
+			lastInputTime = new Date();
+
 		lastInputTime.setHours(0,0,0,0);
 
 		if ( ( lastInputTime.getTime() < todaysDate.getTime() ) && ( currentIntake != 0 ) )
