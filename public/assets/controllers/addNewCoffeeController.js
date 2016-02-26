@@ -11,8 +11,6 @@ $(document).ready(function ( event ) {
 
 });
 
-
-
 $("#signOut").click(signOut);
 
 // Company ( Brand ) selection is Step 1
@@ -201,7 +199,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 
 			//Update caffeine intake
   			updateHistory( event, "caffeine", newCaffeine);
-			
+
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
 			currentUser.save(null, {
@@ -244,6 +242,11 @@ function updateIntake ( event, caffeine ){
 
 	array = currentUser.get("intakeHistory");
 
+	if(array == undefined) {
+		console.log("first time user, no history yet")
+		var array = [];
+	}
+	else {
 	$.each( array, function( index, value ){
 
 		var date = new Date ( value["date"]);
@@ -259,6 +262,7 @@ function updateIntake ( event, caffeine ){
 		}
 
 	});
+}
 
 	if ( !isUpdated )
 	{
@@ -327,7 +331,7 @@ function updateHistory ( event,  type, newValue ){
 
 	// Declare Variables
 	var currentUser = Parse.User.current();
-	var statArray;	
+	var statArray;
 	var isUpdated = false;
 	var todaysDateWithoutTime = new Date();
 	todaysDateWithoutTime.setHours(0,0,0,0);
@@ -393,7 +397,7 @@ function updateHistory ( event,  type, newValue ){
 		{
 			case "sleep":
 			{
-				var newIntake = 
+				var newIntake =
 				{
 					"date": todaysDateWithoutTime,
 					"intake" : 0,
@@ -403,7 +407,7 @@ function updateHistory ( event,  type, newValue ){
 			break;
 			case "caffeine":
 			{
-				var newIntake = 
+				var newIntake =
 				{
 					"date": todaysDateWithoutTime,
 					"intake" : Number( newValue ),
@@ -433,7 +437,7 @@ function updateHistory ( event,  type, newValue ){
 
 	currentUser.set("statistics", statArray );
 	currentUser.save(null, {
-	  success: function(user) {	
+	  success: function(user) {
 
 	  },
 	  error: function(user, error) {

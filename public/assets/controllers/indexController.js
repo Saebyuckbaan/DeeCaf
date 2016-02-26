@@ -158,9 +158,14 @@ function calculateMaxCaffeineIntake ( event ) {
 	    else
 	    	ratio = "100%";
 
-	     $('.waterFill').animate({
-        	height: ratio
-    	}, 1000);
+			if(currentIntake == undefined) {
+				console.log("first time user, no data yet")
+			}
+			else {
+				$('.waterFill').animate({
+         	height: ratio
+     		}, 1000);
+			}
 
 	    appendIntakeReport( currentIntake, parseInt(maxCaffeine));
 	 }
@@ -174,7 +179,11 @@ function appendIntakeReport ( current, max )
 	$("#max").empty();
 
 	//append
-	$("#current").append( current );
+	if(current == undefined)
+		$("#current").append(0);
+	else {
+		$("#current").append( current );
+	}
 	$("#max").append( max );
 }
 

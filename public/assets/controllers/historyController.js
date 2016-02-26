@@ -28,6 +28,8 @@ function userHistory(event)
 	var currentUser = Parse.User.current();
 	if(currentUser) {
 		var history = currentUser.get("drinkHistory");
+		if(history == undefined)
+			$('#firstUser').text("No caffeine inputs yet.")
 		$.each(history, function(index, value){
 			$("#list").append("<dt>" + value["size"] + " "
 			+ value["name"] + ": " + "</dt>");
