@@ -4,68 +4,20 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 
 $(document).ready( function ( event ) {
 
-  drawLineGraph();
-
-  $("#graphToggler").on("change", "label", function( event ) {
-    console.log("changed");
-        console.log( $("graphToggler").val() );
-
-    //debugger;
-    switch ( $(this).val() )
-    {
-      case 0 :
-      {
-        $("#caffeineChart").show();
-        $("#sleepChart").hide();
-      }
-      break;
-      case 1:
-      {
-        $("#sleepChart").show();
-        $("#caffeineChart").hide();
-      }
-      break;
-    }
-
-  });
-
+  drawLineGraph( "caffeineChart" );
+  drawLineGraph( "sleepChart" );
 
 });
 
 
 
 
-function drawLineGraph ( )
+function drawLineGraph ( id )
 {
   var historyObj = queryUserHistory();
-  var data = {
-    labels: historyObj["dateArray"],
-    datasets: [
-        {
-            label: "Caffeine Intake",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: historyObj["intakeArray"]
-        },
-        {
-            label: "Sleeping Time",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: historyObj["sleepArray"]
-        }
-    ]
-  };
+  var data;
   var options = {
 
-    scaleLabel: "<%=value%> mg",
     ///Boolean - Whether grid lines are shown across the chart
     scaleShowGridLines : true,
 
@@ -113,9 +65,57 @@ function drawLineGraph ( )
 
   };
 
-  var ctx = $("#caffeineChart").get(0).getContext("2d");
-  var myLineChart = new Chart(ctx).Line(data, options);
-  $("#chart_div").append(myLineChart.generateLegend());
+  var ctx = $("#"+id).get(0).getContext("2d");
+
+  switch ( id )
+  {
+    case "caffeineChart":
+    {
+      data = {
+        labels: historyObj["dateArray"],
+        datasets: [
+            {
+                label: "Caffeine Intake",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: historyObj["intakeArray"]
+            },
+        ]
+      };
+
+      options["scaleLabel"] = "<%=value%> mg";
+        var myLineChart = new Chart(ctx).Line(data, options);
+    }
+    break;
+    case "sleepChart" : 
+    {
+      data = {
+          labels: historyObj["dateArray"],
+          datasets: [
+              {
+                  label: "Sleeping Time",
+                  fillColor: "rgba(151,187,205,0.2)",
+                  strokeColor: "rgba(151,187,205,1)",
+                  pointColor: "rgba(151,187,205,1)",
+                  pointStrokeColor: "#fff",
+                  pointHighlightFill: "#fff",
+                  pointHighlightStroke: "rgba(151,187,205,1)",
+                  data: historyObj["sleepArray"]
+              }
+          ]
+        };
+        options["scaleLabel"] = "<%=value%> hrs";
+        var myBarChart = new Chart(ctx).Bar(data, options);
+    }
+    break;
+  }
+
+
+  $("#" + id + "_legends").append(myLineChart.generateLegend());
   if(data == "undefined") {
     $('#statHeader').text("No data inputted yet!");
   }
@@ -153,3 +153,11 @@ function queryUserHistory()
     return historyObj;
   }
 }
+
+
+
+//--------------- Tab Bar -------------//
+$('#table a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})

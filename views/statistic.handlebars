@@ -125,22 +125,44 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                                 End of Radio Button-->
 
-                                <!-- Nav Pill -->
-                                <ul class="nav nav-pills">
-                                    <li role="presentation" class="active"><a href="#">Caffine Intake</a></li>
-                                    <li role="presentation"><a href="#">Sleep</a></li>
-                                </ul>
-                                <!-- end of nav pill -->
+                                <!-- Navigation Bar -->
+                                <div>
+                                  <!-- Nav tabs -->
+                                  <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#caffeine_intake" aria-controls="home" role="tab" data-toggle="tab">Caffeine Intake</a></li>
+                                    <li role="presentation"><a href="#sleeping" aria-controls="profile" role="tab" data-toggle="tab">Sleeping</a></li>
+                                  </ul>
 
+                                  <!-- Tab panes -->
+                                  <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="caffeine_intake">
+                                        <!-- Graph -->    
+                                        <div class="portlet-body">
+                                            <p id="statHeader"></p>
+                                              <canvas id="caffeineChart"></canvas>
+                                              <div id="caffeineChart_legends"></div>
+                                        </div>
+                                        <!-- Graph -->                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="sleeping">
+                                        <!-- Graph -->
+                                        <div class="portlet-body">
+                                            <p id="statHeader"></p>
+                                            <canvas id="sleepChart"></canvas>
+                                            <div id="sleepChart_legends"></div>
+                                        </div>
+                                        <!-- Graph -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Navigation Bar -->
+                                <!--
                                 <div class="portlet-body">
-                                    <p id="statHeader">
-
-                                    </p>
-
+                                    <p id="statHeader"></p>
                                       <canvas id="caffeineChart"></canvas>
                                       <canvas id="sleepChart" hidden></canvas>
                                       <div id="chart_div"></div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
