@@ -5,36 +5,25 @@ $(document).ready( function ( event ){
 	userHistory(event);
 
 });
-/*
-function test ( event )
-{
-	var currentUser = Parse.User.current();
-	if( currentUser )
-	{
-		var history = currentUser.get ( "drinkHistory");
-		$.each( history, function (index, value ){
-			console.log ( index + " " + value["name"] );
-			var htmlObj = "<li>" + "</li>";
-			$("#list").append( htmlObj );
 
-		});
-
-	}
-
-}
-*/
 function userHistory(event)
 {
 	var currentUser = Parse.User.current();
 	if(currentUser) {
 		var history = currentUser.get("drinkHistory");
-		if(history == undefined)
-			$('#firstUser').text("No caffeine inputs yet.")
-		$.each(history, function(index, value){
-			$("#list").append("<dt>" + value["size"] + " "
-			+ value["name"] + ": " + "</dt>");
-			$("#list").append("<dd>" + value["caffeine"] + "mg of caffeine at " + value["date"]
-			+ "</dd>");
-		});
+		if(history.length == 0 )
+		{
+			$('#nohistory').show();
+			$("#History").hide();
+		}
+		else
+		{
+			$.each(history, function(index, value){
+				$("#list").append("<dt>" + value["size"] + " "
+				+ value["name"] + ": " + "</dt>");
+				$("#list").append("<dd>" + value["caffeine"] + "mg of caffeine at " + value["date"]
+				+ "</dd>");
+			});
+		}
 	}
 }
