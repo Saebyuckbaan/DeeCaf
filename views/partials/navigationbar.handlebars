@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="nav-item start ">
-                    <a id ="signOut" class="nav-link">
+                    <a id ="signOut" class="nav-link" onclick="signOut()">
                             <i class="fa fa-sign-out"></i>
                             <span class="title">Sign Out</span>
                     </a>
@@ -65,3 +65,38 @@
         <!-- END SIDEBAR -->
     </div>
     <!-- END SIDEBAR -->
+
+
+<script>
+
+function signOut(  ) {
+
+
+    var currentUser = Parse.User.current();
+
+    if (currentUser) {
+        //log out when user is sign in
+
+        bootbox.confirm("Do you really want to sign out?", function(result) {
+            if ( result ){
+                bootbox.alert("You have successfully signed out", function( ){
+                    Parse.User.logOut();
+                    window.location.href = "./sign_in";
+                });
+            }
+        });
+    } else {
+        // show the signup or login page
+        bootbox.alert("You have to sign in first", function () {
+            window.location.href = "./sign_in";
+        });
+    }
+
+
+
+    var currentUser = Parse.User.current();  // this will now be null
+
+}
+
+
+</script>

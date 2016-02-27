@@ -11,8 +11,6 @@ $(document).ready(function ( event ) {
 
 });
 
-$("#signOut").click(signOut);
-
 // Company ( Brand ) selection is Step 1
 $(".company").click( function (event ) {
 	event.preventDefault();
@@ -76,28 +74,6 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 });
 
 // ----------------- Javascript ---------------------//
-function signOut( event ) {
-
-
-	var currentUser = Parse.User.current();
-
-	if (currentUser) {
-		//log out when user is sign in
-		alert("You are successfully sign out");
-	    Parse.User.logOut();
-	} else {
-	    // show the signup or login page
-	    alert("You have to sign in first");
-	}
-
-	window.location.href = "./sign-in.html";
-
-	var currentUser = Parse.User.current();  // this will now be null
-
-}
-
-
-
 function isUserSignedIn ( event ) {
 
 	var currentUser = Parse.User.current();

@@ -14,43 +14,11 @@ $(document).ready(function ( event ) {
 	appendWarning(event);
 
 });
-$("#signOut").click(signOut);
 $("#addNewCoffee").click(goToAddNewCoffeePage);
 
 
 
 //------------------- Javascript Functions --------------//
-
-function signOut( event ) {
-
-
-	var currentUser = Parse.User.current();
-
-	if (currentUser) {
-		//log out when user is sign in
-
-		bootbox.confirm("Do you really want to sign out?", function(result) {
-		  	if ( result ){
-				bootbox.alert("You have successfully signed out", function( ){
-			   		Parse.User.logOut();
-			   		window.location.href = "./sign_in";
-				});
-		  	}
-		});
-	} else {
-	    // show the signup or login page
-	    bootbox.alert("You have to sign in first", function () {
-	    	window.location.href = "./sign_in";
-	    });
-	}
-
-
-
-	var currentUser = Parse.User.current();  // this will now be null
-
-}
-
-
 function isUserSignedIn ( event ) {
 
 	var currentUser = Parse.User.current();

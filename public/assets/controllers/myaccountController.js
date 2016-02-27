@@ -8,8 +8,6 @@ $(document).ready(function ( event ) {
 
 });
 
-
-$("#signOut").click(signOut);
 $("#formSubmit").click(submitForm);
 
 function submitForm( event ) {
@@ -39,28 +37,6 @@ function submitForm( event ) {
 	  }
 	});
 }
-
-
-function signOut( event ) {
-
-
-	var currentUser = Parse.User.current();
-
-	if (currentUser) {
-		//log out when user is sign in
-		alert("You have successfully signed out");
-	    Parse.User.logOut();
-	} else {
-	    // show the signup or login page
-	    alert("You have to sign in first");
-	}
-
-	window.location.href = "./sign_in";
-
-	var currentUser = Parse.User.current();  // this will now be null
-
-}
-
 
 function isUserSignedIn ( event ) {
 
