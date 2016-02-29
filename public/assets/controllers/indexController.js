@@ -89,6 +89,7 @@ function appendWarning ( event ){
 
 
 function goToAddNewCoffeePage( event ) {
+	
 	window.location.href = "./brands";
 
 }

@@ -7,16 +7,8 @@ exports.brands = function(req, res) {
 
 	//console.log( brands["companies"]);
 	//res.json( brands  );
-	var random_num = Math.random();
-	console.log(random_num);
-
-	if (random_num > 0.5) {
-		var companies = brands["companies"];
-		res.render( "brands",{ companies: companies });
-	} else {
-	  res.redirect('/altbrands');
-	}
-	
+	var companies = brands["companies"];
+	res.render( "altbrands",{ companies: companies });
 
 }
 
