@@ -7,6 +7,7 @@ $(document).ready( function ( event ) {
   if ( drawLineGraph( "caffeineChart" ) )
   {
     drawLineGraph( "sleepChart" );
+    drawIntakeSleepLineGraph( "caffeinevssleepChart");
   }
   else
   {
@@ -22,9 +23,6 @@ $(document).ready( function ( event ) {
 function drawLineGraph ( id )
 {
   var historyObj = queryUserHistory();
-
-  console.log ( "historyObj[datearray] = " + historyObj["dateArray"].length );
-  console.log ( "historyObj = " + historyObj );
 
 
   if( historyObj["dateArray"] != 0 )
@@ -129,7 +127,7 @@ function drawLineGraph ( id )
     }
 
 
-    $("#" + id + "_legends").append(myLineChart.generateLegend());
+    //$("#" + id + "_legends").append(myLineChart.generateLegend());
     if(data == "undefined") {
       $('#statHeader').text("No data inputted yet!");
     }
@@ -139,6 +137,102 @@ function drawLineGraph ( id )
 
   return false;
 }
+
+
+function drawIntakeSleepLineGraph ( id )
+{
+  var historyObj = queryUserHistory();
+
+  if( historyObj["dateArray"] != 0 )
+  {
+    var data;
+    var options = {
+
+      ///Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines : true,
+
+      //String - Colour of the grid lines
+      scaleGridLineColor : "rgba(0,0,0,.05)",
+
+      //Number - Width of the grid lines
+      scaleGridLineWidth : 1,
+
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+
+      //Boolean - Whether the line is curved between points
+      bezierCurve : true,
+
+      //Number - Tension of the bezier curve between points
+      bezierCurveTension : 0.4,
+
+      //Boolean - Whether to show a dot for each point
+      pointDot : true,
+
+      //Number - Radius of each point dot in pixels
+      pointDotRadius : 4,
+
+      //Number - Pixel width of point dot stroke
+      pointDotStrokeWidth : 1,
+
+      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+      pointHitDetectionRadius : 20,
+
+      //Boolean - Whether to show a stroke for datasets
+      datasetStroke : true,
+
+      //Number - Pixel width of dataset stroke
+      datasetStrokeWidth : 2,
+
+      //Boolean - Whether to fill the dataset with a colour
+      datasetFill : true,
+
+      //String - A legend template
+      legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+    };
+
+    var ctx = $("#"+id).get(0).getContext("2d");
+
+    data = {
+        labels: historyObj["intakeArray"],
+        datasets: [
+            {
+                label: "Sleeping Time",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: historyObj["sleepArray"]
+            }
+        ]
+      };
+      options["scaleLabel"] = "<%=value%> hrs";
+      var myLineChart = new Chart(ctx).Line(data, options);
+
+
+    //$("#" + id + "_legends").append(myLineChart.generateLegend());
+    if(data == "undefined") {
+      $('#statHeader').text("No data inputted yet!");
+    }
+
+    return true;
+  }
+
+  return false;
+}
+
+
+
+
+
+
+
 
 
 
@@ -165,10 +259,7 @@ function queryUserHistory()
     historyObj = {  "dateArray": dateArray,
                     "intakeArray": intakeArray,
                     "sleepArray": sleepArray };
-    //debugger;
 
-    console.log("Date Array = " + dateArray);
-    console.log("intake Array = " + intakeArray);
     return historyObj;
   }
 }

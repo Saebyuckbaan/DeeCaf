@@ -15,7 +15,6 @@ $(document).ready(function ( event ) {
 $(".company").click( function (event ) {
 	event.preventDefault();
 
-	//console.log(this.id);
 	companyID = this.id;
 	selectFromSwipeList ( event, "./types" + "?" + "cid=" + companyID);
 });
@@ -25,7 +24,7 @@ $(".type").click( function (event ) {
 	event.preventDefault();
 	beverageID = this.id;
 	companyID = $(this).data('cid');
-//	console.log($(this).data('cid'));
+
 	//beverageId = this.id;
 	selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
 });
@@ -33,7 +32,6 @@ $(".type").click( function (event ) {
 // Beverage Selection is Step 3
 $(".beverage").click( function (event ) { //future class for beverage.handlebars = .beverage
 	event.preventDefault();
-	//console.log(this.id);
 
 	companyID = $(this).data('cid');
 	beverageName = this.id;
@@ -58,7 +56,7 @@ $(".size").click( function ( event ) { //future class for size.handlebars = .siz
 	var day = currentDate.getDate();
 	var year = currentDate.getFullYear();
 	var dateString = mon + "/" + day + "/" + year;
-	console.log(dateString);
+
 
 	caffeineObj = {
 					"name": beverageName,
@@ -118,7 +116,6 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 	var currentUser = Parse.User.current();
 	var caffeine = caffeineObj["caffeine"];
 
-	console.log( caffeine);
 	if ( currentUser )
 	{
 		var isFirstCoffee = currentUser.get("isFirstCoffee");
@@ -126,12 +123,6 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		var todaysDate  = new Date();
 		var todaysDateWithoutTime = new Date();
 		todaysDateWithoutTime.setHours(0,0,0,0);
-
-		console.log ( "year = " + todaysDateWithoutTime.getFullYear() );
-		console.log ( "Day = " + todaysDateWithoutTime.getDay() );
-		console.log ( "Date = " + todaysDateWithoutTime.getDate() );
-		console.log ( "Month = " + todaysDateWithoutTime.getMonth() );
-
 		//if user drink first coffee of the day, please ask how long have they slept
 		if ( isFirstCoffee )
 		{
@@ -139,12 +130,11 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 			{
 				if (result)
 				{
-			    	console.log ( "Your sleep time = " + result);
 			    	updateIntake( event, caffeine );
 
 			    	//Update both sleep and caffeine intake
 			    	updateHistory( event, "sleep", result );
-  					updateHistory( event, "caffeine", newCaffeine);
+  					updateHistory( event, "caffeine", caffeine);
 
 			    	//Update information
 					currentUser.set("todayscaffeine",newCaffeine);
@@ -174,7 +164,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 			updateIntake( event, caffeine );
 
 			//Update caffeine intake
-  			updateHistory( event, "caffeine", newCaffeine);
+  			updateHistory( event, "caffeine", caffeine);
 
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
@@ -219,22 +209,17 @@ function updateIntake ( event, caffeine ){
 	array = currentUser.get("intakeHistory");
 
 	if(array == undefined) {
-		console.log("first time user, no history yet")
 		var array = [];
 	}
 	else {
 	$.each( array, function( index, value ){
 
 		var date = new Date ( value["date"]);
-		console.log( value["date"]);
-		console.log( date);
 		if ( date.getTime() == todaysDateWithoutTime.getTime() )
 		{
 
 			value["intake"] = Number( value["intake"] ) + Number( caffeine );
 			isUpdated = true;
-			console.log("found, and new value = " + value["intake"]);
-			//value["intake"] += caffeine;
 		}
 
 	});
@@ -278,10 +263,6 @@ function showExceedingWarning ( event, caffeine ){
 				{
 					incrementCaffeineIntake( event, caffeine );
 				}
-				else
-				{
-					console.log( "NAH ");
-				}
 			});
 
 		}
@@ -322,8 +303,6 @@ function updateHistory ( event,  type, newValue ){
 	statArray = currentUser.get("statistics");
 	//debugger;
 
-//	console.log ( "statArray= " + statArray, " it's lenfth = " + statArray.length);
-
 	if(typeof statArray == "undefined") {
     	statArray = new Array();
 	}
@@ -333,8 +312,6 @@ function updateHistory ( event,  type, newValue ){
 		$.each( statArray, function( index, value ){
 
 			var date = new Date ( value["date"] );
-			console.log( value["date"] );
-			console.log( date );
 			if ( date.getTime() == todaysDateWithoutTime.getTime() )
 			{
 				//update the value according to the type
@@ -358,9 +335,6 @@ function updateHistory ( event,  type, newValue ){
 					}
 					break;
 				}
-
-				console.log("found, and new value = " + value["intake"]);
-				//value["intake"] += caffeine;
 			}
 
 		});
