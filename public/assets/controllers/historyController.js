@@ -19,16 +19,11 @@ function userHistory(event)
 		else
 		{
 			$.each(history, function(index, value){
-				/*
-				$("#list").append("<dt>" + value["size"] + " "
-				+ value["name"] + ": " + "</dt>");
-				$("#list").append("<dd>" + value["caffeine"] + "mg of caffeine at " + value["date"]
-				+ "</dd>");*/
 				var date = new Date ( value["date"] );
 
 				$("#historytable tbody").append("<tr><td>" + value["name"]
 												 + "</td><td>" + value["caffeine"]
-												 + " mg</td><td>" + date.getMonth() + " / " + date.getDate()
+												 + " mg</td><td>" + ( date.getMonth() + 1 ) + " / " + date.getDate()
 												 + "</td></tr>");
 			});
 		}
