@@ -4,6 +4,7 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 $(document).ready(function ( event ) {
 
 	pageTrack();
+
 	isUserSignedIn( event );
 	appendSwipe( event );
 
@@ -16,12 +17,12 @@ function pageTrack() {
 
 function backClick(e) {
 	console.log("Back Clicked!");
-	ga('send', 'event', 'back', 'click');
+	ga('send', 'event', 'back-B', 'click');
 }
 
 function homeClick(e) {
 	console.log("Home clicked!");
-	ga('send', 'event', 'home', 'click');
+	ga('send', 'event', 'home-B', 'click');
 }
 
 // Company ( Brand ) selection is Step 1
