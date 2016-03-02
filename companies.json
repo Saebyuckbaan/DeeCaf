@@ -49,21 +49,6 @@
       "name": "Coffee Beverages",
         "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-coffee-beverages.jpg",
          "bid" : "0"
-    }, {
-      "name": "Tea Beverages",
-        "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-tea-beverages.jpg",
-         "bid" : "1"
-
-    }, {
-      "name": "Blended Refreshment",
-        "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/stores/menu-image-stores-blended-freddos.jpg",
-         "bid" : "2"
-
-    }, {
-      "name": "Coffee-Free Beverages",
-        "image": "http://d3mrtwiv4dr09z.cloudfront.net/media/wysiwyg/2014-01/stores-page-coffee-free-beverages-2014.jpg",
-         "bid" : "3"
-
     }]
   }]
 }
