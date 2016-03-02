@@ -3,10 +3,20 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 // ----------------- jQuery Function ----------------- //
 $(document).ready(function ( event ) {
 
+	pageTrack();
 	isUserSignedIn( event );
 	appendSwipe( event );
 
 });
+
+function pageTrack() {
+	$('.backBtn').click(backClick);
+}
+
+function backClick(e) {
+	console.log("Back Clicked!");
+	ga('send', 'event', 'back', 'click');
+}
 
 // Company ( Brand ) selection is Step 1
 $("#brands").on("change", function (event ) {
@@ -15,21 +25,10 @@ $("#brands").on("change", function (event ) {
 	//alert("YEAH");
 	//console.log(this.id);
 	companyID = this.value;
-	$('.page-type').keyup(function(){
-    var txt = $('.page-type').val();
-    $.post("./altbrands", {suggest: txt}, function(result){
-        $("span").html(result);
-    });
-});
-	if(companyID == 1) {
-		$('.page-type').append('<p class="bg-success"> Starbucks </p>');
-	}
-	else {
-		$('.page-type').append('<p class="bg-success"> Peets </p>');
-	}
+
 	//console.log( this + " / " + this.id + " / " + this.value);
 
-	//selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
+	selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
 });
 
 // Type of Beverage selection is Step 2

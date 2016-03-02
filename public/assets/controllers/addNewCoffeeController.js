@@ -3,6 +3,7 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 // ----------------- jQuery Function ----------------- //
 $(document).ready(function ( event ) {
 
+	pageTrack();
 	isUserSignedIn( event );
 	appendSwipe( event );
 	$('.bxslider').bxSlider({
@@ -10,6 +11,15 @@ $(document).ready(function ( event ) {
   	});
 
 });
+
+function pageTrack() {
+	$('.backBtn').click(backClick);
+}
+
+function backClick(e) {
+	console.log("Back clicked!");
+	ga('send', 'event', 'back', 'click');
+}
 
 // Company ( Brand ) selection is Step 1
 $(".company").click( function (event ) {
