@@ -47,6 +47,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/add-new-coffee.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/swipe.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/progressbar.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         </head>
     <!-- END HEAD -->
@@ -110,18 +111,57 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-                                  <ul class="pagination">
-                                    <li><a href="./altbrands">Brand</a></li>
-                                    <li class="active"><a href="./alttypes">Type</a></li>
-                                    <li><a href="./altbeverages">Beverage</a></li>
-                                    <li><a href="./altsizes">Size</a></li>
-                                  </ul>
+                                    <!-- Progress Bar -->
+                                <div class="container">
+                                    <div class="row bs-wizard" style="border-bottom:0;">
+                                        <div class="col-xs-3 bs-wizard-step complete">
+                                          <div class="text-center bs-wizard-stepnum">Step 1</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Brand
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+                                          <div class="text-center bs-wizard-stepnum">Step 2</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Type
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                                          <div class="text-center bs-wizard-stepnum">Step 3</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                            Beverage
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                                          <div class="text-center bs-wizard-stepnum">Step 4</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Size
+                                          </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- End of Progress Bar -->
+
+
+
                                     <h3 style="text-align: center;">Select Your Drink Type</h3>
                                     <div data-id="{{selectedCid}}"></div>
 
                                     <!-- Option -->
                                     <select id="type" class="form-control select2" >
-                                        <option>Select Type of Beverage</option>
+                                        <option value ="description">Select Type of Beverage</option>
                                         {{#each type}}
                                         <option class="company" data-bid="{{bid}}" name="brand" value ="{{../selectedCid}}">{{name}}</option>
                                         {{/each}}
@@ -130,11 +170,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </br>
                                     </br>
                                     <!-- End of Options -->
+
                                     <!-- Buttons -->
                                     <div class="row">
-                                        <div class ="pull-right">
-                                            <a href="/altbrands" type="button" class="btn green-haze">Back</a>
-                                            <a href="/" type="button" class="btn green-haze">Home</a>
+                                        <div class="col-lg-6 col-lg-offset-3 text-center">
+                                        <a  href="/altbrands" id= "back" type="button" class="btn green-haze backBtn">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                        <a href="/" type="button" class="btn blue-madison home-button"><i class="fa fa-home"></i></a>
+                                        <a id="toBeverages" type="button" class="btn green-haze">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
                                         </div>
                                     </div>
                                     <!--- End of the Buttons-->

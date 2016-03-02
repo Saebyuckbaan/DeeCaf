@@ -32,63 +32,67 @@ $("#brands").on("change", function (event ) {
 	//console.log(this.id);
 	companyID = this.value;
 
-	//console.log( this + " / " + this.id + " / " + this.value);
+$("#toTypes").click( function( event ) {
+	event.preventDefault();
+	var companyID = $("#brands").val();
 
-	selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
+	if ( companyID != "description"  )
+	{
+		selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
+	}
 });
 
-// Type of Beverage selection is Step 2
-$("#type").on( "change", function (event ) {
+$("#toBeverages").click( function( event ) {
 	event.preventDefault();
-	console.log ( $(this).find(':selected').data("bid") + " and " + this.value);
-	beverageID = $(this).find(':selected').data("bid");
-	companyID = this.value;
-	//debugger;
-//	console.log($(this).data('cid'));
-	//beverageId = this.id;
-	selectFromSwipeList ( event, "./altbeverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
+	var beverageID = $("#type").find(':selected').data("bid");
+	var companyID  = $("#type").val();
+	if ( companyID != "description"  )
+		selectFromSwipeList ( event, "./altbeverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
 });
 
-// Beverage Selection is Step 3
-$("#beverage").on( "change", function (event ) { //future class for beverage.handlebars = .beverage
+$("#toSizes").click( function( event ) {
 	event.preventDefault();
-	//console.log(this.id);
-
-	companyID = $(this).find(':selected').data('cid');
-	beverageName = $(this).find(':selected').data("name");
-	selectFromSwipeList ( event, "./altsizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
+	var companyID    = $("#beverage").find(':selected').data('cid');
+	var beverageName = $("#beverage").find(':selected').data("name");
+	if ( $("#beverage").find(':selected').val() != "description"  )
+		selectFromSwipeList ( event, "./altsizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
 });
 
-//Size Selection is Step 4
-$("#size").on( "change", function ( event ) { //future class for size.handlebars = .size
-	event.preventDefault();
 
+$("#toComplete").click( function( event ) {
+	event.preventDefault();
 
 	// Create Caffeine intake information object
 	var caffeineObj;
-	var caffeineVal = $(this).find(':selected').val();
-	var companyID = $(this).find(':selected').data('cid');
-	var beverageID = $(this).find(':selected').data('bid');
-	var beverageName = $(this).find(':selected').data('name');
-	var size = $(this).find(':selected').data("size");
+	var caffeineVal  = $("#size").find(':selected').val();
 
-	var currentDate = new Date();
-	var mon = currentDate.getMonth()+1;
-	var day = currentDate.getDate();
-	var year = currentDate.getFullYear();
-	var dateString = mon + "/" + day + "/" + year;
-	console.log(dateString);
+	if ( caffeineVal != "description"  )
+	{
+		var companyID    = $("#size").find(':selected').data('cid');
+		var beverageID   = $("#size").find(':selected').data('bid');
+		var beverageName = $("#size").find(':selected').data('name');
+		var size         = $("#size").find(':selected').data("size");
 
-	caffeineObj = {
-					"name": beverageName,
-					"bid": beverageID,
-					"cid" : companyID,
-					"caffeine" : caffeineVal,
-					"size": size,
-					"date" : dateString
-					};
 
-	showExceedingWarning ( event, caffeineObj );
+		var currentDate  = new Date();
+		var mon          = currentDate.getMonth()+1;
+		var day          = currentDate.getDate();
+		var year         = currentDate.getFullYear();
+		var dateString   = mon + "/" + day + "/" + year;
+		console.log(dateString);
+
+		caffeineObj = {
+						"name": beverageName,
+						"bid": beverageID,
+						"cid" : companyID,
+						"caffeine" : caffeineVal,
+						"size": size,
+						"date" : dateString
+						};
+
+		showExceedingWarning ( event, caffeineObj );
+	}
+
 
 });
 
@@ -282,19 +286,18 @@ function showExceedingWarning ( event, caffeine ){
 	{
 		var maxCaffeine = currentUser.get("maxCaffeine");
 		var todayscaffeine = currentUser.get("todayscaffeine");
-		var intakeRate = parseInt( 100 * ( ( todayscaffeine + intakeCaffeine ) / maxCaffeine ) ) ;
+		var intakeRate = ( ( Number( todayscaffeine ) + Number( intakeCaffeine ) ) / Number( maxCaffeine ) ) ;
 
+		console.log ( "todayscaffeine = " + todayscaffeine + ", intakeCaffeine = " + intakeCaffeine + " maxCaffeine = " + maxCaffeine );
+		console.log ( "intakeRate = " + intakeRate );
+		debugger;
 		// if user consume full amount
-		if( intakeRate >= 100 )
+		if( intakeRate >= 1 )
 		{
 			bootbox.confirm("You are having more than your daily recommended caffeine value. Are you sure you want to add?", function(result) {
 				if( result )
 				{
 					incrementCaffeineIntake( event, caffeine );
-				}
-				else
-				{
-					console.log( "NAH ");
 				}
 			});
 
