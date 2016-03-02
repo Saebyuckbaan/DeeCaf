@@ -12,12 +12,24 @@ $(document).ready(function ( event ) {
 $("#brands").on("change", function (event ) {
 	event.preventDefault();
 
-	alert("YEAH");
+	//alert("YEAH");
 	//console.log(this.id);
 	companyID = this.value;
+	$('.page-type').keyup(function(){
+    var txt = $('.page-type').val();
+    $.post("./altbrands", {suggest: txt}, function(result){
+        $("span").html(result);
+    });
+});
+	if(companyID == 1) {
+		$('.page-type').append('<p class="bg-success"> Starbucks </p>');
+	}
+	else {
+		$('.page-type').append('<p class="bg-success"> Peets </p>');
+	}
 	//console.log( this + " / " + this.id + " / " + this.value);
-	
-	selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
+
+	//selectFromSwipeList ( event, "./alttypes" + "?" + "cid=" + companyID);
 });
 
 // Type of Beverage selection is Step 2
@@ -70,7 +82,7 @@ $("#size").on( "change", function ( event ) { //future class for size.handlebars
 					"size": size,
 					"date" : dateString
 					};
-	
+
 	showExceedingWarning ( event, caffeineObj );
 
 });
@@ -109,6 +121,7 @@ function appendSwipe ( event ) {
 
 
 function selectFromSwipeList ( event, url ) {
+	//$('.page-type').append("<");
 	window.location.href = url;
 }
 

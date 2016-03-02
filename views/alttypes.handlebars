@@ -110,24 +110,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="portlet-body">
+                                  <ul class="pagination">
+                                    <li><a href="./altbrands">Brand</a></li>
+                                    <li class="active"><a href="./alttypes">Type</a></li>
+                                    <li><a href="./altbeverages">Beverage</a></li>
+                                    <li><a href="./altsizes">Size</a></li>
+                                  </ul>
                                     <h3 style="text-align: center;">Select Your Drink Type</h3>
                                     <div data-id="{{selectedCid}}"></div>
 
-                                    <!-- Option -->                                
+                                    <!-- Option -->
                                     <select id="type" class="form-control select2" >
                                         <option>Select Type of Beverage</option>
                                         {{#each type}}
                                         <option class="company" data-bid="{{bid}}" name="brand" value ="{{../selectedCid}}">{{name}}</option>
                                         {{/each}}
                                     </select>
-                                    
+
                                     </br>
                                     </br>
                                     <!-- End of Options -->
                                     <!-- Buttons -->
                                     <div class="row">
                                         <div class ="pull-right">
-                                            <a href="/brands" type="button" class="btn green-haze">Back</a>
+                                            <a href="/altbrands" type="button" class="btn green-haze">Back</a>
                                             <a href="/" type="button" class="btn green-haze">Home</a>
                                         </div>
                                     </div>

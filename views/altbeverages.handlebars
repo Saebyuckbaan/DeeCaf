@@ -110,17 +110,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="portlet-body">
+                                  <ul class="pagination">
+                                    <li><a href="./altbrands">Brand</a></li>
+                                    <li><a href="./alttypes">Type</a></li>
+                                    <li class="active"><a href="./altbeverages">Beverage</a></li>
+                                    <li><a href="./altsizes">Size</a></li>
+                                  </ul>
 
                                     <h3 style="text-align: center;">Select the Drink</h3>
 
-                                    <!-- Option -->                                
+                                    <!-- Option -->
                                     <select id="beverage" class="form-control select2" >
                                         <option>Select Beverage</option>
                                         {{#each beverages}}
                                         <option class="beverage" data-name="{{name}}" name="beverages" data-cid ="{{../selectedCid}}">{{name}}</option>
                                         {{/each}}
                                     </select>
-                                    
+
                                     </br>
                                     </br>
                                     <!-- End of Options -->
@@ -128,7 +134,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <!-- Buttons -->
                                     <div class="row">
                                         <div class ="pull-right">
-                                            <a href="/types?cid={{selectedCid}}" type="button" class="btn green-haze">Back</a>
+                                            <a href="/alttypes?cid={{selectedCid}}" type="button" class="btn green-haze">Back</a>
                                             <a href="/" type="button" class="btn green-haze">Home</a>
                                         </div>
                                     </div>
