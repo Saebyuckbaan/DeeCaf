@@ -10,14 +10,12 @@ exports.brands = function(req, res) {
 	var random_num = Math.random();
 	console.log(random_num);
 
-	if (random_num > 0.5) {
+	if (random_num >= 0) {
 		var companies = brands["companies"];
 		res.render( "brands",{ companies: companies });
 	} else {
 	  res.redirect('/altbrands');
 	}
-	
+
 
 }
-
-
