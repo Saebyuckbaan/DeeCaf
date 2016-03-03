@@ -31,6 +31,7 @@ $("#brands").on("change", function (event ) {
 	//alert("YEAH");
 	//console.log(this.id);
 	companyID = this.value;
+});
 
 $("#toTypes").click( function( event ) {
 	event.preventDefault();
