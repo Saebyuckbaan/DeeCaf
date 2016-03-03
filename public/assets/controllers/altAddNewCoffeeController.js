@@ -17,12 +17,12 @@ function pageTrack() {
 
 function backClick(e) {
 	console.log("Back Clicked!");
-	ga('send', 'event', 'back-B', 'click');
+	ga('send', 'event', 'back', 'click');
 }
 
 function homeClick(e) {
 	console.log("Home clicked!");
-	ga('send', 'event', 'home-B', 'click');
+	ga('send', 'event', 'home', 'click');
 }
 
 // Company ( Brand ) selection is Step 1
