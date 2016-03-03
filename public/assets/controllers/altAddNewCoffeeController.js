@@ -156,7 +156,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		//if user drink first coffee of the day, please ask how long have they slept
 		if ( isFirstCoffee )
 		{
-			bootbox.prompt("How long did you sleep last night?", function(result)
+			bootbox.prompt("How long did you sleep last night? (hours)", function(result)
 			{
 				if (result)
 				{
