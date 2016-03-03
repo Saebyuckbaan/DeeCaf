@@ -274,10 +274,6 @@ function showExceedingWarning ( event, caffeine ){
 		var maxCaffeine = currentUser.get("maxCaffeine");
 		var todayscaffeine = currentUser.get("todayscaffeine");
 		var intakeRate = ( ( Number( todayscaffeine ) + Number( intakeCaffeine ) ) / Number( maxCaffeine ) ) ;
-
-		console.log ( "todayscaffeine = " + todayscaffeine + ", intakeCaffeine = " + intakeCaffeine + " maxCaffeine = " + maxCaffeine );
-		console.log ( "intakeRate = " + intakeRate );
-		debugger;
 		// if user consume full amount
 		if( intakeRate >= 1 )
 		{
