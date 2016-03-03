@@ -11,6 +11,7 @@ $(document).ready(function ( event ) {
 
 function pageTrack() {
 	$('.backBtn').click(backClick);
+	$('.homeBtn').click(homeClick);
 }
 
 function backClick(e) {
@@ -18,6 +19,18 @@ function backClick(e) {
 	ga('send', 'event', 'back', 'click');
 }
 
+function homeClick(e) {
+	console.log("Home clicked!");
+	ga('send', 'event', 'home', 'click');
+}
+
+// Company ( Brand ) selection is Step 1
+$("#brands").on("change", function (event ) {
+	event.preventDefault();
+
+	//alert("YEAH");
+	//console.log(this.id);
+	companyID = this.value;
 
 $("#toTypes").click( function( event ) {
 	event.preventDefault();
@@ -59,7 +72,7 @@ $("#toComplete").click( function( event ) {
 		var beverageID   = $("#size").find(':selected').data('bid');
 		var beverageName = $("#size").find(':selected').data('name');
 		var size         = $("#size").find(':selected').data("size");
-		
+
 
 		var currentDate  = new Date();
 		var mon          = currentDate.getMonth()+1;

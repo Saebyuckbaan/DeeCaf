@@ -14,11 +14,17 @@ $(document).ready(function ( event ) {
 
 function pageTrack() {
 	$('.backBtn').click(backClick);
+	$('.homeBtn').click(homeClick);
 }
 
 function backClick(e) {
 	console.log("Back clicked!");
 	ga('send', 'event', 'back', 'click');
+}
+
+function homeClick(e) {
+	console.log("Home clicked!");
+	ga('send', 'event', 'home', 'click');
 }
 
 // Company ( Brand ) selection is Step 1
