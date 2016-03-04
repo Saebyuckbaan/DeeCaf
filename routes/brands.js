@@ -7,6 +7,8 @@ exports.brands = function(req, res) {
 
 	//console.log( brands["companies"]);
 	//res.json( brands  );
+	res.redirect('/altbrands');
+	/*
 	var random_num = Math.random();
 	console.log(random_num);
 
@@ -17,6 +19,6 @@ exports.brands = function(req, res) {
 	} else {
 	  res.redirect('/altbrands');
 	}
-
+*/
 	
 }
