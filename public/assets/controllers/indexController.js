@@ -140,6 +140,7 @@ function calculateMaxCaffeineIntake ( event ) {
 				console.log("first time user, no data yet")
 			}
 			else {
+				console.log( "new raito = " + ratio )
 				$('.waterFill').animate({
          	height: ratio,
          	left: "+=40"
