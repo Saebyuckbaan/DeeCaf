@@ -48,6 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/add-new-coffee.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/swipe.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/progressbar.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         </head>
     <!-- END HEAD -->
@@ -111,59 +112,80 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-                                    <!-- Step Bar -->
-                                    <!--
-                                    <div class ="mt-element-step">
-                                        <div class ="row step-thin">
-                                            <div class="col-md-4 mt-step-col first done">
-                                                <div class="mt-step-number bg-white">1</div>
-                                                <div class="mt-step-title uppercase font-grey-cascade">Brand</div>
-                                                <div class="mt-step-content font-grey-cascade">Select the brand</div>
-                                            </div>
-                                            <div class="col-md-4 bg-grey mt-step-col done">
-                                                <div class="mt-step-number bg-white">2</div>
-                                                <div class="mt-step-title uppercase font-grey-cascade">Coffee</div>
-                                                <div class="mt-step-content font-grey-cascade">Select the Coffee</div>
-                                            </div>
-                                            <div class="col-md-4 bg-grey mt-step-col done last">
-                                                <div class="mt-step-number bg-white">3</div>
-                                                <div class="mt-step-title uppercase font-grey-cascade">Size</div>
-                                                <div class="mt-step-content font-grey-cascade">Select the size</div>
-                                            </div>
+
+                                <!-- Progress Bar -->
+                                <div>
+                                    <div class="row bs-wizard" style="border-bottom:0;">
+                                        <div class="col-xs-3 bs-wizard-step complete">
+                                          <div class="text-center bs-wizard-stepnum">Step 1</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Brand
+                                          </div>
+                                        </div>
+
+                                        <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+                                          <div class="text-center bs-wizard-stepnum">Step 2</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Type
+                                          </div>
+                                        </div>
+
+                                        <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+                                          <div class="text-center bs-wizard-stepnum">Step 3</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                            Beverage
+                                          </div>
+                                        </div>
+
+                                        <div class="col-xs-3 bs-wizard-step active"><!-- active -->
+                                          <div class="text-center bs-wizard-stepnum">Step 4</div>
+                                          <div class="progress"><div class="progress-bar"></div></div>
+                                          <a href="#" class="bs-wizard-dot"></a>
+                                          <div class="bs-wizard-info text-center">
+                                              Size
+                                          </div>
                                         </div>
                                     </div>
-                                    -->
+                                    </div>
+                                </div>
+                                <!-- End of Progress Bar -->
 
                                     <h3 style="text-align: center;">Select the Size</h3>
-                                    <!-- Slide Image-->
-                                    <div style ="padding-top: 10%">
-                                        <ul class="bxslider">
+                                    <!-- Option -->
+                                    <select id="size" class="form-control select2" >
+                                        <option value ="description">Select the Size</option>
                                         {{#each sizes}}
-                                          <li class="size" id="{{size}}" name="type" value="{{caffeine}}" data-size="{{size}}" data-bid="{{../bid}}"
-                                          data-cid="{{../cid}}" data-name="{{../name}}" >
-                                              <div style="text-align: center;">
-                                                Size: {{size}}
-                                                <br/>
-                                                {{floz}} fl oz.
-                                                <br />
-                                                Caffeine: {{caffeine}} mg
-                                              </div>
-                                              <!--<img src="{{image}}" />-->
-                                          </li>
+                                        <option value="{{caffeine}}" data-size="{{size}}" data-bid="{{../bid}}" data-cid="{{../cid}}" data-name="{{../name}}">
+                                            Size: {{size}},
+                                            {{floz}} fl oz.
+                                            , Caffeine: {{caffeine}} mg
+                                        </option>
                                         {{/each}}
-                                        </ul>
-                                    </div>
-                                    <!-- end of slide -->
+                                    </select>
+
+                                    </br>
+                                    </br>
+                                    <!-- End of Options -->
 
                                     <!-- Buttons -->
                                     <div class="row">
-                                        <div class ="pull-right">
-                                            <a href="/beverages?cid={{cid}}&amp;bid={{bid}}" type="button" class="btn green-haze backBtn">Back</a>
-                                            <a href="/" type="button" class="btn green-haze homeBtn">Home</a>
+                                        <div class="col-lg-6 col-lg-offset-3 text-center">
+                                        <a  href="/beverages?cid={{cid}}&amp;bid={{bid}}" id= "back" type="button" class="btn green-haze backBtn">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                        <a href="/" type="button" class="btn blue-madison homeBtn"><i class="fa fa-home home-button"></i></a>
+                                        <a id="toComplete" type="button" class="btn green-haze">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
                                         </div>
                                     </div>
                                     <!--- End of the Buttons-->
-
                                 </div>
                             </div>
                         </div>
@@ -183,9 +205,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!-- END FOOTER -->
         <!--[if lt IE 9]>
-		<script src="assets/global/plugins/respond.min.js"></script>
-		<script src="assets/global/plugins/excanvas.min.js"></script>
-		<![endif]-->
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script>
+        <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
         <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -202,7 +224,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
         <script src="assets/global/scripts/swipe.js" type="text/javascript"></script>
-		<script src="assets/global/scripts/parse-1.6.14.min.js" type="text/javascript"></script>
+        <script src="assets/global/scripts/parse-1.6.14.min.js" type="text/javascript"></script>
         <script src="assets/global/scripts/jquery.bxslider.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
@@ -213,9 +235,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>
         <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
-        <script src="assets/controllers/addNewCoffeeController.js" type="text/javascript"></script>
+        <script src="assets/controllers/AddNewCoffeeController.js" type="text/javascript"></script>
         <script src="assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
         {{> googleAnalytics}}
-	</body>
+    </body>
 
 </html>

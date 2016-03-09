@@ -22,9 +22,6 @@ var beverages = require ( './routes/beverages');
 var menu = require('./routes/menu');
 var help = require('./routes/help');
 
-//Alt Routes
-var altbrands = require('./routes/altbrands');
-var altbeverages = require ( './routes/altbeverages');
 
 // Example route
 // var user = require('./routes/user');
@@ -65,12 +62,6 @@ app.get('/types', beverages.beverage_types);
 app.get('/sizes', beverages.beverage_sizes);
 app.get('/menu', menu.menu);
 app.get('/helpdoc', help.view);
-
-//Alt Routes
-app.get('/altbrands', altbrands.brands);
-app.get('/altbeverages', altbeverages.beverages);
-app.get('/alttypes', altbeverages.beverage_types);
-app.get('/altsizes', altbeverages.beverage_sizes);
 
 
 // Example route

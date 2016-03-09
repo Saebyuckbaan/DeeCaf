@@ -9,7 +9,6 @@ exports.beverage_types = function(req, res) {
 
 	//get beverages JSON object
 	var beverageTypeObj = companies["companies"];
-	//console.log( beverageTypeObj);
 	
 	//Sort out beverages that belongs to specific brands
 	var selectedCompany;
@@ -17,8 +16,6 @@ exports.beverage_types = function(req, res) {
 	for (i = 0; i < beverageTypeObj.length ; i++) {
 		if ( beverageTypeObj[i]['cid'] == cid )
 		{
-			console.log ( "beverageTypeObj[i]['cid'] == cid = ", beverageTypeObj[i]['cid'] == cid);
-			console.log ( "beverage = " + beverageTypeObj[i]['name'] + " CID =" + beverageTypeObj[i]['cid'] );
 			selectedCompany = beverageTypeObj[i]['beverageType'];
 			selectedCompany
 		}
@@ -41,7 +38,6 @@ exports.beverages = function(req, res) {
 	//Sort out beverages that belongs to specific type
 	var sortedBeverages = new Array();
 
-	console.log ( "bid = " + bid + " cid = " + cid);
 
 	// Get all beverages information according to the bid
 	for (i = 0; i < beverageObj.length ; i++) {

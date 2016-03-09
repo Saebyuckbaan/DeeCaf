@@ -4,11 +4,9 @@ Parse.initialize("WSw9tShiRqVNExj4V7QQ2uxZMGYrZpzqune2fn6i", "RnMNB3sfpKXXQz8j7X
 $(document).ready(function ( event ) {
 
 	pageTrack();
+
 	isUserSignedIn( event );
 	appendSwipe( event );
-	$('.bxslider').bxSlider({
-
-  	});
 
 });
 
@@ -18,7 +16,7 @@ function pageTrack() {
 }
 
 function backClick(e) {
-	console.log("Back clicked!");
+	console.log("Back Clicked!");
 	ga('send', 'event', 'back', 'click');
 }
 
@@ -28,62 +26,75 @@ function homeClick(e) {
 }
 
 // Company ( Brand ) selection is Step 1
-$(".company").click( function (event ) {
+$("#brands").on("change", function (event ) {
 	event.preventDefault();
 
-	companyID = this.id;
-	selectFromSwipeList ( event, "./types" + "?" + "cid=" + companyID);
+	//alert("YEAH");
+	//console.log(this.id);
+	companyID = this.value;
 });
 
-// Type of Beverage selection is Step 2
-$(".type").click( function (event ) {
+$("#toTypes").click( function( event ) {
 	event.preventDefault();
-	beverageID = this.id;
-	companyID = $(this).data('cid');
+	var companyID = $("#brands").val();
 
-	//beverageId = this.id;
-	selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
+	if ( companyID != "description"  )
+	{
+		selectFromSwipeList ( event, "./types" + "?" + "cid=" + companyID);
+	}
 });
 
-// Beverage Selection is Step 3
-$(".beverage").click( function (event ) { //future class for beverage.handlebars = .beverage
+$("#toBeverages").click( function( event ) {
 	event.preventDefault();
-
-	companyID = $(this).data('cid');
-	beverageName = this.id;
-	selectFromSwipeList ( event, "./sizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
+	var beverageID = $("#type").find(':selected').data("bid");
+	var companyID  = $("#type").val();
+	if ( companyID != "description"  )
+		selectFromSwipeList ( event, "./beverages" + "?" + "cid=" + companyID + "&bid=" + beverageID);
 });
 
-//Size Selection is Step 4
-$(".size").click( function ( event ) { //future class for size.handlebars = .size
+$("#toSizes").click( function( event ) {
 	event.preventDefault();
+	var companyID    = $("#beverage").find(':selected').data('cid');
+	var beverageName = $("#beverage").find(':selected').data("name");
+	if ( $("#beverage").find(':selected').val() != "description"  )
+		selectFromSwipeList ( event, "./sizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
+});
 
+
+$("#toComplete").click( function( event ) {
+	event.preventDefault();
 
 	// Create Caffeine intake information object
 	var caffeineObj;
-	var caffeineVal = $(this).val();
-	var companyID = $(this).data('cid');
-	var beverageID = $(this).data('bid');
-	var beverageName = $(this).data('name');
-	var size = $(this).data("size");
+	var caffeineVal  = $("#size").find(':selected').val();
 
-	var currentDate = new Date();
-	var mon = currentDate.getMonth()+1;
-	var day = currentDate.getDate();
-	var year = currentDate.getFullYear();
-	var dateString = mon + "/" + day + "/" + year;
+	if ( caffeineVal != "description"  )
+	{
+		var companyID    = $("#size").find(':selected').data('cid');
+		var beverageID   = $("#size").find(':selected').data('bid');
+		var beverageName = $("#size").find(':selected').data('name');
+		var size         = $("#size").find(':selected').data("size");
 
 
-	caffeineObj = {
-					"name": beverageName,
-					"bid": beverageID,
-					"cid" : companyID,
-					"caffeine" : caffeineVal,
-					"size": size,
-					"date" : dateString
-					};
+		var currentDate  = new Date();
+		var mon          = currentDate.getMonth()+1;
+		var day          = currentDate.getDate();
+		var year         = currentDate.getFullYear();
+		var dateString   = mon + "/" + day + "/" + year;
+		console.log(dateString);
 
-	showExceedingWarning ( event, caffeineObj );
+		caffeineObj = {
+						"name": beverageName,
+						"bid": beverageID,
+						"cid" : companyID,
+						"caffeine" : caffeineVal,
+						"size": size,
+						"date" : dateString
+						};
+
+		showExceedingWarning ( event, caffeineObj );
+	}
+
 
 });
 
@@ -121,6 +132,7 @@ function appendSwipe ( event ) {
 
 
 function selectFromSwipeList ( event, url ) {
+	//$('.page-type').append("<");
 	window.location.href = url;
 }
 
@@ -132,6 +144,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 	var currentUser = Parse.User.current();
 	var caffeine = caffeineObj["caffeine"];
 
+	console.log( caffeine);
 	if ( currentUser )
 	{
 		var isFirstCoffee = currentUser.get("isFirstCoffee");
@@ -139,10 +152,11 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 		var todaysDate  = new Date();
 		var todaysDateWithoutTime = new Date();
 		todaysDateWithoutTime.setHours(0,0,0,0);
+
 		//if user drink first coffee of the day, please ask how long have they slept
 		if ( isFirstCoffee )
 		{
-			bootbox.prompt("How long did you sleep last night? (in hours)", function(result)
+			bootbox.prompt("How long did you sleep last night? (hours)", function(result)
 			{
 				if (result)
 				{
@@ -225,17 +239,22 @@ function updateIntake ( event, caffeine ){
 	array = currentUser.get("intakeHistory");
 
 	if(array == undefined) {
+		console.log("first time user, no history yet")
 		var array = [];
 	}
 	else {
 	$.each( array, function( index, value ){
 
 		var date = new Date ( value["date"]);
+		console.log( value["date"]);
+		console.log( date);
 		if ( date.getTime() == todaysDateWithoutTime.getTime() )
 		{
 
 			value["intake"] = Number( value["intake"] ) + Number( caffeine );
 			isUpdated = true;
+			console.log("found, and new value = " + value["intake"]);
+			//value["intake"] += caffeine;
 		}
 
 	});
@@ -269,10 +288,9 @@ function showExceedingWarning ( event, caffeine ){
 	{
 		var maxCaffeine = currentUser.get("maxCaffeine");
 		var todayscaffeine = currentUser.get("todayscaffeine");
-		var intakeRate = parseInt( 100 * ( ( todayscaffeine + intakeCaffeine ) / maxCaffeine ) ) ;
-
+		var intakeRate = ( ( Number( todayscaffeine ) + Number( intakeCaffeine ) ) / Number( maxCaffeine ) ) ;
 		// if user consume full amount
-		if( intakeRate >= 100 )
+		if( intakeRate >= 1 )
 		{
 			bootbox.confirm("You are having more than your daily recommended caffeine value. Are you sure you want to add?", function(result) {
 				if( result )
@@ -302,6 +320,9 @@ function showExceedingWarning ( event, caffeine ){
 */
 function updateHistory ( event,  type, newValue ){
 
+	console.log ( "new value = " + newValue );
+
+
 	// Declare Variables
 	var currentUser = Parse.User.current();
 	var statArray;
@@ -319,6 +340,8 @@ function updateHistory ( event,  type, newValue ){
 	statArray = currentUser.get("statistics");
 	//debugger;
 
+//	console.log ( "statArray= " + statArray, " it's lenfth = " + statArray.length);
+
 	if(typeof statArray == "undefined") {
     	statArray = new Array();
 	}
@@ -326,7 +349,6 @@ function updateHistory ( event,  type, newValue ){
 	else
 	{
 		$.each( statArray, function( index, value ){
-
 			var date = new Date ( value["date"] );
 			if ( date.getTime() == todaysDateWithoutTime.getTime() )
 			{
@@ -351,6 +373,7 @@ function updateHistory ( event,  type, newValue ){
 					}
 					break;
 				}
+
 			}
 
 		});
