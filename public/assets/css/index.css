@@ -52,6 +52,7 @@ h2{
 .portlet-body{
     position: relative;
     min-height: 330px;
+
     /*height:348px;*/
 
 }
@@ -61,7 +62,7 @@ h2{
 
 
 /*Mobile Resolution*/
-@media ( max-width:765px ) {
+@media ( max-width:667px ) {
     .intake_table{
     opacity: 1.0 !important;
     position: absolute;
@@ -81,11 +82,12 @@ h2{
         -moz-border-radius: 10px;
         background-color: #F0F0F0;
         overflow: hidden;
+
     }
     .glass img{
     z-index: 1;
     position: absolute;
-  
+     
     width: 100%;
     height: 100%;
 
@@ -107,8 +109,16 @@ h2{
 
 }
 
+
+
 /*Table or higher resoltion*/
-@media ( min-width:765px ) {
+@media ( min-width:667px) {
+    .col-md-6 #blockui_sample_1_portlet_body{
+    /*background-color: #cd7f65 !important;*/
+    position: relative;
+    min-width: 667px;
+
+}
        .intake_table{
     opacity: 1.0 !important;
      text-align: center;
@@ -119,19 +129,23 @@ h2{
     {
         max-height: 360px;
         min-height: 330px;
-        width: 70%;
-        max-width: 380px;
+        width: 90%;
+        max-width: 370px;
+        min-width: 340px;
         position: absolute;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         background-color: #F0F0F0;
-        left:25%;
+        left:20%;
+
+
         margin: 0 auto;
         overflow: hidden;
     }
     
     .glass img
     {
+       
         z-index: 1;
         position: absolute;
 
