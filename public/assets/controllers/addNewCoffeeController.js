@@ -116,20 +116,6 @@ function isUserSignedIn ( event ) {
 
 }
 
-function appendSwipe ( event ) {
-	// pure JS
-	var elem = document.getElementById('mySwipe');
-	window.mySwipe = Swipe(elem, {
-	  // startSlide: 4,
-	  // auto: 3000,
-	  // continuous: true,
-	  // disableScroll: true,
-	  // stopPropagation: true,
-	  // callback: function(index, element) {},
-	  // transitionEnd: function(index, element) {}
-	});
-}
-
 
 function selectFromSwipeList ( event, url ) {
 	//$('.page-type').append("<");
@@ -198,6 +184,7 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 
 			currentUser.set("todayscaffeine",newCaffeine);
 			currentUser.set("lastInputTime", todaysDate);
+			currentUser.add("drinkHistory",  caffeineObj);
 			currentUser.save(null, {
 			  success: function(user) {
 			    // Hooray! Let them use the app now.
@@ -238,27 +225,29 @@ function updateIntake ( event, caffeine ){
 
 	array = currentUser.get("intakeHistory");
 
-	if(array == undefined) {
+	if(array == undefined) 
+	{
 		console.log("first time user, no history yet")
 		var array = [];
 	}
-	else {
-	$.each( array, function( index, value ){
-
-		var date = new Date ( value["date"]);
-		console.log( value["date"]);
-		console.log( date);
-		if ( date.getTime() == todaysDateWithoutTime.getTime() )
+	else 
+	{
+		$.each( array, function( index, value )
 		{
+			var date = new Date ( value["date"]);
+			console.log( value["date"]);
+			console.log( date );
+			if ( date.getTime() == todaysDateWithoutTime.getTime() )
+			{
 
-			value["intake"] = Number( value["intake"] ) + Number( caffeine );
-			isUpdated = true;
-			console.log("found, and new value = " + value["intake"]);
-			//value["intake"] += caffeine;
-		}
-
-	});
-}
+				value["intake"] = Number( value["intake"] ) + Number( caffeine );
+				isUpdated = true;
+				console.log("found, and new value = " + value["intake"]);
+				return false;
+				//value["intake"] += caffeine;
+			}
+		});
+	}
 
 	if ( !isUpdated )
 	{
@@ -320,8 +309,6 @@ function showExceedingWarning ( event, caffeine ){
 */
 function updateHistory ( event,  type, newValue ){
 
-	console.log ( "new value = " + newValue );
-
 
 	// Declare Variables
 	var currentUser = Parse.User.current();
@@ -338,9 +325,6 @@ function updateHistory ( event,  type, newValue ){
 	//Try to querying current user's history.
 	//if they are empty, create new object
 	statArray = currentUser.get("statistics");
-	//debugger;
-
-//	console.log ( "statArray= " + statArray, " it's lenfth = " + statArray.length);
 
 	if(typeof statArray == "undefined") {
     	statArray = new Array();
@@ -425,13 +409,4 @@ function updateHistory ( event,  type, newValue ){
 	});
 
 	currentUser.set("statistics", statArray );
-	currentUser.save(null, {
-	  success: function(user) {
-
-	  },
-	  error: function(user, error) {
-	    // Show the error message somewhere and let the user try again.
-	    alert("Error: " + error.code + " " + error.message);
-	  }
-	});
 }
