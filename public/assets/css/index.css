@@ -1,3 +1,37 @@
+
+.page-container{
+    background-image: url("../img/background.jpg")!important; 
+    background-color: #cccccc;
+    
+}
+.col-md-6 #blockui_sample_1_portlet_body{
+    /*background-color: #cd7f65 !important;*/
+
+}
+.caption {
+    opacity: 1.0 !important;
+    position: absolute;
+    z-index: 2 !important;
+}
+.caption-subject{
+    /*font-size: 20px !important;*/
+}
+.header-img #header-img{
+    position: absolute;
+    opacity: 0.3;
+    /*display: inline;*/
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.portlet-title{
+   /* background-image: url("../img/coffee-shop-header.jpg")!important; */
+    /*opacity: 0.6;*/
+    /*z-index: ;*/
+    position: relative;
+    height: 60px;
+   
+}
 #maxCaffeine {
 	color: white;
 	text-align: center;
@@ -11,11 +45,20 @@
 	text-align: center;
 
 }
-
-.glass {
-    height: 250px;
-    width: 100%;
+.portlet-body{
     position: relative;
+    height:338px;
+}
+.intake_table{
+    opacity: 1.0 !important;
+    position: absolute;
+    z-index: 2 !important;
+}
+
+/*.glass {
+    height: 100%;
+    width: 100%;
+    position: absolute;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     background-color: #F0F0F0;
@@ -25,12 +68,12 @@
     border-color: lightgray;
     border-radius: 10px;
     margin: 50px auto;
-    */
+    
 
-}
+}*/
 .glass img{
     z-index: 1;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
