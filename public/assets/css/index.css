@@ -1,6 +1,6 @@
 
 .page-container{
-    background-image: url("../img/background.jpg")!important; 
+    background-image: url("../img/background05.png")!important; 
     background-color: #cccccc;
     
 }
@@ -22,16 +22,12 @@ h2{
 }
 .header-img #header-img{
     position: absolute;
-    opacity: 0.3;
-    /*display: inline;*/
-    height: 100%;
+    opacity: 0.2;
     width: 100%;
     z-index: 1;
 }
 .portlet-title{
-   /* background-image: url("../img/coffee-shop-header.jpg")!important; */
-    /*opacity: 0.6;*/
-    /*z-index: ;*/
+    overflow: hidden;
     position: relative;
     height: 60px;
    
@@ -64,11 +60,11 @@ h2{
 /*Mobile Resolution*/
 @media ( max-width:667px ) {
     .intake_table{
-    opacity: 1.0 !important;
-    position: absolute;
-    text-align: center;
-    z-index: 2 !important;
-}
+        opacity: 1.0 !important;
+        position: absolute;
+        text-align: center;
+        z-index: 2 !important;
+    }
     .glass 
     {
         max-height: 360px;
@@ -103,7 +99,7 @@ h2{
         width: 100%;
         height: 10%;
         position: absolute;
-        bottom: 30px;
+        bottom: 60px;
         /*z-index: 1;*/
     }
 
@@ -164,7 +160,7 @@ h2{
         width: 100%;
         height: 10%;
         position: absolute;
-        bottom: 30px;
+        bottom: 60px;
     }
 }
 

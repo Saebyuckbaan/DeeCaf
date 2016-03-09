@@ -120,22 +120,25 @@ function calculateMaxCaffeineIntake ( event ) {
 	    currentUser.save();
 
 	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
-	   // $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
+	  
+	    //New image's cup take only 1/3 of actual image
+	   	ratio *= 0.3;
 
 	    if ( ratio == 0 )
 	    	ratio = "10%";
-	    else if ( ratio < 100 )
+	    else if ( ratio < 30 )
 	    	ratio += "%";
 	    else
-	    	ratio = "100%";
+	    	ratio = "35%";
 
 			if(currentIntake == undefined) {
 				console.log("first time user, no data yet")
 			}
 			else {
+				console.log( "new raito = " + ratio )
 				$('.waterFill').animate({
-         	height: ratio
-     		}, 1000);
+	         		height: ratio
+	     		}, 1000);
 			}
 
 	    appendIntakeReport( currentIntake, parseInt(maxCaffeine));
