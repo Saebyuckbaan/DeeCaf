@@ -4,6 +4,7 @@
     background-color: #cccccc;
     
 }
+
 .col-md-6 #blockui_sample_1_portlet_body{
     /*background-color: #cd7f65 !important;*/
     position: relative;
@@ -80,7 +81,7 @@ h2{
         position: absolute;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
-        background-color: #F0F0F0;
+        background-color: #443636;
         overflow: hidden;
 
     }
@@ -97,13 +98,14 @@ h2{
         background-image: url("coffee_water.png");  
         background-position: top right; 
        /* background-color: #bf8040;*/
-        -webkit-transition: all 3s ease-out;
-        -moz-transition: all 3s ease-out;
-        -o-transition: all 3s ease-out;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
         width: 100%;
-        height: 10%;
+        height: 15%;
         position: absolute;
-        bottom: 30px;
+        bottom: 20px;
+        left: 0px;
         /*z-index: 1;*/
     }
 
@@ -135,8 +137,8 @@ h2{
         position: absolute;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
-        background-color: #F0F0F0;
-        left:20%;
+        background-color: #443636;
+        left:0px;
 
 
         margin: 0 auto;
@@ -158,13 +160,15 @@ h2{
         background-image: url("coffee_water.png");  
         background-position: top right; 
         /*background-color: #bf8040;*/
-        -webkit-transition: all 3s ease-out;
-        -moz-transition: all 3s ease-out;
-        -o-transition: all 3s ease-out;
+/*     transform: translate3d(10px, 0px, 0px);*/
+        left: 0px;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
         width: 100%;
-        height: 10%;
+        height: 15%;
         position: absolute;
-        bottom: 30px;
+        bottom: 20px;
     }
 }
 

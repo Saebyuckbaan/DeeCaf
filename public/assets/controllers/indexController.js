@@ -98,8 +98,10 @@ function goToAddNewCoffeePage( event ) {
 
 function water( event ){
     $('.waterFill').animate({
-        height: '75%'
+        height: '15%',
+        left: "+=40"
     }, 1000)
+
 }
 
 function calculateMaxCaffeineIntake ( event ) {
@@ -119,23 +121,30 @@ function calculateMaxCaffeineIntake ( event ) {
 	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
 	    currentUser.save();
 
-	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 100 );
+	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 33 );
+	    
 	   // $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
 
 	    if ( ratio == 0 )
-	    	ratio = "10%";
-	    else if ( ratio < 100 )
+	    	ratio = "15%";
+	    else if ( ratio < 33 ){
+	    	ratio += 15;
 	    	ratio += "%";
+	    	console.log(ratio);
+	    }
+	    	
 	    else
-	    	ratio = "100%";
+	    	ratio = "48%";
 
 			if(currentIntake == undefined) {
 				console.log("first time user, no data yet")
 			}
 			else {
 				$('.waterFill').animate({
-         	height: ratio
+         	height: ratio,
+         	left: "+=40"
      		}, 1000);
+				
 			}
 
 	    appendIntakeReport( currentIntake, parseInt(maxCaffeine));
