@@ -11,7 +11,7 @@ $(document).ready( function ( event ) {
   }
   else
   {
-    $("#graph_tabs").hide();
+    $(".graph-body").hide();
     $("#nohistory").show();
   }
 
