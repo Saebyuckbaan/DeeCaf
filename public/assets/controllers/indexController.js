@@ -61,18 +61,20 @@ function appendWarning ( event ){
 		var maxCaffeine = currentUser.get("maxCaffeine");
 		var todayscaffeine = currentUser.get("todayscaffeine");
 		var intakeRate = parseInt( 100 * ( todayscaffeine / maxCaffeine ) ) ;
-
+		console.log("intakeRate = " + intakeRate);
 		// if user consume full amount
 		if( intakeRate >= 100 )
 		{
 			$("#danger").show();
 			$("#warning").hide();
+			$("#symptoms").modal();
 		}
 		//if user consume 80% of daily recommendation
-		else if ( intakeRate >= 80 )
+		else if ( intakeRate >= 70 )
 		{
 			$("#danger").hide();
 			$("#warning").show();
+			$("#symptoms").modal();
 		}
 		else
 		{
