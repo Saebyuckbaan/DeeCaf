@@ -88,7 +88,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN PAGE TITLE
                         <div class="page-title">
                         </div>
-                         END PAGE TITLE -->
+                        END PAGE TITLE -->
                     </div>
                     <!-- END PAGE HEAD-->
                     <!-- BEGIN PAGE BREADCRUMB -->
@@ -98,7 +98,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
-                            <span class="active">Statistic</span>
+                            <span class="active">Add Custom Drink</span>
                         </li>
                     </ul>
                     <!-- END PAGE BREADCRUMB -->
@@ -109,35 +109,33 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-bubble font-green-sharp"></i>
-                                        <span class="caption-subject font-green-sharp sbold">Statistics</span>
+                                        <span class="caption-subject font-green-sharp sbold">
+                                            Add Custom Drink
+                                        </span>
                                     </div>
-                                </div>
 
+                                </div>
+                                <div class="portlet-body">
 
-                                <!-- Intake Graph -->    
-                                <div class="portlet-body graph-body">
-                                    <h4>Caffeine Intake</h4>
-                                      <canvas id="caffeineChart"></canvas>
-                                      <div id="caffeineChart_legends"></div>
-                                </div>
-                                <!-- Graph -->   
-                                <!-- Graph -->
-                                <div class="portlet-body graph-body">
-                                    <h4>Sleep</h4>
-                                    <canvas id="sleepChart"></canvas>
-                                    <div id="sleepChart_legends"></div>
-                                </div>
-                                <!-- Graph -->
-                                <!-- Graph -->
-                                <div class="portlet-body graph-body">
-                                    <h4>Sleep vs Caffeine</h4>
-                                    <canvas id="caffeinevssleepChart"></canvas>
-                                    <div id="sleepChart_legends"></div>
-                                </div>
-                                <!-- Graph -->
-                                {{> nohistory}}
-                                
+                                <form role="form" id="signUpForm">
+                                    <div class="form-body">
+                                        <div class="form-group form-md-line-input">
+                                            <input type="text" class="form-control" id="new-drink-name" placeholder="Enter your drink name">
+                                            <label for="form_control_1">Drink Name</label>
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group form-md-line-input">
+                                            <input type="number" class="form-control" id="new-caffeine" placeholder="Enter caffeine">
+                                            <label for="form_control_1">Caffeine</label>
+                                            <span class="help-block">Please enter your weight in mg</span>
+                                        </div>
+                                    <div class="form-actions noborder">
+                                        <button type="button" id="formSubmit" class="btn blue">Submit</button>
+                                        <a href="/" type="button" id="formCancel" class="btn default">Cancel</a>
+                                    </div>
+                                </form>
 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -159,8 +157,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/global/plugins/excanvas.min.js"></script>
 		<![endif]-->
         <!-- BEGIN CORE PLUGINS -->
-        <script src="assets/global/scripts/Chart.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
@@ -185,10 +181,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>
         <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
-        <script src="assets/controllers/statisticController.js" type="text/javascript"></script>
+        <script src="assets/controllers/addCustomDrinkController.js" type="text/javascript"></script>
         <script src="assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
-
-
 	</body>
 
 </html>

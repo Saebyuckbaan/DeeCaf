@@ -2,25 +2,25 @@
 /**
  * Module dependencies.
  */
-
-var express = require('express');
-var http = require('http');
-var path = require('path');
+var express    = require('express');
+var http       = require('http');
+var path       = require('path');
 var handlebars = require('express3-handlebars')
 
 
 // Routes
-var index = require('./routes/index');
-var error = require('./routes/error');
-var history = require('./routes/history');
-var myaccount = require('./routes/myaccount');
-var sign_in = require('./routes/sign_in');
-var sign_up = require('./routes/sign_up');
-var statistic = require('./routes/statistic');
-var brands = require('./routes/brands');
-var beverages = require ( './routes/beverages');
-var menu = require('./routes/menu');
-var help = require('./routes/help');
+var index          = require('./routes/index');
+var error          = require('./routes/error');
+var history        = require('./routes/history');
+var myaccount      = require('./routes/myaccount');
+var sign_in        = require('./routes/sign_in');
+var sign_up        = require('./routes/sign_up');
+var statistic      = require('./routes/statistic');
+var brands         = require('./routes/brands');
+var beverages      = require ( './routes/beverages');
+var menu           = require('./routes/menu');
+var help           = require('./routes/help');
+var addCustomDrink = require('./routes/addCustomDrink');
 
 
 // Example route
@@ -62,6 +62,8 @@ app.get('/types', beverages.beverage_types);
 app.get('/sizes', beverages.beverage_sizes);
 app.get('/menu', menu.menu);
 app.get('/helpdoc', help.view);
+app.get('/addCustomDrink', addCustomDrink.view);
+
 
 
 // Example route
