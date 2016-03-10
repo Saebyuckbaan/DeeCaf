@@ -116,14 +116,10 @@ function isUserSignedIn ( event ) {
 
 }
 
-
 function selectFromSwipeList ( event, url ) {
 	//$('.page-type').append("<");
 	window.location.href = url;
 }
-
-
-
 
 function incrementCaffeineIntake( event, caffeineObj ) {
 	//Call current user
@@ -197,7 +193,6 @@ function incrementCaffeineIntake( event, caffeineObj ) {
 			  }
 			});
 		}
-
 	}
 }
 
@@ -225,12 +220,12 @@ function updateIntake ( event, caffeine ){
 
 	array = currentUser.get("intakeHistory");
 
-	if(array == undefined) 
+	if(array == undefined)
 	{
 		console.log("first time user, no history yet")
 		var array = [];
 	}
-	else 
+	else
 	{
 		$.each( array, function( index, value )
 		{
@@ -267,7 +262,6 @@ function updateIntake ( event, caffeine ){
 
 }
 
-
 function showExceedingWarning ( event, caffeine ){
 
 	var currentUser = Parse.User.current();
@@ -299,8 +293,6 @@ function showExceedingWarning ( event, caffeine ){
 
 
 
-
-
 // ---------------- Beta testing functions ---------------- //
 /*
 * type - "sleep" or "caffeine"
@@ -308,7 +300,6 @@ function showExceedingWarning ( event, caffeine ){
 *
 */
 function updateHistory ( event,  type, newValue ){
-
 
 	// Declare Variables
 	var currentUser = Parse.User.current();
@@ -393,7 +384,6 @@ function updateHistory ( event,  type, newValue ){
 				bootbox.alert("Choice must be sleep or caffeine you dumb programmer");
 			}
 		}
-
 
 		statArray.push ( newIntake );
 	}

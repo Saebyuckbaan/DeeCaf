@@ -89,7 +89,7 @@ function appendWarning ( event ){
 
 
 function goToAddNewCoffeePage( event ) {
-	
+
 	window.location.href = "./brands";
 
 }
@@ -113,6 +113,7 @@ function calculateMaxCaffeineIntake ( event ) {
 		var ratio;
 
 		maxCaffeine       = 2.72155 * weight;
+		var remainingIntake = maxCaffeine - currentIntake;
 
 	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
 	    currentUser.save();
@@ -136,16 +137,17 @@ function calculateMaxCaffeineIntake ( event ) {
      		}, 1000);
 			}
 
-	    appendIntakeReport( currentIntake, parseInt(maxCaffeine));
+	    appendIntakeReport( currentIntake, parseInt(maxCaffeine), parseInt(remainingIntake));
 	 }
 
 }
 
-function appendIntakeReport ( current, max )
+function appendIntakeReport ( current, max, remaining)
 {
 	//Clear
 	$("#current").empty();
 	$("#max").empty();
+	$("#remaining").empty();
 
 	//append
 	if(current == undefined)
@@ -154,6 +156,12 @@ function appendIntakeReport ( current, max )
 		$("#current").append( current );
 	}
 	$("#max").append( max );
+	if(remaining > 0) {
+		$("#remaining").css("color", "#00FF00");
+	} else {
+		$("#remaining").css("color", "#FF0000")
+	}
+	$("#remaining").append( remaining );
 }
 
 
