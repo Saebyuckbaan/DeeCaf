@@ -47,6 +47,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/add-new-coffee.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/swipe.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/index.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         </head>
     <!-- END HEAD -->
@@ -57,15 +58,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-header navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
             <div class="page-header-inner ">
-                <!-- BEGIN LOGO -->
-                <div class="page-logo">
-                    <a href="/">
-                        <img src="assets/img/deecaf.png" alt="logo" class="logo-default" /> </a>
-                    <div class="menu-toggler sidebar-toggler">
-                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-                    </div>
-                </div>
-                <!-- END LOGO -->
+                {{> logo}}
                 <!-- BEGIN RESPONSIVE MENU TOGGLER -->
                 <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
                 <!-- END RESPONSIVE MENU TOGGLER -->
@@ -104,9 +97,13 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="col-md-6">
                             <div class="portlet light bordered" id="blockui_sample_1_portlet_body">
                                 <div class="portlet-title">
+
+                                  <div class = "header-img">
+                                    <img src="assets/img/coffee-shop-header.jpg" id="header-img">
+                                    </div>
                                     <div class="caption">
-                                        <i class="icon-bubble font-green-sharp"></i>
-                                        <span class="caption-subject font-green-sharp sbold">Help and Documentation</span>
+                                        <i class="fa fa-question-circle font-brown-sharp"></i>
+                                        <span class="caption-subject font-brown-sharp sbold">Help and Documentation</span>
                                     </div>
 
                                 </div>
