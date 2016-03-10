@@ -100,7 +100,7 @@ function water( event ){
     $('.waterFill').animate({
         height: '15%',
         left: "+=40"
-    }, 1000)
+    }, 500)
 
 }
 
@@ -144,7 +144,7 @@ function calculateMaxCaffeineIntake ( event ) {
 				$('.waterFill').animate({
          	height: ratio,
          	left: "+=40"
-     		}, 1000);
+     		}, 500);
 				
 			}
 

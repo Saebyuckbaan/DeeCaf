@@ -4,7 +4,36 @@
     background-color: #cccccc;
     
 }
+h3{
+    font-size: 2rem;
+     margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
 
+.table-scrollable {
+    overflow-y: scroll !important;
+    max-height: 360px;
+}
+.table-scrollable::-webkit-scrollbar
+{
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+
+.table-scrollable::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+
+.table-scrollable::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    -webkit-box-shadow: inset 0 0 6px #443636;
+    background-color: #555;
+}
 .col-md-6 #blockui_sample_1_portlet_body{
     /*background-color: #cd7f65 !important;*/
     position: relative;
@@ -94,9 +123,9 @@ h2{
         background-image: url("coffee_water.png");  
         background-position: top right; 
        /* background-color: #bf8040;*/
-        -webkit-transition: all 2s ease-out;
-        -moz-transition: all 2s ease-out;
-        -o-transition: all 2s ease-out;
+        -webkit-transition: all 3s ease-out;
+        -moz-transition: all 3s ease-out;
+        -o-transition: all 3s ease-out;
         width: 100%;
         position: absolute;
         bottom: 20px;
@@ -156,9 +185,9 @@ h2{
         /*background-color: #bf8040;*/
 /*     transform: translate3d(10px, 0px, 0px);*/
         left: 0px;
-        -webkit-transition: all 2s ease-out;
-        -moz-transition: all 2s ease-out;
-        -o-transition: all 2s ease-out;
+        -webkit-transition: all 3s ease-out;
+        -moz-transition: all 3s ease-out;
+        -o-transition: all 3s ease-out;
         width: 100%;
         position: absolute;
         bottom: 20px;
