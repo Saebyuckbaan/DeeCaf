@@ -22,7 +22,7 @@ function userHistory(event)
 			$.each(history, function(index, value){
 				var date = new Date ( value["date"] );
 
-				$("#historytable tbody").append("<tr><td>" + value["name"]
+				$("#historytable tbody").prepend("<tr><td>" + value["name"]
 												 + "</td><td>" + value["caffeine"]
 												 + " mg</td><td>" + ( date.getMonth() + 1 ) + " / " + date.getDate()
 												 + "</td>" + "<td><a id=\"" + count 
