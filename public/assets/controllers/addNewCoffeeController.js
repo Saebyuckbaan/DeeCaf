@@ -7,7 +7,7 @@ $(document).ready(function ( event ) {
 	isUserSignedIn( event );
 	var url = window.location.href;
 	console.log(url);
-	var recommendPage = "http://deecaf.herokuapp.com/recommendation";
+	var recommendPage = "http://deecaf.herokuapp.com/recommendatio";
 	if(url != recommendPage) {
 		recommend();
 	}
@@ -85,21 +85,19 @@ function recommend () {
   var percentRemaining = remainingIntake/maxIntake;
   console.log(percentRemaining);
 	$('#remaining').append(remainingIntake);
-	if(remainingIntake != 0) {
+	if(remainingIntake > 0) {
 		$("#remaining").css("color", "#00FF00");
 	} else {
 		$("#remaining").css("color", "#FF0000")
 	}
 	var recommendButton = $('<a href=\"/recommendation\" type=\"button\" class=\"btn green-haze\">Recommendations</a>');
-  if(remainingIntake == maxIntake) {
-    //$('.recommendUser').append("Anything's good! (Just remain below your maximum)");
+  if(remainingIntake < maxIntake && remainingIntake > 0) {
 		$('#recommendUser').append(recommendButton);
-  } else if (percentRemaining >= .5) {
-    $('#recommendUser').append(recommendButton);
-  } else if (percentRemaining < .5) {
-    $('.recommendUser').append("Here are some recommendations: ");
-  } else {
-    $('.recommendUser').append("Avoid caffeine! Here are some decaffeinated drinks: ");
+  } else if (remainingIntake == maxIntake) {
+		$('#recommendMessage').append("Anything's good! (Just remain below your maximum)");
+	} else {
+    $('#recommendMessage').append("Avoid caffeine!");
+		$('#recommendUser').append(recommendButton);
   }
 
 }
@@ -316,7 +314,8 @@ function showExceedingWarning ( event, caffeine ){
 		var todayscaffeine = currentUser.get("todayscaffeine");
 		var intakeRate = ( ( Number( todayscaffeine ) + Number( intakeCaffeine ) ) / Number( maxCaffeine ) ) ;
 		// if user consume full amount
-		if( intakeRate >= 1 )
+		console.log("intake caffeine = " + intakeCaffeine);
+		if( intakeRate >= 1 && intakeCaffeine > 0 )
 		{
 			bootbox.confirm("You are having more than your daily recommended caffeine value. Are you sure you want to add?", function(result) {
 				if( result )
