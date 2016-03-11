@@ -7,7 +7,7 @@ $(document).ready(function ( event ) {
 	isUserSignedIn( event );
 	var url = window.location.href;
 	console.log(url);
-	var recommendPage = "http://deecaf.herokuapp.com/recommendatio";
+	var recommendPage = "http://deecaf.herokuapp.com/recommendation";
 	if(url != recommendPage) {
 		recommend();
 	}
