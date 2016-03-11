@@ -5,7 +5,12 @@ $(document).ready(function ( event ) {
 
 	pageTrack();
 	isUserSignedIn( event );
-
+	var url = window.location.href;
+	console.log(url);
+	var recommendPage = "http://deecaf.herokuapp.com/recommendation";
+	if(url != recommendPage) {
+		recommend();
+	}
 });
 
 function pageTrack() {
@@ -58,6 +63,46 @@ $("#toSizes").click( function( event ) {
 		selectFromSwipeList ( event, "./sizes"+ "?" + "cid=" + companyID + "&name=" + beverageName);
 });
 
+function recommend () {
+  var currentUser = Parse.User.current();
+  var remainingIntake = currentUser.get("remainingCaffeine");
+  var maxIntake = currentUser.get("maxCaffeine");
+	var data;
+	/*
+	$.getJSON("beverages.json", function(json) {
+		console.log(json);
+	});
+	//var beverageObj = beverages["beverages"];
+
+	var recommendBeverages = new Array();
+/*
+	for(i = 0; i < beverageObj.length; i++) {
+		for(j = 0; j < beverageObj[i]; j++){
+			console.log(beverageObj[i][j]);
+		}
+	}
+*/
+  var percentRemaining = remainingIntake/maxIntake;
+  console.log(percentRemaining);
+	$('#remaining').append(remainingIntake);
+	if(remainingIntake != 0) {
+		$("#remaining").css("color", "#00FF00");
+	} else {
+		$("#remaining").css("color", "#FF0000")
+	}
+	var recommendButton = $('<a href=\"/recommendation\" type=\"button\" class=\"btn green-haze\">Recommendations</a>');
+  if(remainingIntake == maxIntake) {
+    //$('.recommendUser').append("Anything's good! (Just remain below your maximum)");
+		$('#recommendUser').append(recommendButton);
+  } else if (percentRemaining >= .5) {
+    $('#recommendUser').append(recommendButton);
+  } else if (percentRemaining < .5) {
+    $('.recommendUser').append("Here are some recommendations: ");
+  } else {
+    $('.recommendUser').append("Avoid caffeine! Here are some decaffeinated drinks: ");
+  }
+
+}
 
 $("#toComplete").click( function( event ) {
 	event.preventDefault();

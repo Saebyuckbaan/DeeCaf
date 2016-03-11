@@ -21,6 +21,7 @@ var beverages      = require ( './routes/beverages');
 var menu           = require('./routes/menu');
 var help           = require('./routes/help');
 var addCustomDrink = require('./routes/addCustomDrink');
+var recommend      = require('./routes/recommend');
 
 
 // Example route
@@ -63,6 +64,7 @@ app.get('/sizes', beverages.beverage_sizes);
 app.get('/menu', menu.menu);
 app.get('/helpdoc', help.view);
 app.get('/addCustomDrink', addCustomDrink.view);
+app.get('/recommendation', recommend.recommend);
 
 
 

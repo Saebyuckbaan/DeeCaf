@@ -120,10 +120,11 @@ function calculateMaxCaffeineIntake ( event ) {
 		var remainingIntake = maxCaffeine - currentIntake;
 
 	    currentUser.set("maxCaffeine", parseInt(maxCaffeine));
+			currentUser.set("remainingCaffeine", parseInt(remainingIntake)); 					//remaining intake Parse input
 	    currentUser.save();
 
 	    ratio = parseInt( ( currentIntake / maxCaffeine ) * 33 );
-	    
+
 	   // $("#maxCaffeine").append( currentIntake + " mg" + " / " + parseInt(maxCaffeine) + "mg" );
 
 	    if ( ratio == 0 )
@@ -133,7 +134,7 @@ function calculateMaxCaffeineIntake ( event ) {
 	    	ratio += "%";
 	    	console.log(ratio);
 	    }
-	    	
+
 	    else
 	    	ratio = "48%";
 
@@ -146,7 +147,7 @@ function calculateMaxCaffeineIntake ( event ) {
          	height: ratio,
          	left: "+=40"
      		}, 1000);
-				
+
 			}
 
 	    appendIntakeReport( currentIntake, parseInt(maxCaffeine), parseInt(remainingIntake));
