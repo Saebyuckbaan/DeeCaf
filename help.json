@@ -1,0 +1,15 @@
+{
+  "helps": [{
+      "id": "1",
+      "title": "How To Add Coffee/Drink",
+      "body": "1. Go to Today's Intake page\n 2. Click on Add Coffee "
+    }, {
+      "id": "2",
+      "title": "Title",
+      "body": "body"
+    }
+
+
+  ]
+
+}
